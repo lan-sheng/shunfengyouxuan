@@ -1,0 +1,34 @@
+{
+  "name": "shunfengyouxuan",
+  "version": "1.0.0",
+  "description": "顺丰优选是顺丰集团旗下，以“优选商品，服务到家”为宗旨，依托线上电商平台与线下社区门店，为用户提供日常所需的全球优质美食的一个平台。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lan-sheng/shunfengyouxuan.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lan-sheng/shunfengyouxuan/issues"
+  },
+  "homepage": "https://github.com/lan-sheng/shunfengyouxuan#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-imagemin": "^6.2.0",
+    "gulp-load-plugins": "^2.0.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^5.0.1",
+    "install": "^0.13.0"
+  }
+}

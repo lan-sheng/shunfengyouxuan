@@ -14,22 +14,75 @@
 <meta property=wb:webmaster content=3a008ad947166307>
 <link rel=stylesheet type=text/css href='./src/css/index_0.css'>
 <link rel=stylesheet type=text/css href="./src/css/index_1.css">
-<script src="src/script/index/0.js"></script>
+<!-- <script src="src/script/index/0.js"></script> -->
 <script>
     var SMART_SORT_FLAG = 0;
 </script>
-<link type=image/x-icon rel="shortcut icon" href="./src/img/index/./src/img/index/images/50.ico">
+
+<!-- 懒加载 -->
+<script>
+    function isInSight(el) {
+        const bound = el.getBoundingClientRect(); //这个方法返回一个名为ClientRect的DOMRect对象，包含了top、right、botton、left、width、height这些值。
+        const clientHeight = window.innerHeight;
+        //如果只考虑向下滚动加载
+        //const clientWidth=window.innerWeight;
+        return bound.top <= clientHeight + 100;
+    }
+
+    let index = 0;
+
+    function checkImgs() {
+        const imgs = document.querySelectorAll('.lazy');
+        for (let i = index; i < imgs.length; i++) {
+            if (isInSight(imgs[i])) {
+                loadImg(imgs[i]);
+                index = i;
+            }
+        }
+        // Array.from(imgs).forEach(el => {
+        //   if (isInSight(el)) {
+        //     loadImg(el);
+        //   }
+        // })
+    }
+
+    function loadImg(el) {
+        if (!el.src) {
+            const source = el.dataset.src;
+            el.src = source;
+        }
+    }
+    //以下为函数节流
+    function throttle(fn, mustRun = 500) {
+        const timer = null;
+        let previous = null;
+        return function() {
+            const now = new Date();
+            const context = this;
+            const args = arguments;
+            if (!previous) {
+                previous = now;
+            }
+            const remaining = now - previous;
+            if (mustRun && remaining >= mustRun) {
+                fn.apply(context, args);
+                previous = now;
+            }
+        }
+    }
+</script>
+
+<link type=image/x-icon rel="shortcut icon" href="./src/img/index/images/50.ico">
 </head>
 
 <body>
     <div class=toppromo>
-        <div class=banner style="background:url(  ./src/img/index/background-images/61.jpg ) no-repeat top center;display:block">
-            <a name=sfbest_hp_hp_headbanner_1 class=trackref href=http://www.sfbest.com/html/activity/1575962172.html target=_blank>2019年度好货盘点 爆款美食 买1赠1</a>
+        <div class=banner style="background:url(./src/img/index/background-images/61.jpg) no-repeat top center;display:block">
+            <a class=trackref href="" target=_blank>2019年度好货盘点 爆款美食 买1赠1</a>
         </div>
         <span class=topclose>关闭</span>
-
         <div class=topshow style="background:url(./src/img/index/background-images/62.jpg) no-repeat top center;display:none">
-            <div><a name=sfbest_hp_hp_headbanner_1 class=trackref href=http://www.sfbest.com/html/activity/1575962172.html target=_blank>2019年度好货盘点 爆款美食 买1赠1</a></div>
+            <div><a class=trackref href=# target=_blank>2019年度好货盘点 爆款美食 买1赠1</a></div>
         </div>
 
         <div class=q_ticket>
@@ -50,22 +103,22 @@
             <ul class="fr topTh">
                 <li class=login id=login></li>
                 <li class=myOrder>
-                    <a name=sfbest_hp_hp_head_OrderList class=trackref href=http://home.sfbest.com/myorder/index/ rel=nofollow>我的订单</a>
+                    <a class=trackref href=r el=nofollow>我的订单</a>
                 </li>
                 <li class=menus>
-                    <a name=sfbest_hp_hp_head_home1 href=http://home.sfbest.com/my/index/ rel=nofollow class="trackref t">我的优选</a><b></b>
+                    <a href=c lass="trackref t">我的优选</a><b></b>
                     <span class=outline></span>
                     <span class=blank></span>
                     <div class=dd>
-                        <div><a name=sfbest_hp_hp_head_home2 class=trackref href=http://home.sfbest.com/myorder/index/ rel=nofollow>我的订单</a></div>
-                        <div><a name=sfbest_hp_hp_head_home4 class=trackref href=http://home.sfbest.com/my/points/ rel=nofollow>我的积分</a></div>
-                        <div><a name=sfbest_hp_hp_head_home3 class=trackref href=http://home.sfbest.com/favorites/index/ rel=nofollow>我的收藏</a></div>
-                        <div><a href=http://home.sfbest.com/giftcard/list/ rel=nofollow>我的优选卡</a></div>
-                        <div><a href=http://home.sfbest.com/usercoupon/list/ rel=nofollow>我的优惠券</a></div>
+                        <div><a class=trackref href=# rel=nofollow>我的订单</a></div>
+                        <div><a class=trackref href=# rel=nofollow>我的积分</a></div>
+                        <div><a class=trackref href=# rel=nofollow>我的收藏</a></div>
+                        <div><a href=# rel=nofollow>我的优选卡</a></div>
+                        <div><a href=# rel=nofollow>我的优惠券</a></div>
                     </div>
                 </li>
                 <li class="d2 tShow">
-                    <s></s><q></q><a name=sfbest_hp_hp_head_app1 class=trackref href=http://app.sfbest.com/ target=_blank>移动客户端</a>
+                    <s></s><q></q><a class=trackref href=# target=_blank>移动客户端</a>
                     <div class=dd>
                         <div class=sf-client>
                             <span class=client-img></span>
@@ -76,11 +129,11 @@
                             </div>
                         </div>
                         <div class=app-btn>
-                            <a class=app-apple target=_blank rel=nofollow href=http://itunes.apple.com/cn/app/id563194150></a>
-                            <a class=app-android target=_blank rel=nofollow href=http://android.sfimg.cn/sfandroid_gw_v1.2.apk></a>
+                            <a class=app-apple target=_blank rel=nofollow href=#></a>
+                            <a class=app-android target=_blank rel=nofollow href=#></a>
                         </div>
                         <div class=client-promo>
-                            <a class=trackref rel=nofollow href=http://app.sfbest.com/ target=_blank name=sfbest_hp_hp_head_app2></a>
+                            <a class=trackref rel=nofollow href=# target=_blank></a>
                         </div>
                     </div>
                     <div class=corner>
@@ -89,19 +142,19 @@
                     </div>
                 </li>
                 <li class=myOrder>
-                    <a class=trackref target=_blank href="http://iocs.sf-express.com/live800/chatClient/chatbox.jsp?companyID=9052&amp;configID=16" rel=nofollow>在线客服</a>
+                    <a class=trackref target=_blank href="#" rel=nofollow>在线客服</a>
                 </li>
                 <li class=menus>
-                    <a name=sfbest_hp_hp_head_help1 href=http://help.sfbest.com/ target=_blank class="trackref t">帮助中心</a><b></b>
+                    <a name=sfbest_hp_hp_head_help1 href=# target=_blank class="trackref t">帮助中心</a><b></b>
                     <span class=outline></span>
                     <span class=blank></span>
                     <div class=dd>
-                        <div><a name=sfbest_hp_hp_head_help2 class=trackref href=http://help.sfbest.com/140/128.html rel=nofollow target=_blank>购物指南</a></div>
-                        <div><a name=sfbest_hp_hp_head_help3 class=trackref href=http://help.sfbest.com/141/134.html rel=nofollow target=_blank>配送服务</a></div>
-                        <div><a name=sfbest_hp_hp_head_help4 class=trackref href=http://help.sfbest.com/143/131.html rel=nofollow target=_blank>支付方式</a></div>
-                        <div><a name=sfbest_hp_hp_head_help5 class=trackref href=http://help.sfbest.com/144/143.html rel=nofollow target=_blank>售后服务</a></div>
-                        <div><a name=sfbest_hp_hp_head_help7 class=trackref href=http://help.sfbest.com/377/4407.html rel=nofollow target=_blank>客服邮箱</a></div>
-                        <div><a name=sfbest_hp_hp_head_help8 class=trackref href=http://help.sfbest.com/377/6766.html rel=nofollow target=_blank>投诉与建议</a></div>
+                        <div><a class=trackref href=# rel=nofollow target=_blank>购物指南</a></div>
+                        <div><a class=trackref href=# rel=nofollow target=_blank>配送服务</a></div>
+                        <div><a class=trackref href=# rel=nofollow target=_blank>支付方式</a></div>
+                        <div><a class=trackref href=# rel=nofollow target=_blank>售后服务</a></div>
+                        <div><a class=trackref href=# rel=nofollow target=_blank>客服邮箱</a></div>
+                        <div><a class=trackref href=# rel=nofollow target=_blank>投诉与建议</a></div>
                     </div>
                 </li>
                 <li class=allCat>
@@ -110,42 +163,41 @@
                         <dl>
                             <dt class=dh1>商品分类</dt>
                             <dd>
-                                <a name=sfbest_hp_hp_head_category1 class=trackref href=http://www.sfbest.com/fresh/ target=_blank>肉类海鲜</a>
-                                <a name=sfbest_hp_hp_head_category2 class=trackref href=http://www.sfbest.com/fresh/ target=_blank>新鲜果蔬</a>
-                                <a name=sfbest_hp_hp_head_category3 class=trackref href=http://www.sfbest.com/fresh/ target=_blank>速食冷藏</a>
-                                <a name=sfbest_hp_hp_head_category4 class=trackref href=http://www.sfbest.com/multi/7417_7431_7433_7435_7437_7439_7441-0-0-0-0-2-0-0-0-0-0.html target=_blank>酒水饮料</a>
-                                <a name=sfbest_hp_hp_head_category5 class=trackref href=http://www.sfbest.com/multi/7411_7413_7415-0-0-0-0-2-0-0-0-0-0.html target=_blank>休闲糖巧</a>
-                                <a name=sfbest_hp_hp_head_category6 class=trackref href=http://www.sfbest.com/multi/7443_7445_7447_7449-0-0-0-0-2-0-0-0-0-0.html target=_blank>粮油干货</a>
-                                <a name=sfbest_hp_hp_head_category7 class=trackref href=http://www.sfbest.com/mall/7451-0-0-0-0-2-0-0-0-0-0.html target=_blank>冲调茶饮</a>
-                                <a name=sfbest_hp_hp_head_category8 class=trackref href=http://www.sfbest.com/ht/ target=_blank>优选国际</a>
+                                <a class=trackref href=# target=_blank>肉类海鲜</a>
+                                <a class=trackref href=# target=_blank>新鲜果蔬</a>
+                                <a class=trackref href=# target=_blank>速食冷藏</a>
+                                <a class=trackref href=# target=_blank>酒水饮料</a>
+                                <a class=trackref href=# target=_blank>休闲糖巧</a>
+                                <a class=trackref href=# target=_blank>粮油干货</a>
+                                <a class=trackref href=# target=_blank>冲调茶饮</a>
+                                <a class=trackref href=# target=_blank>优选国际</a>
                             </dd>
                         </dl>
                         <dl class=line></dl>
                         <dl>
                             <dt class=dh2>特色频道</dt>
                             <dd>
-                                <a name=sfbest_hp_hp_head_channel12 class=trackref href=http://www.sfbest.hk/ target=_blank>跨境直发</a>
-                                <a name=sfbest_hp_hp_head_channel2 class=trackref href=http://www.sfbest.com/qiye/ target=_blank>企业专区</a>
-                                <a name=sfbest_hp_hp_head_channel3 class=trackref href=http://www.sfbest.com/wine/ target=_blank>红酒廊</a>
-                                <a name=sfbest_hp_hp_head_channel4 class=trackref href=http://www.sfbest.com/taste/ target=_blank>寰宇美食</a>
+                                <a class=trackref href=# target=_blank>跨境直发</a>
+                                <a class=trackref href=# target=_blank>企业专区</a>
+                                <a class=trackref href=# target=_blank>红酒廊</a>
+                                <a class=trackref href=# target=_blank>寰宇美食</a>
                             </dd>
                         </dl>
                         <dl class=line></dl>
                         <dl>
                             <dt class=dh3>更多</dt>
                             <dd>
-                                <a name=sfbest_hp_hp_head_moreapp class=trackref href=http://app.sfbest.com/ target=_blank>客户端</a>
-                                <a name=sfbest_hp_hp_head_moreabout class=trackref href=http://www.sfbest.com/www/380/5118.html target=_blank>关注我们</a>
+                                <a class=trackref href=# target=_blank>客户端</a>
+                                <a class=trackref href=# target=_blank>关注我们</a>
                                 <p>客服电话：9533858</p>
                             </dd>
                         </dl>
                     </div>
                 </li>
                 <li class="d3 tShow">
-                    <a name=sfbest_hp_hp_head_weibo class=trackref title=关注顺丰优选微博 href=http://weibo.com/sfbest rel=nofollow target=_blank><q></q></a>
+                    <a class=trackref title=关注顺丰优选微博 href=# rel=nofollow target=_blank><q></q></a>
                 </li>
                 <li class="d4 tShow">
-
                     <q></q>
                     <div class=dd>
                         <div class=sf_wx_t>关注顺丰优选微信</div>
@@ -164,11 +216,11 @@
         <div class=header_inner>
             <div class=logo>
                 <div class=index_topad id=playLogo style=display:none>
-                    <a href=http://www.sfbest.com/html/activity/1566956438.html target=_blank>
-                        <img src=./src/img/index/images/63.gif>
+                    <a href=# target=_blank>
+                        <img src="./src/img/index/images/63.gif">
                     </a>
                 </div>
-                <script>
+                <!-- <script>
                     // 是否显示logo
                     function playLogo() {
                         var sta = '2019-08-28 00:00';
@@ -196,27 +248,24 @@
                             }
                         });
                     });
-                </script>
-                <a name=sfbest_hp_hp_head_logo href=http://www.sfbest.com/ class=trackref title=顺丰优选>
+                </script> -->
+                <a href=# class=trackref title=顺丰优选>
                     <img src=./src/img/index/images/64.png class=index_mr width=220 border=0 height=69>
                 </a>
             </div>
             <div class=index_promo></div>
             <div class=search>
                 <form action=/productlist/search id=searchForm name=query method=GET>
-
-
                     <input type=text class="text keyword" name=keyword id=keyword value style=color:#999999 onkeydown="javascript:if(event.keyCode==13) search_keys('searchForm');">
                     <input type=button value class=submit onclick="search_keys('searchForm')">
                 </form>
                 <div class=search_hot></div>
             </div>
             <div class=shopingcar id=topCart>
-                <s class=setCart></s><a href=http://cart.sfbest.com/ class=t rel=nofollow>我的购物车</a><b id=cartNum>0</b>
+                <s class=setCart></s><a href=# class=t rel=nofollow>我的购物车</a><b id=cartNum>0</b>
                 <span class=outline></span>
                 <span class=blank></span>
                 <div id=cart_lists>
-
                     <div class=clear></div>
                 </div>
             </div>
@@ -225,7 +274,7 @@
     <div class=mainNav>
         <div class=navmenu>
             <div class="categories hover">
-                <div class=dt><a name=sfbest_hp_hp_menu_all class="trackref topall" href=javascript:void(0);>精选商品分类</a></div>
+                <div class=dt><a class="trackref topall" href=javascript:void(0);>精选商品分类</a></div>
                 <div id=allSort class=dd>
 
                     <div id=booksort>
@@ -233,23 +282,14 @@
                             <span class=i-master>
     <h3 class=dev>
     <p class=fresh></p>
-    <a class=trackref href=http://www.sfbest.com/fresh/ fro_id=1 target=_blank name=sfbest_Uhead_Uhead_menu_category1-hot0>肉类海鲜
+    <a class=trackref href=# fro_id=1 target=_blank >肉类海鲜
    </a>
     </h3>
     <ul class=subCat>
-    <li><a href=http://www.sfbest.com/mall/7543-0-0-0-0-2-0-0-0-0-0.html target=_blank class=trackref name="sfbest_Uhead_Uhead_menu_category1-
-   
-   hot1">牛肉
-   </a></li>
-    <li><a href=http://www.sfbest.com/mall/7547-0-0-0-0-2-0-0-0-0-0.html target=_blank class=trackref name="sfbest_Uhead_Uhead_menu_category1-
-   
-   hot2">羊肉
-   </a></li>
-    <li><a href=http://www.sfbest.com/multi/7533_7535-0-0-0-0-2-0-0-0-0-0.html target=_blank class=trackref name=sfbest_Uhead_Uhead_menu_category1-hot3>参鲍
-   </a></li>
-    <li><a href=http://www.sfbest.com/mall/7527-0-0-0-0-2-0-0-0-0-0.html target=_blank class=trackref name="sfbest_Uhead_Uhead_menu_category1-
-   
-   hot4">鱼</a></li>
+    <li><a href=# target=_blank class=trackref >牛肉</a></li>
+    <li><a href=# target=_blank class=trackref >羊肉</a></li>
+    <li><a href=# target=_blank class=trackref >参鲍</a></li>
+    <li><a href=# target=_blank class=trackref >鱼</a></li>
     </ul>
     <s></s> 
     </span>
@@ -259,60 +299,50 @@
                                         <dl>
                                             <dt>
     <strong>
-    <a name=sfbest_Uhead_Uhead_menu_category1-1 class=trackref href=http://www.sfbest.com/mall/7423-0-0-0-0-2-0-0-0-0-0.html target=_blank>精品肉类</a>
+    <a  class=trackref href=# target=_blank>精品肉类</a>
     </strong>
     </dt>
                                             <dd>
-                                                <a name=sfbest_Uhead_Uhead_menu_category1-2 class=trackref href=http://www.sfbest.com/mall/7543-0-0-0-0-2-0-0-0-0-0.html>
-   牛肉</a>
-                                                <a name=sfbest_Uhead_Uhead_menu_category1-3 class=trackref href=http://www.sfbest.com/mall/7547-0-0-0-0-2-0-0-0-0-0.html>
-   羊肉</a>
-                                                <a name=sfbest_Uhead_Uhead_menu_category1-4 class=trackref href=http://www.sfbest.com/mall/7545-0-0-0-0-2-0-0-0-0-0.html>
-   猪肉</a>
-                                                <a name=sfbest_Uhead_Uhead_menu_category1-5 class=trackref href=http://www.sfbest.com/mall/7549-0-0-0-0-2-0-0-0-0-0.html>
-   禽类</a>
-                                                <a name=sfbest_Uhead_Uhead_menu_category1-8 class=trackref href=http://www.sfbest.com/mall/7557-0-0-0-0-2-0-0-0-0-0.html>
-   加工肉类</a>
+                                                <a class=trackref href=#>牛肉</a>
+                                                <a class=trackref href=#>羊肉</a>
+                                                <a class=trackref href=#>猪肉</a>
+                                                <a class=trackref href=#>禽类</a>
+                                                <a class=trackref href=#>加工肉类</a>
                                             </dd>
                                         </dl>
                                         <dl>
                                             <dt>
     <strong>
-    <a name=sfbest_Uhead_Uhead_menu_category1-10 class=trackref href=http://www.sfbest.com/mall/7421-0-0-0-0-2-0-0-0-0-0.html>
+    <a  class=trackref href=#>
    海鲜水产</a>
     </strong>
     </dt>
                                             <dd>
-                                                <a name=sfbest_Uhead_Uhead_menu_category1-11 class=trackref href=http://www.sfbest.com/mall/7525-0-0-0-0-2-0-0-0-0-0.html>
-   虾</a>
-                                                <a name=sfbest_Uhead_Uhead_menu_category1-12 class=trackref href=http://www.sfbest.com/multi/7527_7703-0-0-0-0-2-0-0-0-0-0.html>鱼</a>
-                                                <a name=sfbest_Uhead_Uhead_menu_category1-14 class=trackref href=http://www.sfbest.com/multi/7529_7531-0-0-0-0-2-0-0-0-0-0.html>蟹/贝类</a>
-                                                <a name=sfbest_Uhead_Uhead_menu_category1-16 class=trackref href=http://www.sfbest.com/multi/7533_7535-0-0-0-0-2-0-0-0-0-0.html>参鲍</a>
-                                                <a name=sfbest_Uhead_Uhead_menu_category1-17 class=trackref href=http://www.sfbest.com/mall/7541-0-0-0-0-2-0-0-0-0-0.html>
-   加工水产</a>
-                                                <a name=sfbest_Uhead_Uhead_menu_category1-18 class=trackref href=http://www.sfbest.com/mall/8061-0-0-0-0-2-0-0-0-0-0.html>
-   其他水产</a>
-                                                <a name=sfbest_Uhead_Uhead_menu_category1-19 class=trackref href=http://www.sfbest.com/mall/8059-0-0-0-0-2-0-0-0-0-0.html>
-   水产礼盒</a>
-                                                <a name=sfbest_Uhead_Uhead_menu_category1-20 class=trackref href=http://www.sfbest.com/multi/7697_7701-0-0-0-0-2-0-0-0-0-0.html>卡券</a>
+                                                <a class=trackref href=# <a class=trackref href=#>鱼</a>
+                                                <a class=trackref href=#>蟹/贝类</a>
+                                                <a class=trackref href=#>参鲍</a>
+                                                <a class=trackref href=#>加工水产</a>
+                                                <a class=trackref href=#>其他水产</a>
+                                                <a class=trackref href=#>水产礼盒</a>
+                                                <a class=trackref href=#>卡券</a>
                                             </dd>
                                         </dl>
                                         <dl>
                                             <dt>
     <strong>
-    <a name=sfbest_Uhead_Uhead_menu_category5-32 class=trackref href=http://www.sfbest.com/mall/7453-0-0-0-0-2-0-0-0-0-0.html>季节性食
+    <a  class=trackref href=#>季节性食
    品</a>
     </strong>
     </dt>
                                             <dd>
-                                                <a name=sfbest_Uhead_Uhead_menu_category5-33 class=trackref href="http://www.sfbest.com/productlist/search/?keyword=%E5%A4%A7%E9%97%B8%E8%9F%B9&amp;categoryId=7701">大闸蟹</a>
-                                                <a name=sfbest_Uhead_Uhead_menu_category1-15 class=trackref href=http://www.sfbest.com/mall/8621-0-0-0-0-2-0-0-0-0-0.html>
+                                                <a class=trackref href="#">大闸蟹</a>
+                                                <a class=trackref href=#>
    小龙虾</a>
                                             </dd>
                                         </dl>
                                     </div>
                                     <div class=i-img>
-                                        <a href=http://www.sfbest.com/html/activity/1576026711.html target=_blank><img src=./src/img/index/images/7.jpg></a>
+                                        <a href=# target=_blank><img src=./src/img/index/images/7.jpg></a>
                                     </div>
                                 </div>
                                 <div class=i-right> <span onclick="$('.item').removeClass('hover')" class=i-close></span> </div>
@@ -322,16 +352,16 @@
                             <span class=i-master>
     <h3 class=dev>
     <p class=pastry></p>
-    <a class=trackref href=http://www.sfbest.com/fresh/ fro_id=2 target=_blank name=sfbest_hp_hp_menu_category2-hot0>新鲜果蔬</a>
+    <a class=trackref href=# fro_id=2 target=_blank name=sfbest_hp_hp_menu_category2-hot0>新鲜果蔬</a>
     </h3>
     <ul class=subCat>
-    <li><a href=http://www.sfbest.com/mall/7971-0-0-0-0-2-0-0-0-0-0.html target=_blank name=sfbest_Uhead_Uhead_menu_category2-hot1>
+    <li><a href=# target=_blank >
    柑橘橙
    </a></li>
-    <li><a href=http://www.sfbest.com/mall/7981-0-0-0-0-2-0-0-0-0-0.html target=_blank name=sfbest_Uhead_Uhead_menu_category2-hot2>
+    <li><a href=# target=_blank >
    猕猴桃
    </a></li>
-    <li><a href=http://www.sfbest.com/mall/7425-0-0-0-0-2-0-0-0-0-0.html target=_blank name=sfbest_Uhead_Uhead_menu_category2-hot3>
+    <li><a href=# target=_blank >
    蔬菜
    </a></li>
     </ul>
@@ -343,55 +373,55 @@
                                         <dl>
                                             <dt>
     <strong>
-    <a name=sfbest_hp_hp_menu_category2-1 class=trackref href=http://www.sfbest.com/mall/7419-0-0-0-0-2-0-0-0-0-0.html>
+    <a class=trackref href=#>
    水果</a>
     </strong>
     </dt>
-                                            <dd><a name=sfbest_hp_hp_menu_category2-2 class=trackref href=http://www.sfbest.com/mall/7971-0-0-0-0-2-0-0-0-0-0.html>
+                                            <dd><a class=trackref href=http://www.sfbest.com/mall/7971-0-0#>
    柑橘橙</a>
-                                                <a name=sfbest_hp_hp_menu_category2-3 class=trackref href=http://www.sfbest.com/mall/7973-0-0-0-0-2-0-0-0-0-0.html>
+                                                <a class=trackref href=http://www.sfbest.com/mall/7973-0-0#>
    柠檬</a>
-                                                <a name=sfbest_hp_hp_menu_category2-4 class=trackref href=http://www.sfbest.com/mall/7969-0-0-0-0-2-0-0-0-0-0.html>
+                                                <a class=trackref href=http://www.sfbest.com/mall/7969-0-0#>
    柚</a>
-                                                <a name=sfbest_hp_hp_menu_category2-5 class=trackref href=http://www.sfbest.com/mall/7993-0-0-0-0-2-0-0-0-0-0.html>
+                                                <a class=trackref href=http://www.sfbest.com/mall/7993-0-0#>
    瓜类</a>
-                                                <a name=sfbest_hp_hp_menu_category2-6 class=trackref href=http://www.sfbest.com/mall/7965-0-0-0-0-2-0-0-0-0-0.html>
+                                                <a class=trackref href=http://www.sfbest.com/mall/7965-0-0#>
    梨</a>
-                                                <a name=sfbest_hp_hp_menu_category2-7 class=trackref href=http://www.sfbest.com/mall/7963-0-0-0-0-2-0-0-0-0-0.html>
+                                                <a class=trackref href=http://www.sfbest.com/mall/7963-0-0#>
    芒果</a>
-                                                <a name=sfbest_hp_hp_menu_category2-8 class=trackref href=http://www.sfbest.com/mall/7953-0-0-0-0-2-0-0-0-0-0.html>
+                                                <a class=trackref href=http://www.sfbest.com/mall/7953-0-0#>
    牛油果</a>
-                                                <a name=sfbest_hp_hp_menu_category2-9 class=trackref href=http://www.sfbest.com/multi/7959_7967-0-0-0-0-2-0-0-0-0-0.html>苹果/桃</a>
-                                                <a name=sfbest_hp_hp_menu_category2-10 class=trackref href=http://www.sfbest.com/multi/7957_7961-0-0-0-0-2-0-0-0-0-0.html>杏/李/梅</a>
-                                                <a name=sfbest_hp_hp_menu_category2-11 class=trackref href=http://www.sfbest.com/mall/7955-0-0-0-0-2-0-0-0-0-0.html>
+                                                <a class=trackref href=http://www.sfbest.com/multi/7959_7967-0-0#>苹果/桃</a>
+                                                <a class=trackref href=http://www.sfbest.com/multi/7957_7961-0-0#>杏/李/梅</a>
+                                                <a class=trackref href=http://www.sfbest.com/mall/7955-0-0-0-0-2-0-0-0-0-0.html>
    枣</a>
-                                                <a name=sfbest_hp_hp_menu_category2-13 class=trackref href=http://www.sfbest.com/mall/7995-0-0-0-0-2-0-0-0-0-0.html>
+                                                <a class=trackref href=http://www.sfbest.com/mall/7995-0-0#>
    椰子</a>
-                                                <a name=sfbest_hp_hp_menu_category2-16 class=trackref href=http://www.sfbest.com/mall/7987-0-0-0-0-2-0-0-0-0-0.html>
+                                                <a class=trackref href=http://www.sfbest.com/mall/7987-0-0#>
    火龙果</a>
-                                                <a name=sfbest_hp_hp_menu_category2-18 class=trackref href=http://www.sfbest.com/mall/7981-0-0-0-0-2-0-0-0-0-0.html>
+                                                <a class=trackref href=http://www.sfbest.com/mall/7981-0-0#>
    猕猴桃/奇异果</a>
-                                                <a name=sfbest_hp_hp_menu_category2-21 class=trackref href=http://www.sfbest.com/mall/7975-0-0-0-0-2-0-0-0-0-0.html>
+                                                <a class=trackref href=http://www.sfbest.com/mall/7975-0-0#>
    石榴</a>
-                                                <a name=sfbest_hp_hp_menu_category2-28 class=trackref href=http://www.sfbest.com/mall/8007-0-0-0-0-2-0-0-0-0-0.html>
+                                                <a class=trackref href=http://www.sfbest.com/mall/8007-0-0#>
    龙眼</a>
-                                                <a name=sfbest_hp_hp_menu_category2-29 class=trackref href=http://www.sfbest.com/mall/8009-0-0-0-0-2-0-0-0-0-0.html>
+                                                <a class=trackref href=http://www.sfbest.com/mall/8009-0-0#>
    香蕉</a>
-                                                <a name=sfbest_hp_hp_menu_category2-26 class=trackref href=http://www.sfbest.com/mall/8011-0-0-0-0-2-0-0-0-0-0.html>
+                                                <a class=trackref href=http://www.sfbest.com/mall/8011-0-0#>
    其他水果</a>
                                             </dd>
                                         </dl>
                                         <dl>
                                             <dt>
     <strong>
-    <a name=sfbest_Uhead_Uhead_menu_category2-32 class=trackref href=http://www.sfbest.com/mall/7425-0-0-0-0-2-0-0-0-0-0.html>
+    <a name=s class=trackref href=http://www.sfbest.com/mall/7425-0-0-0-0-2-0-0-0-0-0.html>
    蔬菜</a>
     </strong>
     </dt>
                                             <dd>
-                                                <a name=sfbest_Uhead_Uhead_menu_category2-34 class=trackref href=http://www.sfbest.com/mall/8113-0-0-0-0-2-0-0-0-0-0.html>
+                                                <a name=s class=trackref href=http://www.sfbest.com/mall/8113-0-0-0-0-2-0-0-0-0-0.html>
    根茎类</a>
-                                                <a name=sfbest_Uhead_Uhead_menu_category2-35 class=trackref href=http://www.sfbest.com/mall/8109-0-0-0-0-2-0-0-0-0-0.html>
+                                                <a name=s class=trackref href=http://www.sfbest.com/mall/8109-0-0-0-0-2-0-0-0-0-0.html>
    叶菜类</a>
                                             </dd>
                                         </dl>
@@ -1375,7 +1405,7 @@
                         <a class=a_buy href=http://www.sfbest.com/html/products/215/1800214855.html target=_blank title="GUOLIAN  金鲳鱼 300/400  两条装 700g">GUOLIAN 金鲳鱼 300/400 两条装 700g</a>
                         <div class=a_price id=priceK_b_214855_0><span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span></div>
                         <a name=sfbest_hp_hp_goods_big-item1 class=trackref href=http://www.sfbest.com/html/products/215/1800214855.html target=_blank title="GUOLIAN  金鲳鱼 300/400  两条装 700g">
-                            <img class=lazy data=http://pic.sfimg.cn/adsSaleGoodsPic/a924eaee20d20f185fb0c9e47aa1b3f2.png alt="GUOLIAN  金鲳鱼 300/400  两条装 700g">
+                            <img class=lazy data-src=http://pic.sfimg.cn/adsSaleGoodsPic/a924eaee20d20f185fb0c9e47aa1b3f2.png alt="GUOLIAN  金鲳鱼 300/400  两条装 700g">
                         </a>
                         <div class="gBtn p-btn bbtn">
                             <a indexflag=1 pid=214855 data_url=http://203.sfimg.cn/2018/1800214855/middle_1800214855_0_1_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
@@ -1385,7 +1415,7 @@
                         <a class=a_buy href=http://www.sfbest.com/html/products/22/1400021820.html target=_blank title="剑南春 52°500ml（买2件赠1个礼品袋)">剑南春 52°500ml（买2件赠1个礼品袋)</a>
                         <div class=a_price id=priceK_b_21820_0><span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span></div>
                         <a name=sfbest_hp_hp_goods_big-item2 class=trackref href=http://www.sfbest.com/html/products/22/1400021820.html target=_blank title="剑南春 52°500ml（买2件赠1个礼品袋)">
-                            <img class=lazy data=http://pic.sfimg.cn/adsSaleGoodsPic/36b367279562e992b558384aba58fcda.png alt="剑南春 52°500ml（买2件赠1个礼品袋)">
+                            <img class=lazy data-src=http://pic.sfimg.cn/adsSaleGoodsPic/36b367279562e992b558384aba58fcda.png alt="剑南春 52°500ml（买2件赠1个礼品袋)">
                         </a>
                         <div class="gBtn p-btn bbtn">
                             <a indexflag=1 pid=21820 data_url=http://201.sfimg.cn/2014/1400021820/middle_1400021820_1_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
@@ -1395,7 +1425,7 @@
                         <a class=a_buy href=http://www.sfbest.com/html/products/348/4600347221.html target=_blank title="易盛玖 灰芦花小公鸡 700g">易盛玖 灰芦花小公鸡 700g</a>
                         <div class=a_price id=priceK_b_347221_0><span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span></div>
                         <a name=sfbest_hp_hp_goods_big-item3 class=trackref href=http://www.sfbest.com/html/products/348/4600347221.html target=_blank title="易盛玖 灰芦花小公鸡 700g">
-                            <img class=lazy data=http://pic.sfimg.cn/adsSaleGoodsPic/b6c32268e09da8651983ebebac2a4574.png alt="易盛玖 灰芦花小公鸡 700g">
+                            <img class=lazy data-src=http://pic.sfimg.cn/adsSaleGoodsPic/b6c32268e09da8651983ebebac2a4574.png alt="易盛玖 灰芦花小公鸡 700g">
                         </a>
                         <div class="gBtn p-btn bbtn">
                             <a indexflag=1 pid=347221 data_url=http://203.sfimg.cn/2019/4600347221/middle_4600347221_1_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
@@ -1405,7 +1435,7 @@
                         <a class=a_buy href=http://www.sfbest.com/html/products/276/5600275057.html target=_blank title="磨米世家 五常稻花香大米 5kg">磨米世家 五常稻花香大米 5kg</a>
                         <div class=a_price id=priceK_b_275057_0><span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span></div>
                         <a name=sfbest_hp_hp_goods_big-item4 class=trackref href=http://www.sfbest.com/html/products/276/5600275057.html target=_blank title="磨米世家 五常稻花香大米 5kg">
-                            <img class=lazy data=http://pic.sfimg.cn/adsSaleGoodsPic/0d6b75fe02340c83dd91e1b399edf0e5.png alt="磨米世家 五常稻花香大米 5kg">
+                            <img class=lazy data-src=http://pic.sfimg.cn/adsSaleGoodsPic/0d6b75fe02340c83dd91e1b399edf0e5.png alt="磨米世家 五常稻花香大米 5kg">
                         </a>
                         <div class="gBtn p-btn bbtn">
                             <a indexflag=1 pid=275057 data_url=http://202.sfimg.cn/2017/5600275057/middle_5600275057_0_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
@@ -1415,7 +1445,7 @@
                         <a class=a_buy href=http://www.sfbest.com/html/products/334/4400333419.html target=_blank title="云源 智利车厘子单J 26~28mm 2磅礼盒装 1.8斤盒">云源 智利车厘子单J 26~28mm 2磅礼盒装 1.8斤盒</a>
                         <div class=a_price id=priceK_b_333419_1><span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span></div>
                         <a name=sfbest_hp_hp_goods_small-item1 class=trackref href=http://www.sfbest.com/html/products/334/4400333419.html target=_blank title="云源 智利车厘子单J 26~28mm 2磅礼盒装 1.8斤盒">
-                            <img class=lazy data=http://pic.sfimg.cn/adsSaleGoodsPic/0b86a908337e89276c4932749e0a7432.png alt="云源 智利车厘子单J 26~28mm 2磅礼盒装 1.8斤盒">
+                            <img class=lazy data-src=http://pic.sfimg.cn/adsSaleGoodsPic/0b86a908337e89276c4932749e0a7432.png alt="云源 智利车厘子单J 26~28mm 2磅礼盒装 1.8斤盒">
                         </a>
                         <div class="gBtn p-btn bbtn">
                             <a indexflag=1 pid=333419 data_url=http://202.sfimg.cn/2019/4400333419/middle_w_4400333419_1_13/60x60.jpg href=javascript:void(0)>加入购物车</a>
@@ -1425,7 +1455,7 @@
                         <a class=a_buy href=http://www.sfbest.com/html/products/311/4100310459.html target=_blank title=马卡龙Z/ACARONZ松露形代可可脂巧克力380g>马卡龙Z/ACARONZ松露形代可可脂巧克力380g</a>
                         <div class=a_price id=priceK_b_310459_1><span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span></div>
                         <a name=sfbest_hp_hp_goods_small-item2 class=trackref href=http://www.sfbest.com/html/products/311/4100310459.html target=_blank title=马卡龙Z/ACARONZ松露形代可可脂巧克力380g>
-                            <img class=lazy data=http://pic.sfimg.cn/adsSaleGoodsPic/e4f73255839471ad3669c01bc921755b.png alt=马卡龙Z/ACARONZ松露形代可可脂巧克力380g>
+                            <img class=lazy data-src=http://pic.sfimg.cn/adsSaleGoodsPic/e4f73255839471ad3669c01bc921755b.png alt=马卡龙Z/ACARONZ松露形代可可脂巧克力380g>
                         </a>
                         <div class="gBtn p-btn bbtn">
                             <a indexflag=1 pid=310459 data_url=http://202.sfimg.cn/2018/4100310459/middle_4100310459_1_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
@@ -1435,7 +1465,7 @@
                         <a class=a_buy href=http://www.sfbest.com/html/products/349/1000348623.html target=_blank title="玛氏MARS 【香港直邮】巧克力礼盒 大脸盘 夹心什锦婚庆节日礼盒 8种口味 650g*4盒">玛氏MARS 【香港直邮】巧克力礼盒 大脸盘 夹心什锦婚庆节日礼盒 8种口味 650g*4盒</a>
                         <div class=a_price id=priceK_b_348623_1><span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span></div>
                         <a name=sfbest_hp_hp_goods_small-item3 class=trackref href=http://www.sfbest.com/html/products/349/1000348623.html target=_blank title="玛氏MARS 【香港直邮】巧克力礼盒 大脸盘 夹心什锦婚庆节日礼盒 8种口味 650g*4盒">
-                            <img class=lazy data=http://pic.sfimg.cn/adsSaleGoodsPic/df5e91050fd26ded952dc551c3eb6032.png alt="玛氏MARS 【香港直邮】巧克力礼盒 大脸盘 夹心什锦婚庆节日礼盒 8种口味 650g*4盒">
+                            <img class=lazy data-src=http://pic.sfimg.cn/adsSaleGoodsPic/df5e91050fd26ded952dc551c3eb6032.png alt="玛氏MARS 【香港直邮】巧克力礼盒 大脸盘 夹心什锦婚庆节日礼盒 8种口味 650g*4盒">
                         </a>
                         <div class="gBtn p-btn bbtn">
                             <a indexflag=1 pid=348623 data_url=http://202.sfimg.cn/2019/1000348623/middle_w_1000348623_1_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
@@ -1445,7 +1475,7 @@
                         <a class=a_buy href=http://www.sfbest.com/html/products/344/6300343543.html target=_blank title="A2 platinum 婴幼儿奶粉3段【保税仓】 【保质期到2021.01】 900g*6罐">A2 platinum 婴幼儿奶粉3段【保税仓】 【保质期到2021.01】 900g*6罐</a>
                         <div class=a_price id=priceK_b_343543_1><span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span></div>
                         <a name=sfbest_hp_hp_goods_small-item4 class=trackref href=http://www.sfbest.com/html/products/344/6300343543.html target=_blank title="A2 platinum 婴幼儿奶粉3段【保税仓】 【保质期到2021.01】 900g*6罐">
-                            <img class=lazy data=http://pic.sfimg.cn/adsSaleGoodsPic/44f6d146e8215dab98a047c57244ae68.png alt="A2 platinum 婴幼儿奶粉3段【保税仓】 【保质期到2021.01】 900g*6罐">
+                            <img class=lazy data-src=http://pic.sfimg.cn/adsSaleGoodsPic/44f6d146e8215dab98a047c57244ae68.png alt="A2 platinum 婴幼儿奶粉3段【保税仓】 【保质期到2021.01】 900g*6罐">
                         </a>
                         <div class="gBtn p-btn bbtn">
                             <a indexflag=1 pid=343543 data_url=http://202.sfimg.cn/2019/6300343543/middle_w_6300343543_1_4/60x60.jpg href=javascript:void(0)>加入购物车</a>
@@ -1479,7 +1509,7 @@
 
     <div class="indexW mt2 full_ad" style=width:1190px;padding-left:10px>
         <a name=sfbest_hp_hp_banner_1 class=trackref href=http://www.sfbest.com/html/activity/1576036267.html target=_blank>
-            <img alt="圣诞有新意 给TA的苹安果" class=lazy data=http://002.sfimg.cn/web/7916250c/7916250c44bc5d5f7ea87b31881a7fc2.jpg>
+            <img alt="圣诞有新意 给TA的苹安果" class=lazy data-src=http://002.sfimg.cn/web/7916250c/7916250c44bc5d5f7ea87b31881a7fc2.jpg>
         </a>
     </div>
     <div class="indexW mt2 ie6 fresh">
@@ -1496,7 +1526,7 @@
             </ul>
             <div class=lCont>
                 <a name=sfbest_hp_hp_floor1_left-ad class=trackref href=http://www.sfbest.com/html/products/352/4400351947.html target=_blank>
-                    <img alt=富平流心吊柿饼 class=lazy data=http://004.sfimg.cn/web/9a9d91d7/9a9d91d74aa2d209f810d1d2a719cbad.jpg>
+                    <img alt=富平流心吊柿饼 class=lazy data-src=http://004.sfimg.cn/web/9a9d91d7/9a9d91d74aa2d209f810d1d2a719cbad.jpg>
                 </a>
             </div>
         </div>
@@ -1506,7 +1536,7 @@
                     <li class=price_list1 eid=l_333535_0_0 goods=333535 id=cx_l_333535_0_0>
                         <div class="pImg pImg_vip">
                             <a href="http://www.sfbest.com/html/products/334/4400333535.html#trackref=sfbest_hp_hp_floor1_item1" target=_blank title="云源 智利车厘子双J 28~30mm 2磅礼盒装 1.8斤盒">
-                                <img class=lazy data=http://201.sfimg.cn/2019/4400333535/middle_w_4400333535_1_13/160x160.jpg alt="云源 智利车厘子双J 28~30mm 2磅礼盒装 1.8斤盒">
+                                <img class=lazy data-src=http://201.sfimg.cn/2019/4400333535/middle_w_4400333535_1_13/160x160.jpg alt="云源 智利车厘子双J 28~30mm 2磅礼盒装 1.8斤盒">
                             </a>
                             <div class="gBtn p-btn">
                                 <a indexflag=1 pid=333535 data_url=http://202.sfimg.cn/2019/4400333535/middle_w_4400333535_1_13/60x60.jpg href=javascript:void(0)>加入购物车</a>
@@ -1522,7 +1552,7 @@
                     <li class=price_list1 eid=l_278999_0_0 goods=278999 id=cx_l_278999_0_0>
                         <div class="pImg pImg_vip">
                             <a href="http://www.sfbest.com/html/products/279/4400278999.html#trackref=sfbest_hp_hp_floor1_item2" target=_blank title="誉福园 时令鲜果 新疆阿克苏冰糖心苹果8斤装净重彩箱 单果70一80mm">
-                                <img class=lazy data=http://204.sfimg.cn/2017/4400278999/middle_w_4400278999_1_8/160x160.jpg alt="誉福园 时令鲜果 新疆阿克苏冰糖心苹果8斤装净重彩箱 单果70一80mm">
+                                <img class=lazy data-src=http://204.sfimg.cn/2017/4400278999/middle_w_4400278999_1_8/160x160.jpg alt="誉福园 时令鲜果 新疆阿克苏冰糖心苹果8斤装净重彩箱 单果70一80mm">
                             </a>
                             <div class="gBtn p-btn">
                                 <a indexflag=1 pid=278999 data_url=http://201.sfimg.cn/2017/4400278999/middle_w_4400278999_1_8/60x60.jpg href=javascript:void(0)>加入购物车</a>
@@ -1538,7 +1568,7 @@
                     <li class=price_list1 eid=l_338059_0_0 goods=338059 id=cx_l_338059_0_0>
                         <div class="pImg pImg_vip">
                             <a href="http://www.sfbest.com/html/products/339/4400338059.html#trackref=sfbest_hp_hp_floor1_item3" target=_blank title="云源 澳洲甜橙澳橙单果约170g12个装 2.04kg箱">
-                                <img class=lazy data=http://204.sfimg.cn/2019/4400338059/middle_w_4400338059_1_1/160x160.jpg alt="云源 澳洲甜橙澳橙单果约170g12个装 2.04kg箱">
+                                <img class=lazy data-src=http://204.sfimg.cn/2019/4400338059/middle_w_4400338059_1_1/160x160.jpg alt="云源 澳洲甜橙澳橙单果约170g12个装 2.04kg箱">
                             </a>
                             <div class="gBtn p-btn">
                                 <a indexflag=1 pid=338059 data_url=http://203.sfimg.cn/2019/4400338059/middle_w_4400338059_1_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
@@ -1554,7 +1584,7 @@
                     <li class=price_list1 eid=l_349761_0_0 goods=349761 id=cx_l_349761_0_0>
                         <div class="pImg pImg_vip">
                             <a href="http://www.sfbest.com/html/products/350/4400349761.html#trackref=sfbest_hp_hp_floor1_item4" target=_blank title="瑞阳瑞雪礼盒12粒装 80~85mm 6斤装">
-                                <img class=lazy data=http://204.sfimg.cn/2019/4400349761/middle_4400349761_1_1/160x160.jpg alt="瑞阳瑞雪礼盒12粒装 80~85mm 6斤装">
+                                <img class=lazy data-src=http://204.sfimg.cn/2019/4400349761/middle_4400349761_1_1/160x160.jpg alt="瑞阳瑞雪礼盒12粒装 80~85mm 6斤装">
                             </a>
                             <div class="gBtn p-btn">
                                 <a indexflag=1 pid=349761 data_url=http://203.sfimg.cn/2019/4400349761/middle_4400349761_1_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
@@ -1570,7 +1600,7 @@
                     <li class=price_list1 eid=l_278979_0_0 goods=278979 id=cx_l_278979_0_0>
                         <div class="pImg pImg_vip">
                             <a href="http://www.sfbest.com/html/products/279/4400278979.html#trackref=sfbest_hp_hp_floor1_item5" target=_blank title="七公主果园 秭归脐橙 九月红布丁橙 9斤中小果家庭装  单果60—70mm 4500g">
-                                <img class=lazy data=http://202.sfimg.cn/2017/4400278979/middle_w_4400278979_1_1/160x160.jpg alt="七公主果园 秭归脐橙 九月红布丁橙 9斤中小果家庭装  单果60—70mm 4500g">
+                                <img class=lazy data-src=http://202.sfimg.cn/2017/4400278979/middle_w_4400278979_1_1/160x160.jpg alt="七公主果园 秭归脐橙 九月红布丁橙 9斤中小果家庭装  单果60—70mm 4500g">
                             </a>
                             <div class="gBtn p-btn">
                                 <a indexflag=1 pid=278979 data_url=http://201.sfimg.cn/2017/4400278979/middle_w_4400278979_1_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
@@ -1586,7 +1616,7 @@
                     <li class=price_list1 eid=l_276509_0_0 goods=276509 id=cx_l_276509_0_0>
                         <div class="pImg pImg_vip">
                             <a href="http://www.sfbest.com/html/products/277/4400276509.html#trackref=sfbest_hp_hp_floor1_item6" target=_blank title="厚利 海南红心火龙果5斤 单果重量250g~400g 2.5公斤">
-                                <img class=lazy data=http://202.sfimg.cn/2017/4400276509/middle_w_4400276509_1_7/160x160.jpg alt="厚利 海南红心火龙果5斤 单果重量250g~400g 2.5公斤">
+                                <img class=lazy data-src=http://202.sfimg.cn/2017/4400276509/middle_w_4400276509_1_7/160x160.jpg alt="厚利 海南红心火龙果5斤 单果重量250g~400g 2.5公斤">
                             </a>
                             <div class="gBtn p-btn">
                                 <a indexflag=1 pid=276509 data_url=http://201.sfimg.cn/2017/4400276509/middle_w_4400276509_1_7/60x60.jpg href=javascript:void(0)>加入购物车</a>
@@ -1602,7 +1632,7 @@
                     <li class=price_list1 eid=l_325735_0_0 goods=325735 id=cx_l_325735_0_0>
                         <div class="pImg pImg_vip">
                             <a href="http://www.sfbest.com/html/products/326/4400325735.html#trackref=sfbest_hp_hp_floor1_item7" target=_blank title="云源 台湾牛奶释迦果单果350g—400g4个装 1.5KG箱">
-                                <img class=lazy data=http://203.sfimg.cn/2019/4400325735/middle_w_4400325735_1_3/160x160.jpg alt="云源 台湾牛奶释迦果单果350g—400g4个装 1.5KG箱">
+                                <img class=lazy data-src=http://203.sfimg.cn/2019/4400325735/middle_w_4400325735_1_3/160x160.jpg alt="云源 台湾牛奶释迦果单果350g—400g4个装 1.5KG箱">
                             </a>
                             <div class="gBtn p-btn">
                                 <a indexflag=1 pid=325735 data_url=http://204.sfimg.cn/2019/4400325735/middle_w_4400325735_1_3/60x60.jpg href=javascript:void(0)>加入购物车</a>
@@ -1618,7 +1648,7 @@
                     <li class=price_list1 eid=l_345271_0_0 goods=345271 id=cx_l_345271_0_0>
                         <div class="pImg pImg_vip">
                             <a href="http://www.sfbest.com/html/products/346/4400345271.html#trackref=sfbest_hp_hp_floor1_item8" target=_blank title="云源 山西玉露香梨单果250—300g12个礼盒装 3kg箱">
-                                <img class=lazy data=http://201.sfimg.cn/2019/4400345271/middle_w_4400345271_1_4/160x160.jpg alt="云源 山西玉露香梨单果250—300g12个礼盒装 3kg箱">
+                                <img class=lazy data-src=http://201.sfimg.cn/2019/4400345271/middle_w_4400345271_1_4/160x160.jpg alt="云源 山西玉露香梨单果250—300g12个礼盒装 3kg箱">
                             </a>
                             <div class="gBtn p-btn">
                                 <a indexflag=1 pid=345271 data_url=http://203.sfimg.cn/2019/4400345271/middle_w_4400345271_1_4/60x60.jpg href=javascript:void(0)>加入购物车</a>
@@ -1648,7 +1678,7 @@
                 <div class=clr></div>
                 <div class=rimg>
 
-                    <a name=sfbest_hp_hp_floor1_right-ad class="ht1 trackref" href=http://www.sfbest.com/mall/7971-0-0-0-0-2-0-0-0-0-0.html target=_blank><img alt=全橙热恋 class=lazy data=http://004.sfimg.cn/web/765a2d3f/765a2d3f8a5804811d984e3339e40f77.jpg></a>
+                    <a name=sfbest_hp_hp_floor1_right-ad class="ht1 trackref" href=http://www.sfbest.com/mall/7971-0-0-0-0-2-0-0-0-0-0.html target=_blank><img alt=全橙热恋 class=lazy data-src=http://004.sfimg.cn/web/765a2d3f/765a2d3f8a5804811d984e3339e40f77.jpg></a>
                     <div class=rbutton>
                         <a href=http://www.sfbest.com/mall/7971-0-0-0-0-2-0-0-0-0-0.html target=_blank></a>
                     </div>
@@ -1658,548 +1688,11 @@
 
         <span class=clr></span>
     </div>
-    <div class="indexW mt2 full_ad" style=width:1190px;padding-left:10px>
-        <a name=sfbest_hp_hp_banner_2 class=trackref href=http://www.sfbest.com/html/activity/1576138527.html target=_blank>
-            <img alt="火锅聚惠 全场8折" class=lazy data=http://004.sfimg.cn/web/a36ac6cc/a36ac6cc809172f640eda45c6995b104.jpg>
-        </a>
-    </div>
-    <div class="indexW mt2 baby">
-        <div class=category>
-            <ul class=mTitle>
-                <li>
-                    <div class=cir></div>
-                    <h2>
-                        <em></em>
-                        <a name=sfbest_hp_hp_floor2_floor-category1 class=trackref href=http://www.sfbest.com/mall/7423-0-0-0-0-2-0-0-0-0-0.html target=_blank>肉类</a>&nbsp;&nbsp;<a name=sfbest_hp_hp_floor2_floor-category2 class=trackref href=http://www.sfbest.com/mall/7421-0-0-0-0-2-0-0-0-0-0.html
-                            target=_blank>海鲜</a>
-                    </h2>
-                </li>
-            </ul>
-            <div class=lCont>
-                <a name=sfbest_hp_hp_floor2_left-ad class=trackref href=http://www.sfbest.com/html/activity/1576131783.html target=_blank>
-                    <img alt=牛羊肉特惠专场 class=lazy data=http://002.sfimg.cn/web/8e1c954b/8e1c954bf2bf6a72d55a70f39ccd648b.jpg>
-                </a>
-            </div>
-        </div>
-        <div class=sfRight>
-            <div class=subCont>
-                <ul class=pList id=floor-gap-2>
-                    <li class=price_list1 eid=l_309723_0_1 goods=309723 id=cx_l_309723_0_1>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/310/4600309723.html#trackref=sfbest_hp_hp_floor2_item1" target=_blank title="U选一品 澳大利亚牛腩 1kg">
-                                <img class=lazy data=http://204.sfimg.cn/2018/4600309723/middle_4600309723_9_00/160x160.jpg alt="U选一品 澳大利亚牛腩 1kg">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=309723 data_url=http://203.sfimg.cn/2018/4600309723/middle_4600309723_9_00/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor2_item1 class=trackref href="http://www.sfbest.com/html/products/310/4600309723.html#trackref=sfbest_hp_hp_floor2_item1" target=_blank title="U选一品 澳大利亚牛腩 1kg">U选一品 澳大利亚牛腩 1kg</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_309723_0_1>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_347221_0_1 goods=347221 id=cx_l_347221_0_1>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/348/4600347221.html#trackref=sfbest_hp_hp_floor2_item2" target=_blank title="易盛玖 灰芦花小公鸡 700g">
-                                <img class=lazy data=http://202.sfimg.cn/2019/4600347221/middle_4600347221_1_1/160x160.jpg alt="易盛玖 灰芦花小公鸡 700g">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=347221 data_url=http://202.sfimg.cn/2019/4600347221/middle_4600347221_1_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor2_item2 class=trackref href="http://www.sfbest.com/html/products/348/4600347221.html#trackref=sfbest_hp_hp_floor2_item2" target=_blank title="易盛玖 灰芦花小公鸡 700g">易盛玖 灰芦花小公鸡 700g</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_347221_0_1>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_302881_0_1 goods=302881 id=cx_l_302881_0_1>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/303/4600302881.html#trackref=sfbest_hp_hp_floor2_item3" target=_blank title="恒都 新西兰带骨羊腱子 600g">
-                                <img class=lazy data=http://203.sfimg.cn/2018/4600302881/middle_4600302881_9_01/160x160.jpg alt="恒都 新西兰带骨羊腱子 600g">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=302881 data_url=http://202.sfimg.cn/2018/4600302881/middle_4600302881_9_01/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor2_item3 class=trackref href="http://www.sfbest.com/html/products/303/4600302881.html#trackref=sfbest_hp_hp_floor2_item3" target=_blank title="恒都 新西兰带骨羊腱子 600g">恒都 新西兰带骨羊腱子 600g</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_302881_0_1>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_338041_0_1 goods=338041 id=cx_l_338041_0_1>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/339/4600338041.html#trackref=sfbest_hp_hp_floor2_item4" target=_blank title="顶诺 家庭牛排套餐3经典3菲力 840g">
-                                <img class=lazy data=http://201.sfimg.cn/2019/4600338041/middle_4600338041_4_4/160x160.jpg alt="顶诺 家庭牛排套餐3经典3菲力 840g">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=338041 data_url=http://204.sfimg.cn/2019/4600338041/middle_4600338041_4_4/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor2_item4 class=trackref href="http://www.sfbest.com/html/products/339/4600338041.html#trackref=sfbest_hp_hp_floor2_item4" target=_blank title="顶诺 家庭牛排套餐3经典3菲力 840g">顶诺 家庭牛排套餐3经典3菲力 840g</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_338041_0_1>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_340711_0_1 goods=340711 id=cx_l_340711_0_1>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/341/4500340711.html#trackref=sfbest_hp_hp_floor2_item5" target=_blank title="皇冠 厄瓜多尔白虾40/50 1.8kg（海外直采）">
-                                <img class=lazy data=http://201.sfimg.cn/2019/4500340711/middle_4500340711_2_1/160x160.jpg alt="皇冠 厄瓜多尔白虾40/50 1.8kg（海外直采）">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=340711 data_url=http://202.sfimg.cn/2019/4500340711/middle_4500340711_2_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor2_item5 class=trackref href="http://www.sfbest.com/html/products/341/4500340711.html#trackref=sfbest_hp_hp_floor2_item5" target=_blank title="皇冠 厄瓜多尔白虾40/50 1.8kg（海外直采）">皇冠 厄瓜多尔白虾40/50 1.8kg（海外直采）</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_340711_0_1>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_214855_0_1 goods=214855 id=cx_l_214855_0_1>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/215/1800214855.html#trackref=sfbest_hp_hp_floor2_item6" target=_blank title="GUOLIAN  金鲳鱼 300/400  两条装 700g">
-                                <img class=lazy data=http://203.sfimg.cn/2018/1800214855/middle_1800214855_0_1_1/160x160.jpg alt="GUOLIAN  金鲳鱼 300/400  两条装 700g">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=214855 data_url=http://202.sfimg.cn/2018/1800214855/middle_1800214855_0_1_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor2_item6 class=trackref href="http://www.sfbest.com/html/products/215/1800214855.html#trackref=sfbest_hp_hp_floor2_item6" target=_blank title="GUOLIAN  金鲳鱼 300/400  两条装 700g">GUOLIAN 金鲳鱼 300/400 两条装 700g</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_214855_0_1>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_255361_0_1 goods=255361 id=cx_l_255361_0_1>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/256/1800255361.html#trackref=sfbest_hp_hp_floor2_item7" target=_blank title="爱吃鱼 挪威北极鳕-优选切片 400g">
-                                <img class=lazy data=http://204.sfimg.cn/2018/1800255361/middle_1800255361_0_1_1/160x160.jpg alt="爱吃鱼 挪威北极鳕-优选切片 400g">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=255361 data_url=http://201.sfimg.cn/2018/1800255361/middle_1800255361_0_1_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor2_item7 class=trackref href="http://www.sfbest.com/html/products/256/1800255361.html#trackref=sfbest_hp_hp_floor2_item7" target=_blank title="爱吃鱼 挪威北极鳕-优选切片 400g">爱吃鱼 挪威北极鳕-优选切片 400g</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_255361_0_1>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_257729_0_1 goods=257729 id=cx_l_257729_0_1>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/258/1800257729.html#trackref=sfbest_hp_hp_floor2_item8" target=_blank title="三都港 无公害黄花鱼（两条装） 600g">
-                                <img class=lazy data=http://203.sfimg.cn/2018/1800257729/middle_1800257729_1_1/160x160.jpg alt="三都港 无公害黄花鱼（两条装） 600g">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=257729 data_url=http://201.sfimg.cn/2018/1800257729/middle_1800257729_1_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor2_item8 class=trackref href="http://www.sfbest.com/html/products/258/1800257729.html#trackref=sfbest_hp_hp_floor2_item8" target=_blank title="三都港 无公害黄花鱼（两条装） 600g">三都港 无公害黄花鱼（两条装） 600g</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_257729_0_1>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class=redge>
-                <ul class=rHot>
-                    <li><a name=sfbest_hp_hp_floor2_Keywords1 class=trackref href=http://www.sfbest.com/mall/7543-0-0-0-0-2-0-0-0-0-0.html target=_blank>牛肉</a></li>
-                    <li><a name=sfbest_hp_hp_floor2_Keywords2 class=trackref href=http://www.sfbest.com/mall/7545-0-0-0-0-2-0-0-0-0-0.html target=_blank>猪肉</a></li>
-                    <li><a name=sfbest_hp_hp_floor2_Keywords3 class=trackref href=http://www.sfbest.com/mall/8105-0-0-0-0-2-0-0-0-0-0.html target=_blank>肉丸</a></li>
-                    <li><a name=sfbest_hp_hp_floor2_Keywords4 class=trackref href=http://www.sfbest.com/mall/7547-0-0-0-0-2-0-0-0-0-0.html target=_blank>羊肉</a></li>
-                    <li><a name=sfbest_hp_hp_floor2_Keywords5 class=trackref href=http://www.sfbest.com/mall/7549-0-0-0-0-2-0-0-0-0-0.html target=_blank>禽类</a></li>
-                    <li><a name=sfbest_hp_hp_floor2_Keywords6 class=trackref href=http://www.sfbest.com/mall/8043-0-0-0-0-2-0-0-0-0-0.html target=_blank>鳕鱼</a></li>
-                    <li><a name=sfbest_hp_hp_floor2_Keywords7 class=trackref href=http://www.sfbest.com/mall/7525-0-0-0-0-2-0-0-0-0-0.html target=_blank>虾类</a></li>
-                    <li><a name=sfbest_hp_hp_floor2_Keywords8 class=trackref href=http://www.sfbest.com/multi/7533_7535-0-0-0-0-2-0-0-0-0-0.html target=_blank>参鲍</a></li>
-                    <li><a name=sfbest_hp_hp_floor2_Keywords9 class=trackref href=http://www.sfbest.com/mall/8621-0-0-0-0-2-0-0-0-0-0.html target=_blank>小龙虾</a></li>
-                </ul>
-                <div class=clr></div>
-                <div class=rimg>
 
-                    <a name=sfbest_hp_hp_floor2_right-ad class="ht1 trackref" href="http://www.sfbest.com/mall/7421-0-0-0-0-2-0-0-0-0-0.html#trackref=sfbest_Uhead_Uhead_menu_category1-" target=_blank><img alt=海鲜集市 class=lazy data=http://001.sfimg.cn/web/4bcd0f3a/4bcd0f3ac24cfc65cd1d3dcacb0a867f.jpg></a>
-                    <div class=rbutton>
-                        <a href="http://www.sfbest.com/mall/7421-0-0-0-0-2-0-0-0-0-0.html#trackref=sfbest_Uhead_Uhead_menu_category1-" target=_blank></a>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <span class=clr></span>
-    </div>
-    <div class="indexW mt2 full_ad" style=width:1190px;padding-left:10px>
-        <a name=sfbest_hp_hp_banner_3 class=trackref href=http://www.sfbest.com/html/activity/1576036468.html target=_blank>
-            <img alt="暖冬食节   汤圆饺子特价" class=lazy data=http://001.sfimg.cn/web/86719b16/86719b16f18e43f0283d2f5c79e46822.jpg>
-        </a>
-    </div>
-    <div class="indexW mt2 food">
-        <div class=category>
-            <ul class=mTitle>
-                <li>
-                    <div class=cir></div>
-                    <h2>
-                        <em></em>
-                        <a name=sfbest_hp_hp_floor3_floor-category1 class=trackref href=http://www.sfbest.com/mall/7443-0-0-0-0-2-0-0-0-0-0.html target=_blank>粮油</a>&nbsp;&nbsp;<a name=sfbest_hp_hp_floor3_floor-category2 class=trackref href=http://www.sfbest.com/mall/7661-0-0-0-0-2-0-0-0-0-0.html
-                            target=_blank>干货</a>
-                    </h2>
-                </li>
-            </ul>
-            <div class=lCont>
-                <a name=sfbest_hp_hp_floor3_left-ad class=trackref href=http://www.sfbest.com/html/activity/1576055974.html target=_blank>
-                    <img alt="粮油好货盘点 五常大米2件85折" class=lazy data=http://003.sfimg.cn/web/95cf325c/95cf325cb3c4ee6319310e1ac8868d92.jpg>
-                </a>
-            </div>
-        </div>
-        <div class=sfRight>
-            <div class=subCont>
-                <ul class=pList id=floor-gap-3>
-                    <li class=price_list1 eid=l_126545_0_2 goods=126545 id=cx_l_126545_0_2>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/127/1300126545.html#trackref=sfbest_hp_hp_floor3_item1" target=_blank title="北纯  五常稻花香 东北大米 5kg">
-                                <img class=lazy data=http://201.sfimg.cn/2016/1300126545/middle_1300126545_0_1/160x160.jpg alt="北纯  五常稻花香 东北大米 5kg">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=126545 data_url=http://203.sfimg.cn/2016/1300126545/middle_1300126545_0_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor3_item1 class=trackref href="http://www.sfbest.com/html/products/127/1300126545.html#trackref=sfbest_hp_hp_floor3_item1" target=_blank title="北纯  五常稻花香 东北大米 5kg">北纯 五常稻花香 东北大米 5kg</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_126545_0_2>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_259407_0_2 goods=259407 id=cx_l_259407_0_2>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/260/1300259407.html#trackref=sfbest_hp_hp_floor3_item2" target=_blank title="第一坊  冷榨花生油 1.8L">
-                                <img class=lazy data=http://204.sfimg.cn/2017/1300259407/middle_1300259407_5_1/160x160.jpg alt="第一坊  冷榨花生油 1.8L">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=259407 data_url=http://202.sfimg.cn/2017/1300259407/middle_1300259407_5_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor3_item2 class=trackref href="http://www.sfbest.com/html/products/260/1300259407.html#trackref=sfbest_hp_hp_floor3_item2" target=_blank title="第一坊  冷榨花生油 1.8L">第一坊 冷榨花生油 1.8L</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_259407_0_2>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_313601_0_2 goods=313601 id=cx_l_313601_0_2>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/314/6000313601.html#trackref=sfbest_hp_hp_floor3_item3" target=_blank title="绿茶园Nokchawon 蜂蜜柚子茶（海外直采） 1kg">
-                                <img class=lazy data=http://204.sfimg.cn/2018/6000313601/middle_6000313601_1_00/160x160.jpg alt="绿茶园Nokchawon 蜂蜜柚子茶（海外直采） 1kg">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=313601 data_url=http://202.sfimg.cn/2018/6000313601/middle_6000313601_1_00/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor3_item3 class=trackref href="http://www.sfbest.com/html/products/314/6000313601.html#trackref=sfbest_hp_hp_floor3_item3" target=_blank title="绿茶园Nokchawon 蜂蜜柚子茶（海外直采） 1kg">绿茶园Nokchawon 蜂蜜柚子茶（海外直采） 1kg</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_313601_0_2>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_343601_0_2 goods=343601 id=cx_l_343601_0_2>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/344/5900343601.html#trackref=sfbest_hp_hp_floor3_item4" target=_blank title="自嗨锅 菌菇牛肉煲仔饭自热锅 245g">
-                                <img class=lazy data=http://201.sfimg.cn/2019/5900343601/middle_5900343601_1_1/160x160.jpg alt="自嗨锅 菌菇牛肉煲仔饭自热锅 245g">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=343601 data_url=http://203.sfimg.cn/2019/5900343601/middle_5900343601_1_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor3_item4 class=trackref href="http://www.sfbest.com/html/products/344/5900343601.html#trackref=sfbest_hp_hp_floor3_item4" target=_blank title="自嗨锅 菌菇牛肉煲仔饭自热锅 245g">自嗨锅 菌菇牛肉煲仔饭自热锅 245g</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_343601_0_2>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_279889_0_2 goods=279889 id=cx_l_279889_0_2>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/280/6000279889.html#trackref=sfbest_hp_hp_floor3_item5" target=_blank title="卡乐比 水果麦片 500g">
-                                <img class=lazy data=http://203.sfimg.cn/2017/6000279889/middle_6000279889_1_01/160x160.jpg alt="卡乐比 水果麦片 500g">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=279889 data_url=http://202.sfimg.cn/2017/6000279889/middle_6000279889_1_01/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor3_item5 class=trackref href="http://www.sfbest.com/html/products/280/6000279889.html#trackref=sfbest_hp_hp_floor3_item5" target=_blank title="卡乐比 水果麦片 500g">卡乐比 水果麦片 500g</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_279889_0_2>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_14468_0_2 goods=14468 id=cx_l_14468_0_2>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/15/1500014468.html#trackref=sfbest_hp_hp_floor3_item6" target=_blank title="益昌三合一白咖啡（原味）固体饮料 40g*15包/袋">
-                                <img class=lazy data=http://203.sfimg.cn/2013/1500014468/middle_1500014468_9_3/160x160.jpg alt="益昌三合一白咖啡（原味）固体饮料 40g*15包/袋">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=14468 data_url=http://203.sfimg.cn/2013/1500014468/middle_1500014468_9_3/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor3_item6 class=trackref href="http://www.sfbest.com/html/products/15/1500014468.html#trackref=sfbest_hp_hp_floor3_item6" target=_blank title="益昌三合一白咖啡（原味）固体饮料 40g*15包/袋">益昌三合一白咖啡（原味）固体饮料 40g*15包/袋</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_14468_0_2>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_289529_0_2 goods=289529 id=cx_l_289529_0_2>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/290/5900289529.html#trackref=sfbest_hp_hp_floor3_item7" target=_blank title="寿桃  港式车仔面3份装（内附XO滋味酱包） 205g*3">
-                                <img class=lazy data=http://201.sfimg.cn/2018/5900289529/middle_5900289529_0_01/160x160.jpg alt="寿桃  港式车仔面3份装（内附XO滋味酱包） 205g*3">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=289529 data_url=http://202.sfimg.cn/2018/5900289529/middle_5900289529_0_01/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor3_item7 class=trackref href="http://www.sfbest.com/html/products/290/5900289529.html#trackref=sfbest_hp_hp_floor3_item7" target=_blank title="寿桃  港式车仔面3份装（内附XO滋味酱包） 205g*3">寿桃 港式车仔面3份装（内附XO滋味酱包） 205g*3</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_289529_0_2>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_272953_0_2 goods=272953 id=cx_l_272953_0_2>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/273/5900272953.html#trackref=sfbest_hp_hp_floor3_item8" target=_blank title="麦丽莎Melissa 螺旋形意大利面 500g">
-                                <img class=lazy data=http://202.sfimg.cn/2017/5900272953/middle_5900272953_1_1/160x160.jpg alt="麦丽莎Melissa 螺旋形意大利面 500g">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=272953 data_url=http://202.sfimg.cn/2017/5900272953/middle_5900272953_1_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor3_item8 class=trackref href="http://www.sfbest.com/html/products/273/5900272953.html#trackref=sfbest_hp_hp_floor3_item8" target=_blank title="麦丽莎Melissa 螺旋形意大利面 500g">麦丽莎Melissa 螺旋形意大利面 500g</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_272953_0_2>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class=redge>
-                <ul class=rHot>
-                    <li><a name=sfbest_hp_hp_floor3_Keywords1 class=trackref href=http://www.sfbest.com/multi/7649_7651-0-0-0-0-2-0-0-0-0-0.html target=_blank>大米</a></li>
-                    <li><a name=sfbest_hp_hp_floor3_Keywords2 class=trackref href=http://www.sfbest.com/mall/7657-0-0-0-0-2-0-0-0-0-0.html target=_blank>橄榄油</a></li>
-                    <li><a name=sfbest_hp_hp_floor3_Keywords3 class=trackref href=http://www.sfbest.com/mall/7447-0-0-0-0-2-0-0-0-0-0.html target=_blank>调味品</a></li>
-                    <li><a name=sfbest_hp_hp_floor3_Keywords4 class=trackref href=http://www.sfbest.com/mall/7655-0-0-0-0-2-0-0-0-0-0.html target=_blank>面粉</a></li>
-                    <li><a name=sfbest_hp_hp_floor3_Keywords5 class=trackref href=http://www.sfbest.com/mall/8547-0-0-0-0-2-0-0-0-0-0.html target=_blank>意大利面</a></li>
-                    <li><a name=sfbest_hp_hp_floor3_Keywords6 class=trackref href=http://www.sfbest.com/mall/7663-0-0-0-0-2-0-0-0-0-0.html target=_blank>杂粮</a></li>
-                    <li><a name=sfbest_hp_hp_floor3_Keywords7 class=trackref href=http://www.sfbest.com/mall/8419-0-0-0-0-2-0-0-0-0-0.html target=_blank>枸杞/莲子</a></li>
-                    <li><a name=sfbest_hp_hp_floor3_Keywords8 class=trackref href=http://www.sfbest.com/mall/8421-0-0-0-0-2-0-0-0-0-0.html target=_blank>红枣</a></li>
-                    <li><a name=sfbest_hp_hp_floor3_Keywords9 class=trackref href=http://www.sfbest.com/mall/8425-0-0-0-0-2-0-0-0-0-0.html target=_blank>菌菇</a></li>
-                </ul>
-                <div class=clr></div>
-                <div class=rimg>
 
-                    <a name=sfbest_hp_hp_floor3_right-ad class="ht1 trackref" href=http://www.sfbest.com/html/activity/1557215728.html target=_blank><img alt="食米香 有米之炊" class=lazy data=http://003.sfimg.cn/web/28122447/28122447cbe4c6ed2ce44b4e87c95382.jpg></a>
-                    <div class=rbutton>
-                        <a href=http://www.sfbest.com/html/activity/1557215728.html target=_blank></a>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <span class=clr></span>
-    </div>
-    <div class="indexW mt2 full_ad" style=width:1190px;padding-left:10px>
-        <a name=sfbest_hp_hp_banner_4 class=trackref href=http://www.sfbest.com/html/activity/1576135382.html target=_blank>
-            <img alt=解馋零食 class=lazy data=http://003.sfimg.cn/web/e0a300a3/e0a300a31272b906cac56af421098a9a.jpg>
-        </a>
-    </div>
-    <div class="indexW mt2 baby">
-        <div class=category>
-            <ul class=mTitle>
-                <li>
-                    <div class=cir></div>
-                    <h2>
-                        <em></em>
-                        <a name=sfbest_hp_hp_floor4_floor-category1 class=trackref href=http://www.sfbest.com/multi/7411_7413_7415-0-0-0-0-2-0-0-0-0-0.html target=_blank>休闲糖巧</a>
-                    </h2>
-                </li>
-            </ul>
-            <div class=lCont>
-                <a name=sfbest_hp_hp_floor4_left-ad class=trackref href=http://www.sfbest.com/html/activity/1575879813.html target=_blank>
-                    <img alt=圣诞美食提前备 class=lazy data=http://004.sfimg.cn/web/0e76cafa/0e76cafa455068c79b74b0ab5bbc20f4.jpg>
-                </a>
-            </div>
-        </div>
-        <div class=sfRight>
-            <div class=subCont>
-                <ul class=pList id=floor-gap-4>
-                    <li class=price_list1 eid=l_288423_0_3 goods=288423 id=cx_l_288423_0_3>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/289/4000288423.html#trackref=sfbest_hp_hp_floor4_item1" target=_blank title="臻味 越南原味腰果仁 200g">
-                                <img class=lazy data=http://202.sfimg.cn/2018/4000288423/middle_4000288423_9_001/160x160.jpg alt="臻味 越南原味腰果仁 200g">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=288423 data_url=http://203.sfimg.cn/2018/4000288423/middle_4000288423_9_001/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor4_item1 class=trackref href="http://www.sfbest.com/html/products/289/4000288423.html#trackref=sfbest_hp_hp_floor4_item1" target=_blank title="臻味 越南原味腰果仁 200g">臻味 越南原味腰果仁 200g</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_288423_0_3>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_327031_0_3 goods=327031 id=cx_l_327031_0_3>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/328/4100327031.html#trackref=sfbest_hp_hp_floor4_item2" target=_blank title="卖萌大叔 饭盒装芒果糕 300g">
-                                <img class=lazy data=http://203.sfimg.cn/2019/4100327031/middle_4100327031_1_1/160x160.jpg alt="卖萌大叔 饭盒装芒果糕 300g">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=327031 data_url=http://202.sfimg.cn/2019/4100327031/middle_4100327031_1_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor4_item2 class=trackref href="http://www.sfbest.com/html/products/328/4100327031.html#trackref=sfbest_hp_hp_floor4_item2" target=_blank title="卖萌大叔 饭盒装芒果糕 300g">卖萌大叔 饭盒装芒果糕 300g</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_327031_0_3>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_315403_0_3 goods=315403 id=cx_l_315403_0_3>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/316/4000315403.html#trackref=sfbest_hp_hp_floor4_item3" target=_blank title="自然派 卤鸭脖(香辣) 108g">
-                                <img class=lazy data=http://203.sfimg.cn/2018/4000315403/middle_4000315403_1_1/160x160.jpg alt="自然派 卤鸭脖(香辣) 108g">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=315403 data_url=http://204.sfimg.cn/2018/4000315403/middle_4000315403_1_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor4_item3 class=trackref href="http://www.sfbest.com/html/products/316/4000315403.html#trackref=sfbest_hp_hp_floor4_item3" target=_blank title="自然派 卤鸭脖(香辣) 108g">自然派 卤鸭脖(香辣) 108g</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_315403_0_3>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_294705_0_3 goods=294705 id=cx_l_294705_0_3>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/295/4000294705.html#trackref=sfbest_hp_hp_floor4_item4" target=_blank title="U选一品 泰国芒果干 85g">
-                                <img class=lazy data=http://201.sfimg.cn/2018/4000294705/middle_4000294705_1_1/160x160.jpg alt="U选一品 泰国芒果干 85g">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=294705 data_url=http://202.sfimg.cn/2018/4000294705/middle_4000294705_1_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor4_item4 class=trackref href="http://www.sfbest.com/html/products/295/4000294705.html#trackref=sfbest_hp_hp_floor4_item4" target=_blank title="U选一品 泰国芒果干 85g">U选一品 泰国芒果干 85g</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_294705_0_3>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_330085_0_3 goods=330085 id=cx_l_330085_0_3>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/331/4000330085.html#trackref=sfbest_hp_hp_floor4_item5" target=_blank title="Fragrance 咸蛋黄薯条 100g(海外直采)">
-                                <img class=lazy data=http://204.sfimg.cn/2019/4000330085/middle_4000330085_1_01/160x160.jpg alt="Fragrance 咸蛋黄薯条 100g(海外直采)">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=330085 data_url=http://202.sfimg.cn/2019/4000330085/middle_4000330085_1_01/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor4_item5 class=trackref href="http://www.sfbest.com/html/products/331/4000330085.html#trackref=sfbest_hp_hp_floor4_item5" target=_blank title="Fragrance 咸蛋黄薯条 100g(海外直采)">Fragrance 咸蛋黄薯条 100g(海外直采)</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_330085_0_3>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_333409_0_3 goods=333409 id=cx_l_333409_0_3>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/334/4200333409.html#trackref=sfbest_hp_hp_floor4_item6" target=_blank title="阿孔特AKKIND 菲利莫威化饼干 250g">
-                                <img class=lazy data=http://201.sfimg.cn/2019/4200333409/middle_4200333409_1_1/160x160.jpg alt="阿孔特AKKIND 菲利莫威化饼干 250g">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=333409 data_url=http://202.sfimg.cn/2019/4200333409/middle_4200333409_1_1/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor4_item6 class=trackref href="http://www.sfbest.com/html/products/334/4200333409.html#trackref=sfbest_hp_hp_floor4_item6" target=_blank title="阿孔特AKKIND 菲利莫威化饼干 250g">阿孔特AKKIND 菲利莫威化饼干 250g</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_333409_0_3>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_167803_0_3 goods=167803 id=cx_l_167803_0_3>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/168/1600167803.html#trackref=sfbest_hp_hp_floor4_item7" target=_blank title="富亿农  小紫薯 100g">
-                                <img class=lazy data=http://204.sfimg.cn/2016/1600167803/middle_1600167803_9_01/160x160.jpg alt="富亿农  小紫薯 100g">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=167803 data_url=http://202.sfimg.cn/2016/1600167803/middle_1600167803_9_01/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor4_item7 class=trackref href="http://www.sfbest.com/html/products/168/1600167803.html#trackref=sfbest_hp_hp_floor4_item7" target=_blank title="富亿农  小紫薯 100g">富亿农 小紫薯 100g</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_167803_0_3>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                    <li class=price_list1 eid=l_334619_0_3 goods=334619 id=cx_l_334619_0_3>
-                        <div class="pImg pImg_vip">
-                            <a href="http://www.sfbest.com/html/products/335/4200334619.html#trackref=sfbest_hp_hp_floor4_item8" target=_blank title="精灵骑仕 巧克力果仁曲奇糕点 110g">
-                                <img class=lazy data=http://201.sfimg.cn/2019/4200334619/middle_4200334619_1_0/160x160.jpg alt="精灵骑仕 巧克力果仁曲奇糕点 110g">
-                            </a>
-                            <div class="gBtn p-btn">
-                                <a indexflag=1 pid=334619 data_url=http://202.sfimg.cn/2019/4200334619/middle_4200334619_1_0/60x60.jpg href=javascript:void(0)>加入购物车</a>
-                            </div>
-                        </div>
-                        <div class=title>
-                            <a name=sfbest_hp_hp_floor4_item8 class=trackref href="http://www.sfbest.com/html/products/335/4200334619.html#trackref=sfbest_hp_hp_floor4_item8" target=_blank title="精灵骑仕 巧克力果仁曲奇糕点 110g">精灵骑仕 巧克力果仁曲奇糕点 110g</a>
-                        </div>
-                        <div class="a_price f_price" id=priceL_l_334619_0_3>
-                            <span><i>￥</i>120.8</span><span><b>会员价</b><i>￥</i>98.8</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class=redge>
-                <ul class=rHot>
-                    <li><a name=sfbest_hp_hp_floor4_Keywords1 class=trackref href=http://www.sfbest.com/mall/7471-0-0-0-0-2-0-0-0-0-0.html target=_blank>坚果</a></li>
-                    <li><a name=sfbest_hp_hp_floor4_Keywords2 class=trackref href=http://www.sfbest.com/mall/7475-0-0-0-0-2-0-0-0-0-0.html target=_blank>肉制品</a></li>
-                    <li><a name=sfbest_hp_hp_floor4_Keywords3 class=trackref href=http://www.sfbest.com/mall/7473-0-0-0-0-2-0-0-0-0-0.html target=_blank>蜜饯</a></li>
-                    <li><a name=sfbest_hp_hp_floor4_Keywords4 class=trackref href=http://www.sfbest.com/mall/7485-0-0-0-0-2-0-0-0-0-0.html target=_blank>饼干</a></li>
-                    <li><a name=sfbest_hp_hp_floor4_Keywords5 class=trackref href=http://www.sfbest.com/mall/7483-0-0-0-0-2-0-0-0-0-0.html target=_blank>糖果</a></li>
-                    <li><a name=sfbest_hp_hp_floor4_Keywords6 class=trackref href=http://www.sfbest.com/pinpai/11899.html target=_blank>达利园</a></li>
-                    <li><a name=sfbest_hp_hp_floor4_Keywords7 class=trackref href=http://www.sfbest.com/multi/7411_7413_7415-15101-0-0-0-2-0-0-0-0-0.html target=_blank>四洲</a></li>
-                    <li><a name=sfbest_hp_hp_floor4_Keywords8 class=trackref href=http://www.sfbest.com/multi/7411_7413_7415-3224-0-0-0-2-0-0-0-0-0.html target=_blank>啪啪通</a></li>
-                    <li><a name=sfbest_hp_hp_floor4_Keywords9 class=trackref href=http://www.sfbest.com/multi/7411_7413_7415-2892-0-0-0-2-0-0-0-0-0.html target=_blank>塔塔瓦</a></li>
-                </ul>
-                <div class=clr></div>
-                <div class=rimg>
 
-                    <a name=sfbest_hp_hp_floor4_right-ad class="ht1 trackref" href="http://www.sfbest.com/mall/7475-0-0-0-0-2-0-0-0-0-0.html#trackref=sfbest_Uhead_Uhead_menu_category5-" target=_blank><img alt=肉类零食 class=lazy data=http://003.sfimg.cn/web/33b01657/33b0165744378d4b8d5e3c28128b37cc.jpg></a>
-                    <div class=rbutton>
-                        <a href="http://www.sfbest.com/mall/7475-0-0-0-0-2-0-0-0-0-0.html#trackref=sfbest_Uhead_Uhead_menu_category5-" target=_blank></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <span class=clr></span>
-    </div>
     <a name=promote></a>
 
     <div class="indexW mt2 promote">
@@ -2207,7 +1700,7 @@
         <ul class="ptList clearfix" id=guess_you_like>
             <li class=price_list2 eid=l_249081_0 goods=249081 id=cx_l_249081_0>
                 <div class="pImg pImg_vip">
-                    <a href="http://www.sfbest.com/html/products/250/1400249081.html#trackref=main_b_249081" target=_blank title="奔富PENFOLDS 洛神山庄赤霞珠红葡萄酒 750ml*6"><img class=lazy data=http://p02.sfimg.cn/2018/1400249081/middle_1400249081_0_01/160x160.jpg alt="奔富PENFOLDS 洛神山庄赤霞珠红葡萄酒 750ml*6" src=./src/img/index/images/27.jpg style=display:block></a>
+                    <a href="http://www.sfbest.com/html/products/250/1400249081.html#trackref=main_b_249081" target=_blank title="奔富PENFOLDS 洛神山庄赤霞珠红葡萄酒 750ml*6"><img class=lazy data-src=http://p02.sfimg.cn/2018/1400249081/middle_1400249081_0_01/160x160.jpg alt="奔富PENFOLDS 洛神山庄赤霞珠红葡萄酒 750ml*6" src=./src/img/index/images/27.jpg style=display:block></a>
                     <div class="gBtn p-btn" style=top:211px><a pid=249081 data_url=http://p02.sfimg.cn/2018/1400249081/middle_1400249081_0_01/160x160.jpg href=javascript:void(0) indexflag=1>加入购物车</a></div>
                 </div>
                 <div class=title-a>
@@ -2217,7 +1710,7 @@
             </li>
             <li class=price_list2 eid=l_163625_1 goods=163625 id=cx_l_163625_1>
                 <div class="pImg pImg_vip">
-                    <a href="http://www.sfbest.com/html/products/164/1400163625.html#trackref=main_b_163625" target=_blank title="五粮液 股份公司 感恩酒精酿 52度 500ml"><img class=lazy data=http://p02.sfimg.cn/2015/1400163625/middle_1400163625_9_01/160x160.jpg alt="五粮液 股份公司 感恩酒精酿 52度 500ml" src=./src/img/index/images/28.jpg style=display:block></a>
+                    <a href="http://www.sfbest.com/html/products/164/1400163625.html#trackref=main_b_163625" target=_blank title="五粮液 股份公司 感恩酒精酿 52度 500ml"><img class=lazy data-src=http://p02.sfimg.cn/2015/1400163625/middle_1400163625_9_01/160x160.jpg alt="五粮液 股份公司 感恩酒精酿 52度 500ml" src=./src/img/index/images/28.jpg style=display:block></a>
                     <div class="gBtn p-btn" style=top:211px><a pid=163625 data_url=http://p02.sfimg.cn/2015/1400163625/middle_1400163625_9_01/160x160.jpg href=javascript:void(0) indexflag=1>加入购物车</a></div>
                 </div>
                 <div class=title-a>
@@ -2227,7 +1720,7 @@
             </li>
             <li class=price_list2 eid=l_290511_2 goods=290511 id=cx_l_290511_2>
                 <div class="pImg pImg_vip">
-                    <a href="http://www.sfbest.com/html/products/291/5300290511.html#trackref=main_b_290511" target=_blank title="狮子亨利  小麦啤酒（海外直采） 500ml*24"><img class=lazy data=http://p02.sfimg.cn/2018/5300290511/middle_5300290511_1_01/160x160.jpg alt="狮子亨利  小麦啤酒（海外直采） 500ml*24" src=./src/img/index/images/29.jpg style=display:block></a>
+                    <a href="http://www.sfbest.com/html/products/291/5300290511.html#trackref=main_b_290511" target=_blank title="狮子亨利  小麦啤酒（海外直采） 500ml*24"><img class=lazy data-src=http://p02.sfimg.cn/2018/5300290511/middle_5300290511_1_01/160x160.jpg alt="狮子亨利  小麦啤酒（海外直采） 500ml*24" src=./src/img/index/images/29.jpg style=display:block></a>
                     <div class="gBtn p-btn" style=top:211px><a pid=290511 data_url=http://p02.sfimg.cn/2018/5300290511/middle_5300290511_1_01/160x160.jpg href=javascript:void(0) indexflag=1>加入购物车</a></div>
                 </div>
                 <div class=title-a>
@@ -2237,7 +1730,7 @@
             </li>
             <li class=price_list2 eid=l_36212_3 goods=36212 id=cx_l_36212_3>
                 <div class="pImg pImg_vip">
-                    <a href="http://www.sfbest.com/html/products/37/1400036212.html#trackref=main_b_36212" target=_blank title="德国 爱士堡EICHBAUM 小麦啤酒 500ml*24"><img class=lazy data=http://p02.sfimg.cn/2018/1400036212/middle_1400036212_1_01/160x160.jpg alt="德国 爱士堡EICHBAUM 小麦啤酒 500ml*24" src=./src/img/index/images/30.jpg style=display:block></a>
+                    <a href="http://www.sfbest.com/html/products/37/1400036212.html#trackref=main_b_36212" target=_blank title="德国 爱士堡EICHBAUM 小麦啤酒 500ml*24"><img class=lazy data-src=http://p02.sfimg.cn/2018/1400036212/middle_1400036212_1_01/160x160.jpg alt="德国 爱士堡EICHBAUM 小麦啤酒 500ml*24" src=./src/img/index/images/30.jpg style=display:block></a>
                     <div class="gBtn p-btn" style=top:211px><a pid=36212 data_url=http://p02.sfimg.cn/2018/1400036212/middle_1400036212_1_01/160x160.jpg href=javascript:void(0) indexflag=1>加入购物车</a></div>
                 </div>
                 <div class=title-a>
@@ -2247,7 +1740,7 @@
             </li>
             <li class=price_list2 eid=l_286765_4 goods=286765 id=cx_l_286765_4>
                 <div class="pImg pImg_vip">
-                    <a href="http://www.sfbest.com/html/products/287/5700286765.html#trackref=main_b_286765" target=_blank title="参之源 官栈系列冰糖燕窝饮品 150g*3"><img class=lazy data=http://p02.sfimg.cn/2018/5700286765/middle_5700286765_1_1/160x160.jpg alt="参之源 官栈系列冰糖燕窝饮品 150g*3" src=./src/img/index/images/31.jpg style=display:block></a>
+                    <a href="http://www.sfbest.com/html/products/287/5700286765.html#trackref=main_b_286765" target=_blank title="参之源 官栈系列冰糖燕窝饮品 150g*3"><img class=lazy data-src=http://p02.sfimg.cn/2018/5700286765/middle_5700286765_1_1/160x160.jpg alt="参之源 官栈系列冰糖燕窝饮品 150g*3" src=./src/img/index/images/31.jpg style=display:block></a>
                     <div class="gBtn p-btn" style=top:211px><a pid=286765 data_url=http://p02.sfimg.cn/2018/5700286765/middle_5700286765_1_1/160x160.jpg href=javascript:void(0) indexflag=1>加入购物车</a></div>
                 </div>
                 <div class=title-a>
@@ -2257,7 +1750,7 @@
             </li>
             <li class=price_list2 eid=l_59443_5 goods=59443 id=cx_l_59443_5>
                 <div class="pImg pImg_vip">
-                    <a href="http://www.sfbest.com/html/products/60/1300059443.html#trackref=main_b_59443" target=_blank title="方家铺子  香菇 138g"><img class=lazy data=http://p02.sfimg.cn/2018/1300059443/middle_1300059443_4_001/160x160.jpg alt="方家铺子  香菇 138g" src=./src/img/index/images/32.jpg style=display:block></a>
+                    <a href="http://www.sfbest.com/html/products/60/1300059443.html#trackref=main_b_59443" target=_blank title="方家铺子  香菇 138g"><img class=lazy data-src=http://p02.sfimg.cn/2018/1300059443/middle_1300059443_4_001/160x160.jpg alt="方家铺子  香菇 138g" src=./src/img/index/images/32.jpg style=display:block></a>
                     <div class="gBtn p-btn" style=top:211px><a pid=59443 data_url=http://p02.sfimg.cn/2018/1300059443/middle_1300059443_4_001/160x160.jpg href=javascript:void(0) indexflag=1>加入购物车</a></div>
                 </div>
                 <div class=title-a>
@@ -2267,7 +1760,7 @@
             </li>
             <li class=price_list2 eid=l_325875_6 goods=325875 id=cx_l_325875_6>
                 <div class="pImg pImg_vip">
-                    <a href="http://www.sfbest.com/html/products/326/5600325875.html#trackref=main_b_325875" target=_blank title="斐洛FEROL 葵花籽油 5L"><img class=lazy data=http://p02.sfimg.cn/2019/5600325875/middle_5600325875_0_1/160x160.jpg alt="斐洛FEROL 葵花籽油 5L" src=./src/img/index/images/33.jpg style=display:block></a>
+                    <a href="http://www.sfbest.com/html/products/326/5600325875.html#trackref=main_b_325875" target=_blank title="斐洛FEROL 葵花籽油 5L"><img class=lazy data-src=http://p02.sfimg.cn/2019/5600325875/middle_5600325875_0_1/160x160.jpg alt="斐洛FEROL 葵花籽油 5L" src=./src/img/index/images/33.jpg style=display:block></a>
                     <div class="gBtn p-btn" style=top:211px><a pid=325875 data_url=http://p02.sfimg.cn/2019/5600325875/middle_5600325875_0_1/160x160.jpg href=javascript:void(0) indexflag=1>加入购物车</a></div>
                 </div>
                 <div class=title-a>
@@ -2277,7 +1770,7 @@
             </li>
             <li class=price_list2 eid=l_58773_7 goods=58773 id=cx_l_58773_7>
                 <div class="pImg pImg_vip">
-                    <a href="http://www.sfbest.com/html/products/59/1300058773.html#trackref=main_b_58773" target=_blank title="柴火大院 五常稻花香大米 5kg"><img class=lazy data=http://p02.sfimg.cn/2015/1300058773/middle_1300058773_0_1/160x160.jpg alt="柴火大院 五常稻花香大米 5kg" src=./src/img/index/images/34.jpg style=display:block></a>
+                    <a href="http://www.sfbest.com/html/products/59/1300058773.html#trackref=main_b_58773" target=_blank title="柴火大院 五常稻花香大米 5kg"><img class=lazy data-src=http://p02.sfimg.cn/2015/1300058773/middle_1300058773_0_1/160x160.jpg alt="柴火大院 五常稻花香大米 5kg" src=./src/img/index/images/34.jpg style=display:block></a>
                     <div class="gBtn p-btn" style=top:211px><a pid=58773 data_url=http://p02.sfimg.cn/2015/1300058773/middle_1300058773_0_1/160x160.jpg href=javascript:void(0) indexflag=1>加入购物车</a></div>
                 </div>
                 <div class=title-a>
@@ -2287,7 +1780,7 @@
             </li>
             <li class=price_list2 eid=l_276525_8 goods=276525 id=cx_l_276525_8>
                 <div class="pImg pImg_vip">
-                    <a href="http://www.sfbest.com/html/products/277/4500276525.html#trackref=main_b_276525" target=_blank title="爱吃鱼 挪威北极鳕鱼-鱼扒 330g【新旧包装随机发货】"><img class=lazy data=http://p02.sfimg.cn/2017/4500276525/middle_4500276525_01_1/160x160.jpg alt="爱吃鱼 挪威北极鳕鱼-鱼扒 330g【新旧包装随机发货】" src=./src/img/index/images/35.jpg style=display:block></a>
+                    <a href="http://www.sfbest.com/html/products/277/4500276525.html#trackref=main_b_276525" target=_blank title="爱吃鱼 挪威北极鳕鱼-鱼扒 330g【新旧包装随机发货】"><img class=lazy data-src=http://p02.sfimg.cn/2017/4500276525/middle_4500276525_01_1/160x160.jpg alt="爱吃鱼 挪威北极鳕鱼-鱼扒 330g【新旧包装随机发货】" src=./src/img/index/images/35.jpg style=display:block></a>
                     <div class="gBtn p-btn" style=top:211px><a pid=276525 data_url=http://p02.sfimg.cn/2017/4500276525/middle_4500276525_01_1/160x160.jpg href=javascript:void(0) indexflag=1>加入购物车</a></div>
                 </div>
                 <div class=title-a>
@@ -2297,7 +1790,7 @@
             </li>
             <li class=price_list2 eid=l_257729_9 goods=257729 id=cx_l_257729_9>
                 <div class="pImg pImg_vip">
-                    <a href="http://www.sfbest.com/html/products/258/1800257729.html#trackref=main_b_257729" target=_blank title="三都港 无公害黄花鱼（两条装） 600g"><img class=lazy data=http://p02.sfimg.cn/2018/1800257729/middle_1800257729_1_1/160x160.jpg alt="三都港 无公害黄花鱼（两条装） 600g" src=./src/img/index/images/36.jpg style=display:block></a>
+                    <a href="http://www.sfbest.com/html/products/258/1800257729.html#trackref=main_b_257729" target=_blank title="三都港 无公害黄花鱼（两条装） 600g"><img class=lazy data-src=http://p02.sfimg.cn/2018/1800257729/middle_1800257729_1_1/160x160.jpg alt="三都港 无公害黄花鱼（两条装） 600g" src=./src/img/index/images/36.jpg style=display:block></a>
                     <div class="gBtn p-btn" style=top:211px><a pid=257729 data_url=http://p02.sfimg.cn/2018/1800257729/middle_1800257729_1_1/160x160.jpg href=javascript:void(0) indexflag=1>加入购物车</a></div>
                 </div>
                 <div class=title-a>
@@ -2323,15 +1816,109 @@
             <div class=slide>
                 <ul>
                     <li>
-                        <a name=sfbest_hp_hp_delicacy_ad1 class=trackref href=http://www.sfbest.com/html/activity/1385966739.html target=_blank title=无白酒不成宴席><img data=http://002.sfimg.cn/web/072d7ff9/072d7ff98d7d2278386bd22250b58d30.jpg alt=无白酒不成宴席 class="lazy indexjk"></a>
+                        <a name=sfbest_hp_hp_delicacy_ad1 class=trackref href=http://www.sfbest.com/html/activity/1385966739.html target=_blank title=无白酒不成宴席><img data-src=http://002.sfimg.cn/web/072d7ff9/072d7ff98d7d2278386bd22250b58d30.jpg alt=无白酒不成宴席 class="lazy indexjk"></a>
                     </li>
                     <li>
-                        <a name=sfbest_hp_hp_delicacy_ad2 class=trackref href=http://www.sfbest.com/html/activity/1404807423.html target=_blank title=醍醐味><img data=http://003.sfimg.cn/web/1f2564d9/1f2564d9772bf819d3359b794765262c.jpg alt=醍醐味 class=lazy></a>
+                        <a name=sfbest_hp_hp_delicacy_ad2 class=trackref href=http://www.sfbest.com/html/activity/1404807423.html target=_blank title=醍醐味><img data-src=http://003.sfimg.cn/web/1f2564d9/1f2564d9772bf819d3359b794765262c.jpg alt=醍醐味 class=lazy></a>
                     </li>
                 </ul>
-                <a style=display:none href=javascript:void(0); class=btn_next><s></s></a>
-                <a style=display:none href=javascript:void(0); class=btn_prev><s></s></a>
+                <a style=display:inline href=javascript:void(0); class=btn_next><s></s></a>
+                <a style=display:inline href=javascript:void(0); class=btn_prev><s></s></a>
+                <div class="slideControls">
+                    <span class="cur">1</span>
+                    <span class="">2</span>
+                </div>
             </div>
+            <script src="./src/script/index/animation.js"></script>
+            <script>
+                (function() {
+                    var currIndex; //图片的索引;
+                    var lis; //li变量
+                    var liWidth; //每个li的宽度
+                    var len //li的个数
+                    var id;
+                    init()
+
+                    function init() {
+                        currIndex = 1; //初始化时第一张图片为1；因为前面有一个最后一张图片的复制
+                        var li_first = document.querySelector('.slide ul li:first-of-type')
+                        var copy_first = li_first.cloneNode(true);
+                        var li_last = document.querySelector('.slide ul li:last-of-type');
+                        var copy_last = li_last.cloneNode(true);
+                        var list = document.querySelector('.slide ul');
+                        list.appendChild(copy_first);
+                        list.insertBefore(copy_last, li_first);
+                        lis = document.querySelectorAll(' .slide ul li');
+                        liWidth = lis[0].offsetWidth;
+                        len = lis.length;
+                        list.style.width = liWidth * len + 'px';
+                        list.style.left = -liWidth + 'px';
+                        document.querySelector('.btn_prev').onclick = function() {
+                            slidePrve()
+                        };
+                        document.querySelector('.btn_next').onclick = function() {
+                            slideNext()
+
+                        }
+                        var bullets = document.querySelectorAll('.slide .slideControls span');
+                        for (var i = 0; i < bullets.length; i++) { // bullets.length=2
+                            bullets[i].index = i;
+                            bullets[i].onclick = function() {
+                                currIndex = this.index + 1;
+                                slideTo(currIndex);
+                            }
+                        }
+                        document.querySelector('.slide').onmouseover = function() {
+
+                        }
+                        document.querySelector('.slide').onmouseout = function() {
+
+                        }
+                    }
+
+                    function slideNext() {
+                        currIndex++;
+                        slideTo(currIndex);
+
+                    }
+
+                    function slidePrve() {
+                        currIndex--;
+                        slideTo(currIndex);
+
+                    }
+
+
+                    function slideTo(index) {
+                        var list = document.querySelector('.slide ul')
+                        if (currIndex === len) { //len=4
+                            index = currIndex = 2;
+                            list.style.left = -liWidth + 'px'
+                        }
+
+                        if (currIndex === -1) {
+                            index = currIndex = len - 3;
+                            list.style.left = -liWidth * (len - 2) + 'px'
+                        }
+
+                        var focusIndex;
+                        var bullets = document.querySelectorAll('.slideControls span')
+                        if (index === 0) {
+                            focusIndex = bullets.length - 1;
+                        } else if (index === (len - 1)) {
+                            focusIndex = 0
+                        } else {
+                            focusIndex = index - 1
+                        }
+                        document.querySelector('.slideControls .cur').className = '';
+                        bullets[focusIndex].className = 'cur';
+                        var left = -index * liWidth;
+                        animate(list, {
+                            left: left
+                        })
+                    }
+                })()
+            </script>
             <div class=info>
                 <p><a name=sfbest_hp_hp_article_1 class=trackref rel=nofollow href=http://www.sfbest.com/taste/363/6668.html target=_blank title="花草茶 来自大自然的恩惠">花草茶 来自大自然的恩惠</a></p>
                 <p><a name=sfbest_hp_hp_article_2 class=trackref rel=nofollow href=http://www.sfbest.com/taste/361/5105.html target=_blank title=酒桌礼仪：斟酒的讲究>酒桌礼仪：斟酒的讲究</a></p>
@@ -2345,9 +1932,190 @@
                 <p>热门晒单</p>
             </div>
             <div class=scrollbox>
-                <ul id=toplist></ul>
+                <ul id="toplist" style="top: -910px;">
+                    <li>
+                        <div class="share_c">
+                            <div class="l">
+                                <a href="http://www.sfbest.com/html/products/332/4400331871.html?trackref=sfbest_hp_hp_itemphoto_1#comment" target="_blank" title="无锡阳山水蜜桃12粒礼盒装 单果200-250g"><img src="http://pic.sfimg.cn/c21d6cb1/small_c21d6cb1f0f91ac08c79496987a33c15.jpg" alt="无锡阳山水蜜桃12粒礼盒装 单果200-250g" onerror="this.src='http://i.sfimg.cn/html/images/150pic.jpg'"></a>
+                            </div>
+                            <div class="r">
+                                <p><a href="http://www.sfbest.com/html/products/332/4400331871.html?trackref=sfbest_hp_hp_itemphoto_1#comment" target="_blank" title="无锡阳山水蜜桃12粒礼盒装 单果200-250g">无锡阳山水蜜桃12粒礼盒装 单果200-250g</a></p>
+                                <p class="s_title"><a class="s_content" href="http://www.sfbest.com/html/products/332/4400331871.html?trackref=sfbest_hp_hp_itemphoto_1#comment" target="_blank">“22年前我15岁，第一次去无锡，老爸的无锡当地朋友送给我三个小竹篮装的水蜜桃，吃过之后一直难忘，每年都记挂着这种水蜜桃，自己去市面上买多数都是挨**，直到现在物流发达了，能直接购买无锡生产地的水蜜桃，果然跟当年一样好吃。这次特地买一箱给老公生日，当寿桃。超级好吃，我一家四口人，收到当天就每人两个，12个的一箱，一下就吃完了。好吃到不够吃。”</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="share_c">
+                            <div class="l">
+                                <a href="http://www.sfbest.com/html/products/298/6200297143.html?trackref=sfbest_hp_hp_itemphoto_2#comment" target="_blank" title="Swisse 【保税仓】钙片加维生素D 150粒*5"><img src="http://pic.sfimg.cn/910031ab/small_910031ab30b319262a45861d89126863.jpg" alt="Swisse 【保税仓】钙片加维生素D 150粒*5" onerror="this.src='http://i.sfimg.cn/html/images/150pic.jpg'"></a>
+                            </div>
+                            <div class="r">
+                                <p><a href="http://www.sfbest.com/html/products/298/6200297143.html?trackref=sfbest_hp_hp_itemphoto_2#comment" target="_blank" title="Swisse 【保税仓】钙片加维生素D 150粒*5">Swisse 【保税仓】钙片加维生素D 150粒*5</a></p>
+                                <p class="s_title"><a class="s_content" href="http://www.sfbest.com/html/products/298/6200297143.html?trackref=sfbest_hp_hp_itemphoto_2#comment" target="_blank">“趁优惠，囤多几瓶，和闺蜜一起分”</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="share_c">
+                            <div class="l">
+                                <a href="http://www.sfbest.com/html/products/263/1800262723.html?trackref=sfbest_hp_hp_itemphoto_3#comment" target="_blank" title="GUOLIAN 珍珠鲜虾仁 71/90 800g"><img src="http://pic.sfimg.cn/7f2635d3/small_7f2635d3d2e738b700976fd59d91fb06.jpg" alt="GUOLIAN 珍珠鲜虾仁 71/90 800g" onerror="this.src='http://i.sfimg.cn/html/images/150pic.jpg'"></a>
+                            </div>
+                            <div class="r">
+                                <p><a href="http://www.sfbest.com/html/products/263/1800262723.html?trackref=sfbest_hp_hp_itemphoto_3#comment" target="_blank" title="GUOLIAN 珍珠鲜虾仁 71/90 800g">GUOLIAN 珍珠鲜虾仁 71/90 800g</a></p>
+                                <p class="s_title"><a class="s_content" href="http://www.sfbest.com/html/products/263/1800262723.html?trackref=sfbest_hp_hp_itemphoto_3#comment" target="_blank">“朋友介绍的，然后给了我一包试吃了，虾仁不但新鲜不缩，而且很好吃，所以又买了二包，快递很给力，昨晚订，今天上午送到了，快递小哥还关照说是冷冻食品，快放冰箱，服务态度特好，喜欢。
+                        ”</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="share_c">
+                            <div class="l">
+                                <a href="http://www.sfbest.com/html/products/298/6300297381.html?trackref=sfbest_hp_hp_itemphoto_4#comment" target="_blank" title="德运Devondale 【保税仓】全脂奶粉组合【保质期2020.7月】 1kg*2"><img src="http://pic.sfimg.cn/718b8aa1/small_718b8aa10bca1a87f9b617ab70c2d168.jpg" alt="德运Devondale 【保税仓】全脂奶粉组合【保质期2020.7月】 1kg*2" onerror="this.src='http://i.sfimg.cn/html/images/150pic.jpg'"></a>
+                            </div>
+                            <div class="r">
+                                <p><a href="http://www.sfbest.com/html/products/298/6300297381.html?trackref=sfbest_hp_hp_itemphoto_4#comment" target="_blank" title="德运Devondale 【保税仓】全脂奶粉组合【保质期2020.7月】 1kg*2">德运Devondale 【保税仓】全脂奶粉组合【保质期2020.7月】 1kg*2</a></p>
+                                <p class="s_title"><a class="s_content" href="http://www.sfbest.com/html/products/298/6300297381.html?trackref=sfbest_hp_hp_itemphoto_4#comment" target="_blank">“东西收到了，顺丰快递包邮到家，非常方便，最最关键的是奶粉很好，买给老爸的，”</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="share_c">
+                            <div class="l">
+                                <a href="http://www.sfbest.com/html/products/317/4400316119.html?trackref=sfbest_hp_hp_itemphoto_5#comment" target="_blank" title="入仓 泰国冷冻金枕榴莲果肉（无核） 250g/盒"><img src="http://pic.sfimg.cn/634579b8/small_634579b819367ca07fccb04b26cd8472.jpg" alt="入仓 泰国冷冻金枕榴莲果肉（无核） 250g/盒" onerror="this.src='http://i.sfimg.cn/html/images/150pic.jpg'"></a>
+                            </div>
+                            <div class="r">
+                                <p><a href="http://www.sfbest.com/html/products/317/4400316119.html?trackref=sfbest_hp_hp_itemphoto_5#comment" target="_blank" title="入仓 泰国冷冻金枕榴莲果肉（无核） 250g/盒">入仓 泰国冷冻金枕榴莲果肉（无核） 250g/盒</a></p>
+                                <p class="s_title"><a class="s_content" href="http://www.sfbest.com/html/products/317/4400316119.html?trackref=sfbest_hp_hp_itemphoto_5#comment" target="_blank">“好吃，超级好吃，非常香甜，口感极好，还便宜！”</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="share_c">
+                            <div class="l">
+                                <a href="http://www.sfbest.com/html/products/280/4100279169.html?trackref=sfbest_hp_hp_itemphoto_6#comment" target="_blank" title="KDV 巧克力味夹心糖 500g"><img src="http://pic.sfimg.cn/6151150a/small_6151150abb3b2225c5442f0b20fb77d7.jpg" alt="KDV 巧克力味夹心糖 500g" onerror="this.src='http://i.sfimg.cn/html/images/150pic.jpg'"></a>
+                            </div>
+                            <div class="r">
+                                <p><a href="http://www.sfbest.com/html/products/280/4100279169.html?trackref=sfbest_hp_hp_itemphoto_6#comment" target="_blank" title="KDV 巧克力味夹心糖 500g">KDV 巧克力味夹心糖 500g</a></p>
+                                <p class="s_title"><a class="s_content" href="http://www.sfbest.com/html/products/280/4100279169.html?trackref=sfbest_hp_hp_itemphoto_6#comment" target="_blank">“很好吃的我从未吃过第一次吃还想吃”</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="share_c">
+                            <div class="l">
+                                <a href="http://www.sfbest.com/html/products/317/4400316907.html?trackref=sfbest_hp_hp_itemphoto_7#comment" target="_blank" title="智利进口车厘子2斤装（26~28mm）"><img src="http://pic.sfimg.cn/06a4fecc/small_06a4fecc600b800ea125547cc61cfc83.jpg" alt="智利进口车厘子2斤装（26~28mm）" onerror="this.src='http://i.sfimg.cn/html/images/150pic.jpg'"></a>
+                            </div>
+                            <div class="r">
+                                <p><a href="http://www.sfbest.com/html/products/317/4400316907.html?trackref=sfbest_hp_hp_itemphoto_7#comment" target="_blank" title="智利进口车厘子2斤装（26~28mm）">智利进口车厘子2斤装（26~28mm）</a></p>
+                                <p class="s_title"><a class="s_content" href="http://www.sfbest.com/html/products/317/4400316907.html?trackref=sfbest_hp_hp_itemphoto_7#comment" target="_blank">“还挺甜的，一次洗23个两个人全部吃完??好饱”</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="share_c">
+                            <div class="l">
+                                <a href="http://www.sfbest.com/html/products/228/1600227929.html?trackref=sfbest_hp_hp_itemphoto_8#comment" target="_blank" title="柏泰 轧糖混合装（绿茶+牛奶+巧克力）408g"><img src="http://pic.sfimg.cn/4aa3f14c/small_4aa3f14c28e8a6e25fab26973f149480.jpg" alt="柏泰 轧糖混合装（绿茶+牛奶+巧克力）408g" onerror="this.src='http://i.sfimg.cn/html/images/150pic.jpg'"></a>
+                            </div>
+                            <div class="r">
+                                <p><a href="http://www.sfbest.com/html/products/228/1600227929.html?trackref=sfbest_hp_hp_itemphoto_8#comment" target="_blank" title="柏泰 轧糖混合装（绿茶+牛奶+巧克力）408g">柏泰 轧糖混合装（绿茶+牛奶+巧克力）408g</a></p>
+                                <p class="s_title"><a class="s_content" href="http://www.sfbest.com/html/products/228/1600227929.html?trackref=sfbest_hp_hp_itemphoto_8#comment" target="_blank">“很甜，特别的香，自己都忍不住要吃更别说孩子了，吃完了盒子还可以用，顺丰到货很快，昨天下单今天就到，确实不错，值得推荐”</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="share_c">
+                            <div class="l">
+                                <a href="http://www.sfbest.com/html/products/205/1800204501.html?trackref=sfbest_hp_hp_itemphoto_9#comment" target="_blank" title="必品阁bibigo玉米猪肉王饺子买一赠一捆绑装两包共980g"><img src="http://pic.sfimg.cn/098b2ede/small_098b2ede2fa48a7cd8ad67561983af39.jpg" alt="必品阁bibigo玉米猪肉王饺子买一赠一捆绑装两包共980g" onerror="this.src='http://i.sfimg.cn/html/images/150pic.jpg'"></a>
+                            </div>
+                            <div class="r">
+                                <p><a href="http://www.sfbest.com/html/products/205/1800204501.html?trackref=sfbest_hp_hp_itemphoto_9#comment" target="_blank" title="必品阁bibigo玉米猪肉王饺子买一赠一捆绑装两包共980g">必品阁bibigo玉米猪肉王饺子买一赠一捆绑装两包共980g</a></p>
+                                <p class="s_title"><a class="s_content" href="http://www.sfbest.com/html/products/205/1800204501.html?trackref=sfbest_hp_hp_itemphoto_9#comment" target="_blank">“饺子很好吃，个头很大，里面的馅儿也很满，特别的好吃，皮很薄，一直喜欢这一款味道，现在买很划算”</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="share_c">
+                            <div class="l">
+                                <a href="http://www.sfbest.com/html/products/312/4200311135.html?trackref=sfbest_hp_hp_itemphoto_10#comment" target="_blank" title="伦敦 WF玉米奶酪夹心饼干 440g"><img src="http://pic.sfimg.cn/96d03ad9/small_96d03ad9d1225910705c4da4317c26a0.jpg" alt="伦敦 WF玉米奶酪夹心饼干 440g" onerror="this.src='http://i.sfimg.cn/html/images/150pic.jpg'"></a>
+                            </div>
+                            <div class="r">
+                                <p><a href="http://www.sfbest.com/html/products/312/4200311135.html?trackref=sfbest_hp_hp_itemphoto_10#comment" target="_blank" title="伦敦 WF玉米奶酪夹心饼干 440g">伦敦 WF玉米奶酪夹心饼干 440g</a></p>
+                                <p class="s_title"><a class="s_content" href="http://www.sfbest.com/html/products/312/4200311135.html?trackref=sfbest_hp_hp_itemphoto_10#comment" target="_blank">“好吃，又香又甜”</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="share_c">
+                            <div class="l">
+                                <a href="http://www.sfbest.com/html/products/246/1400245009.html?trackref=sfbest_hp_hp_itemphoto_11#comment" target="_blank" title="泸州老窖 泸小二FORME礼盒装 醉young 42° 125ml*4"><img src="http://pic.sfimg.cn/b95435ae/small_b95435aedd3f36ee0331ae910f6f3b52.jpg" alt="泸州老窖 泸小二FORME礼盒装 醉young 42° 125ml*4" onerror="this.src='http://i.sfimg.cn/html/images/150pic.jpg'"></a>
+                            </div>
+                            <div class="r">
+                                <p><a href="http://www.sfbest.com/html/products/246/1400245009.html?trackref=sfbest_hp_hp_itemphoto_11#comment" target="_blank" title="泸州老窖 泸小二FORME礼盒装 醉young 42° 125ml*4">泸州老窖 泸小二FORME礼盒装 醉young 42° 125ml*4</a></p>
+                                <p class="s_title"><a class="s_content" href="http://www.sfbest.com/html/products/246/1400245009.html?trackref=sfbest_hp_hp_itemphoto_11#comment" target="_blank">“包装很精美，限时抢购的特别便宜”</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="share_c">
+                            <div class="l">
+                                <a href="http://www.sfbest.com/html/products/280/4400279065.html?trackref=sfbest_hp_hp_itemphoto_12#comment" target="_blank" title="果缤纷 进口优选蓝莓 125g*4盒"><img src="http://pic.sfimg.cn/54df2c4a/small_54df2c4ab44d814c508e0e4f88922de9.jpg" alt="果缤纷 进口优选蓝莓 125g*4盒" onerror="this.src='http://i.sfimg.cn/html/images/150pic.jpg'"></a>
+                            </div>
+                            <div class="r">
+                                <p><a href="http://www.sfbest.com/html/products/280/4400279065.html?trackref=sfbest_hp_hp_itemphoto_12#comment" target="_blank" title="果缤纷 进口优选蓝莓 125g*4盒">果缤纷 进口优选蓝莓 125g*4盒</a></p>
+                                <p class="s_title"><a class="s_content" href="http://www.sfbest.com/html/products/280/4400279065.html?trackref=sfbest_hp_hp_itemphoto_12#comment" target="_blank">“蓝莓很新鲜”</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="share_c">
+                            <div class="l">
+                                <a href="http://www.sfbest.com/html/products/249/1800248851.html?trackref=sfbest_hp_hp_itemphoto_13#comment" target="_blank" title="中粮家佳康  单冻鸡翅中 400g"><img src="http://pic.sfimg.cn/a46435f7/small_a46435f7413187bc1a199242c4cb1ab3.jpg" alt="中粮家佳康  单冻鸡翅中 400g" onerror="this.src='http://i.sfimg.cn/html/images/150pic.jpg'"></a>
+                            </div>
+                            <div class="r">
+                                <p><a href="http://www.sfbest.com/html/products/249/1800248851.html?trackref=sfbest_hp_hp_itemphoto_13#comment" target="_blank" title="中粮家佳康  单冻鸡翅中 400g">中粮家佳康  单冻鸡翅中 400g</a></p>
+                                <p class="s_title"><a class="s_content" href="http://www.sfbest.com/html/products/249/1800248851.html?trackref=sfbest_hp_hp_itemphoto_13#comment" target="_blank">“鸡翅价格很划算  ”</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="share_c">
+                            <div class="l">
+                                <a href="http://www.sfbest.com/html/products/259/1800258845.html?trackref=sfbest_hp_hp_itemphoto_14#comment" target="_blank" title="广州酒家 秋之风 顺意腊肠 400g"><img src="http://pic.sfimg.cn/bb030fa5/small_bb030fa504fdab1b605f516a70df13f9.jpg" alt="广州酒家 秋之风 顺意腊肠 400g" onerror="this.src='http://i.sfimg.cn/html/images/150pic.jpg'"></a>
+                            </div>
+                            <div class="r">
+                                <p><a href="http://www.sfbest.com/html/products/259/1800258845.html?trackref=sfbest_hp_hp_itemphoto_14#comment" target="_blank" title="广州酒家 秋之风 顺意腊肠 400g">广州酒家 秋之风 顺意腊肠 400g</a></p>
+                                <p class="s_title"><a class="s_content" href="http://www.sfbest.com/html/products/259/1800258845.html?trackref=sfbest_hp_hp_itemphoto_14#comment" target="_blank">“商品很好吃哦，日期也很新，下次还会再来的”</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="share_c">
+                            <div class="l">
+                                <a href="http://www.sfbest.com/html/products/332/4400331871.html?trackref=sfbest_hp_hp_itemphoto_1#comment" target="_blank" title="无锡阳山水蜜桃12粒礼盒装 单果200-250g"><img src="http://pic.sfimg.cn/c21d6cb1/small_c21d6cb1f0f91ac08c79496987a33c15.jpg" alt="无锡阳山水蜜桃12粒礼盒装 单果200-250g" onerror="this.src='http://i.sfimg.cn/html/images/150pic.jpg'"></a>
+                            </div>
+                            <div class="r">
+                                <p><a href="http://www.sfbest.com/html/products/332/4400331871.html?trackref=sfbest_hp_hp_itemphoto_1#comment" target="_blank" title="无锡阳山水蜜桃12粒礼盒装 单果200-250g">无锡阳山水蜜桃12粒礼盒装 单果200-250g</a></p>
+                                <p class="s_title"><a class="s_content" href="http://www.sfbest.com/html/products/332/4400331871.html?trackref=sfbest_hp_hp_itemphoto_1#comment" target="_blank">“22年前我15岁，第一次去无锡，老爸的无锡当地朋友送给我三个小竹篮装的水蜜桃，吃过之后一直难忘，每年都记挂着这种水蜜桃，自己去市面上买多数都是挨**，直到现在物流发达了，能直接购买无锡生产地的水蜜桃，果然跟当年一样好吃。这次特地买一箱给老公生日，当寿桃。超级好吃，我一家四口人，收到当天就每人两个，12个的一箱，一下就吃完了。好吃到不够吃。”</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="share_c">
+                            <div class="l">
+                                <a href="http://www.sfbest.com/html/products/298/6200297143.html?trackref=sfbest_hp_hp_itemphoto_2#comment" target="_blank" title="Swisse 【保税仓】钙片加维生素D 150粒*5"><img src="http://pic.sfimg.cn/910031ab/small_910031ab30b319262a45861d89126863.jpg" alt="Swisse 【保税仓】钙片加维生素D 150粒*5" onerror="this.src='http://i.sfimg.cn/html/images/150pic.jpg'"></a>
+                            </div>
+                            <div class="r">
+                                <p><a href="http://www.sfbest.com/html/products/298/6200297143.html?trackref=sfbest_hp_hp_itemphoto_2#comment" target="_blank" title="Swisse 【保税仓】钙片加维生素D 150粒*5">Swisse 【保税仓】钙片加维生素D 150粒*5</a></p>
+                                <p class="s_title"><a class="s_content" href="http://www.sfbest.com/html/products/298/6200297143.html?trackref=sfbest_hp_hp_itemphoto_2#comment" target="_blank">“趁优惠，囤多几瓶，和闺蜜一起分”</a></p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
+            <script>
+            </script>
         </div>
+
         <div class=youpin>
             <div class=ucaption>
                 <p>发现优品
@@ -2356,7 +2124,7 @@
                     </h2>
             </div>
             <div class=upic id=findGoods></div>
-            <script>
+            <!-- <script>
                 $(function() {
                     $('.ucaption').click(function() {
                         $('.upic span').slice(4, 8).show();
@@ -2364,7 +2132,7 @@
                         return false;
                     });
                 })
-            </script>
+            </script> -->
             <div class=clear></div>
             <div class=mailDY>
                 <div class=mailDYitem id=mailDYitem>
@@ -2595,11 +2363,28 @@
         <div class=paid_day><span id=paid_day>30</span><i>天</i></div>
     </div>
     <div class=listpic-mini style=display:none></div>
-    <script src="src/script/index/1.js"></script>
+    <script>
+        window.onload = checkImgs;
+        window.onscroll = throttle(checkImgs);
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <script src="src/script/index/1.js"></script>
     <script src="src/script/index/2.js"></script>
     <script src="src/script/index/3.js"></script>
-    <script src="src/script/index/4.js"></script>
-    <script>
+    <script src="src/script/index/4.js"></script> -->
+    <!-- <script>
         $(document).ready(function() {
             if (getCookie('sf_show_dialog') == 1) {
                 $(".paid_lq").hide();
@@ -2673,15 +2458,15 @@
                 $(".banner").slideUp(500)
             });
         });
-    </script>
+    </script> -->
 
-    <script language=JavaScript>
+    <!-- <script language=JavaScript>
         // 发送Analytics请求  ==> 01194954 2018-01-15 @说明：PC去掉的统计代码
         function sendToGooogle(key, val) {
             // ga('send', 'event', 'Index', key, val);   
         }
-    </script>
-    <script>
+    </script> -->
+    <!-- <script>
         (function() {
             var guessHtml = '';
             $.ajax({
@@ -2978,10 +2763,10 @@
             });
             // 楼层商品回调end
         })();
-    </script>
+    </script> -->
 
-    <script charset=UTF-8 src="src/script/index/5.js"></script>
-    <script>
+    <!-- <script charset=UTF-8 src="src/script/index/5.js"></script> -->
+    <!-- <script>
         var pageConfig = {
             linkTrack: "link",
             heatmap: "1"
@@ -2994,14 +2779,14 @@
             3: "首页"
         };
         wt.sendinfo();
-    </script>
+    </script> -->
     <noscript> 
     <div>
     <img src=./src/img/index/images/40.pl height=1 width=1 alt>
     </div>
     </noscript>
 
-    <script>
+    <!-- <script>
         $(document).ready(function() {
             iconShow();
 
@@ -3063,16 +2848,16 @@
                 }
             });
         }
-    </script>
+    </script> -->
     <div id=screen></div>
     <div class=indexshadow id=shadowAllCity></div>
-    <script src="src/script/index/6.js"></script>
-    <script>
+    <!-- <script src="src/script/index/6.js"></script> -->
+    <!-- <script>
         function getSmartSortFlag() {
             $.getJSON("/ajax/getSmartSortFlag/?callback=?", function(data) {});
         }
-    </script>
-    <script>
+    </script> -->
+    <!-- <script>
         // emarbox访问跟踪代码
         var _adwq = _adwq || [];
         _adwq.push(['_setAccount', 'dj5p1']);
@@ -3086,20 +2871,20 @@
             var s = document.getElementsByTagName('script')[0];
             s.parentNode.insertBefore(adw, s);
         })();
-    </script>
-    <script src="src/script/index/7.js"></script>
-    <script language=JavaScript>
+    </script> -->
+    <!-- <script src="src/script/index/7.js"></script> -->
+    <!-- <script language=JavaScript>
         emsSetEnv('suite');
         emsTracking(273131129, 'customer.com');
-    </script>
-    <script src="src/script/index/8.js"></script>
-    <script src="src/script/index/9.js"></script>
+    </script> -->
+    <!-- <script src="src/script/index/8.js"></script> -->
+    <!-- <script src="src/script/index/9.js"></script> -->
     <noscript>
     <div style=display:none>
     <img height=0 width=0 style=border-style:none src=./src/img/index/images/21.jpg>
     </div>
    </noscript>
-    <script>
+    <!-- <script>
         var google_tag_params = {
             ecomm_prodid: '',
             ecomm_pagetype: 'home',
@@ -3107,16 +2892,16 @@
             category: '',
             login: getCookie('_GOOGLE_ISLOG_') == 1 ? 'y' : 'n'
         };
-    </script>
-    <script>
+    </script> -->
+    <!-- <script>
         /* GOOGLE再营销 <![CDATA[ */
         var google_conversion_id = 990764409;
         var google_custom_params = window.google_tag_params;
         var google_remarketing_only = true;
         /* ]]> */
-    </script>
-    <script src="src/script/index/10.js"></script>
-    <script>
+    </script> -->
+    <!-- <script src="src/script/index/10.js"></script> -->
+    <!-- <script>
         /*百度定投*/
         (function(d) {
             window.bd_cpro_rtid = "rj6YrHn";
@@ -3127,8 +2912,8 @@
             var s0 = d.getElementsByTagName("script")[0];
             s0.parentNode.insertBefore(s, s0);
         })(document);
-    </script>
-    <script>
+    </script> -->
+    <!-- <script>
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
@@ -3137,8 +2922,8 @@
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
-    </script>
-    <script>
+    </script> -->
+    <!-- <script>
         var _hmt = _hmt || [];
         var rtTag = {
             "data": {
@@ -3158,8 +2943,8 @@
         //   var s = document.getElementsByTagName("script")[0]; 
         //   s.parentNode.insertBefore(hm, s);
         // })();
-    </script>
-    <script>
+    </script> -->
+    <!-- <script>
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
@@ -3167,14 +2952,4 @@
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
-    </script>
-    <script>
-        var urlzszxcm = document.location.href;
-        var szszxcm = urlzszxcm.indexOf("semk=");
-        if (szszxcm != -1) {
-            var srczszxcm = urlzszxcm.substring(szszxcm);
-            if (srczszxcm) {
-                setCookie('_sf_bdp_sem_cc', srczszxcm, '', '/', '.sfbest.com', '');
-            }
-        }
-    </script>
+    </script> -->
