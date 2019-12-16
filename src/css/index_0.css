@@ -272,7 +272,7 @@ input {
 }
 
 .indexshadow .city_bottom .huadong .on {
-    background: url(background-images/66.png) center bottom no-repeat;
+    background: url(../img/index/background-images/66.png) center bottom no-repeat;
     color: #FFF;
     z-index: 2;
     position: relative;
@@ -387,7 +387,7 @@ input {
 }
 
 .topTh .d6 b {
-    background: url(background-images/1.png) no-repeat -86px -130px;
+    background: url(../img/index/background-images/1.png) no-repeat -86px -130px;
     width: 8px;
     height: 4px;
     position: absolute;
@@ -399,7 +399,7 @@ input {
     transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
     filter: progid: DXImageTransform.Microsoft.BasicImage(rotation=2);
-    *background: url(background-images/1.png) no-repeat -169px -2px
+    *background: url(../img/index/background-images/1.png) no-repeat -169px -2px
 }
 
 .topTh .d6 .blank,
@@ -533,7 +533,7 @@ input {
 .topTh .d6 .city_top .off {
     height: 25px;
     float: right;
-    background: url(background-images/2.png) -245px -33px no-repeat;
+    background: url(../img/index/background-images/2.png) -245px -33px no-repeat;
     width: 18px;
     height: 18px;
     margin: 5px 0 0 0;
@@ -581,7 +581,7 @@ input {
 }
 
 .topTh .d6 .city_bottom .huadong .on {
-    background: url(background-images/65.png) center bottom no-repeat;
+    background: url(../img/index/background-images/65.png) center bottom no-repeat;
     color: #FFF
 }
 
@@ -641,14 +641,14 @@ input {
 }
 
 .topTh .d2 q {
-    background: url(background-images/1.png) no-repeat -73px -122px;
+    background: url(../img/index/background-images/1.png) no-repeat -73px -122px;
     width: 10px;
     left: 10px;
     transition: all .2s ease 0s
 }
 
 .topTh .d2.hover q {
-    background: url(background-images/1.png) no-repeat -73px -138px
+    background: url(../img/index/background-images/1.png) no-repeat -73px -138px
 }
 
 .topTh .d2 .dd {
@@ -670,7 +670,7 @@ input {
     width: 73px;
     height: 74px;
     overflow: hidden;
-    background: url(background-images/1.png) no-repeat 0 -93px;
+    background: url(../img/index/background-images/1.png) no-repeat 0 -93px;
     display: block
 }
 
@@ -680,7 +680,7 @@ input {
     height: 29px;
     left: 80px;
     top: 5px;
-    background: url(background-images/1.png) no-repeat -73px -93px;
+    background: url(../img/index/background-images/1.png) no-repeat -73px -93px;
     display: block
 }
 
@@ -702,7 +702,7 @@ input {
 
 .topTh .d2 .dd .client-promo {
     height: 30px;
-    background: url(background-images/3.png) no-repeat -182px -210px #fcfbe4;
+    background: url(../img/index/background-images/3.png) no-repeat -182px -210px #fcfbe4;
     text-align: center;
     color: #fa6400;
     font-size: 14px;
@@ -726,7 +726,7 @@ input {
     display: block;
     width: 96px;
     height: 29px;
-    background: url(background-images/1.png) no-repeat 0 -167px;
+    background: url(../img/index/background-images/1.png) no-repeat 0 -167px;
     margin-right: 5px;
     _display: inline
 }
@@ -736,11 +736,11 @@ input {
     display: block;
     width: 96px;
     height: 29px;
-    background: url(background-images/1.png) no-repeat 0 -196px
+    background: url(../img/index/background-images/1.png) no-repeat 0 -196px
 }
 
 .topTh .d3 q {
-    background: url(background-images/1.png) no-repeat -55px 0;
+    background: url(../img/index/background-images/1.png) no-repeat -55px 0;
     width: 19px;
     left: 12px;
     cursor: pointer;
@@ -748,7 +748,7 @@ input {
 }
 
 .topTh .d4 q {
-    background: url(background-images/1.png) no-repeat -74px 0;
+    background: url(../img/index/background-images/1.png) no-repeat -74px 0;
     width: 17px;
     left: 8px;
     quotes: none
@@ -771,7 +771,7 @@ input {
     display: block;
     width: 136px;
     height: 110px;
-    background: url(background-images/69.png) no-repeat top center #fff
+    background: url(../img/index/background-images/69.png) no-repeat top center #fff
 }
 
 .topTh .login {
@@ -808,7 +808,7 @@ input {
     position: absolute;
     right: 5px;
     top: 8px;
-    background: url(background-images/1.png) no-repeat -86px -130px;
+    background: url(../img/index/background-images/1.png) no-repeat -86px -130px;
     width: 8px;
     height: 4px;
     transition: transform .2s ease-in 0s;
@@ -832,7 +832,7 @@ input {
     position: absolute;
     right: 0;
     top: 8px;
-    background: url(background-images/1.png) no-repeat -86px -130px;
+    background: url(../img/index/background-images/1.png) no-repeat -86px -130px;
     width: 8px;
     height: 4px;
     transition: transform .2s ease-in 0s;
@@ -959,7 +959,7 @@ input {
 }
 
 .allCat .line {
-    background: url(background-images/70.jpg) center repeat-y;
+    background: url(../img/index/background-images/70.jpg) center repeat-y;
     height: 90px;
     width: 5px;
     margin: 20px 0 0 0
@@ -973,7 +973,7 @@ input {
     transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
     filter: progid: DXImageTransform.Microsoft.BasicImage(rotation=2);
-    *background: url(background-images/1.png) no-repeat -169px -2px
+    *background: url(../img/index/background-images/1.png) no-repeat -169px -2px
 }
 
 .topTh .hover .t {
@@ -990,7 +990,7 @@ input {
     transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
     filter: progid: DXImageTransform.Microsoft.BasicImage(rotation=2);
-    *background: url(background-images/1.png) no-repeat -169px -2px
+    *background: url(../img/index/background-images/1.png) no-repeat -169px -2px
 }
 
 .tShow .corner {
@@ -1100,8 +1100,8 @@ input {
     left: 0px;
     width: 124px;
     padding: 0px 0px 0px 0px;
-    background: url(background-images/68.png) -33px 0px no-repeat;
-    _background: url(background-images/71.jpg) -33px 0px no-repeat;
+    background: url(../img/index/background-images/68.png) -33px 0px no-repeat;
+    _background: url(../img/index/background-images/71.jpg) -33px 0px no-repeat;
     height: 66px
 }
 
@@ -1111,8 +1111,8 @@ input {
     width: 116px;
     right: 0px;
     height: 66px;
-    background: url(background-images/68.png) -160px 0px no-repeat;
-    _background: url(background-images/71.jpg) -160px 0px no-repeat
+    background: url(../img/index/background-images/68.png) -160px 0px no-repeat;
+    _background: url(../img/index/background-images/71.jpg) -160px 0px no-repeat
 }
 
 .header_inner .logo .logoright_best {
@@ -1165,7 +1165,7 @@ input {
     float: left;
     vertical-align: middle;
     border: 0;
-    background: url(background-images/1.png) no-repeat -99px -179px;
+    background: url(../img/index/background-images/1.png) no-repeat -99px -179px;
     color: #FFF
 }
 
@@ -1201,7 +1201,7 @@ input {
 }
 
 .shopingcar s {
-    background: url(background-images/1.png) no-repeat -54px -16px;
+    background: url(../img/index/background-images/1.png) no-repeat -54px -16px;
     width: 23px;
     height: 21px;
     left: 17px;
@@ -1299,7 +1299,7 @@ input {
 }
 
 #topCart .setCart {
-    background: url(background-images/1.png) no-repeat -102px -235px;
+    background: url(../img/index/background-images/1.png) no-repeat -102px -235px;
     margin: 2px 0 0 0
 }
 
@@ -1334,7 +1334,7 @@ input {
     width: 240px;
     height: 42px;
     margin: 0 0 0 85px;
-    background: url(background-images/1.png) no-repeat -99px -123px
+    background: url(../img/index/background-images/1.png) no-repeat -99px -123px
 }
 
 .floatcar .nopro p {
@@ -1481,7 +1481,7 @@ input {
 .navmenu .categories .dt {
     height: 34px;
     overflow: hidden;
-    background: url(background-images/4.jpg)
+    background: url(../img/index/background-images/4.jpg)
 }
 
 .navmenu .categories a.topall {
@@ -1728,7 +1728,7 @@ input {
 #booksort .item .i-master h3 .fresh {
     width: 16px;
     height: 22px;
-    background: url(background-images/67.png) no-repeat -10px 5px;
+    background: url(../img/index/background-images/67.png) no-repeat -10px 5px;
     margin-left: -20px;
     float: left;
     _margin-left: -10px;
@@ -1738,7 +1738,7 @@ input {
 #booksort .item .i-master h3 .drinks {
     width: 14px;
     height: 22px;
-    background: url(background-images/67.png) no-repeat -10px -46px;
+    background: url(../img/index/background-images/67.png) no-repeat -10px -46px;
     margin-left: -20px;
     float: left;
     _margin-left: -10px;
@@ -1748,7 +1748,7 @@ input {
 #booksort .item .i-master h3 .food {
     width: 16px;
     height: 22px;
-    background: url(background-images/67.png) no-repeat -10px -104px;
+    background: url(../img/index/background-images/67.png) no-repeat -10px -104px;
     margin-left: -20px;
     float: left;
     _margin-left: -10px;
@@ -1758,7 +1758,7 @@ input {
 #booksort .item .i-master h3 .pastry {
     width: 16px;
     height: 22px;
-    background: url(background-images/67.png) no-repeat -10px -157px;
+    background: url(../img/index/background-images/67.png) no-repeat -10px -157px;
     margin-left: -20px;
     float: left;
     _margin-left: -10px;
@@ -1768,7 +1768,7 @@ input {
 #booksort .item .i-master h3 .oil {
     width: 16px;
     height: 22px;
-    background: url(background-images/67.png) no-repeat -10px -265px;
+    background: url(../img/index/background-images/67.png) no-repeat -10px -265px;
     margin-left: -20px;
     float: left;
     _margin-left: -10px;
@@ -1778,7 +1778,7 @@ input {
 #booksort .item .i-master h3 .baby {
     width: 16px;
     height: 22px;
-    background: url(background-images/67.png) no-repeat -10px -319px;
+    background: url(../img/index/background-images/67.png) no-repeat -10px -319px;
     margin-left: -20px;
     float: left;
     float: left;
@@ -1789,7 +1789,7 @@ input {
 #booksort .item .i-master h3 .health {
     width: 16px;
     height: 22px;
-    background: url(background-images/67.png) no-repeat -10px -373px;
+    background: url(../img/index/background-images/67.png) no-repeat -10px -373px;
     margin-left: -20px;
     float: left;
     _margin-left: -10px;
@@ -1799,7 +1799,7 @@ input {
 #booksort .item .i-master h3 .tea {
     width: 16px;
     height: 22px;
-    background: url(background-images/67.png) no-repeat -10px -212px;
+    background: url(../img/index/background-images/67.png) no-repeat -10px -212px;
     margin-left: -20px;
     float: left;
     float: left;
@@ -1810,7 +1810,7 @@ input {
 #booksort .item .i-master h3 .tools {
     width: 16px;
     height: 22px;
-    background: url(background-images/67.png) no-repeat -10px -428px;
+    background: url(../img/index/background-images/67.png) no-repeat -10px -428px;
     margin-left: -20px;
     float: left;
     _margin-left: -10px;
@@ -1852,7 +1852,7 @@ input {
 #booksort .item.hover .i-master h3 .fresh {
     width: 16px;
     height: 22px;
-    background: url(background-images/74.png) no-repeat 0 5px;
+    background: url(../img/index/background-images/74.png) no-repeat 0 5px;
     margin-left: -20px;
     float: left;
     _margin-left: -10px;
@@ -1862,7 +1862,7 @@ input {
 #booksort .item.hover .i-master h3 .drinks {
     width: 14px;
     height: 22px;
-    background: url(background-images/74.png) no-repeat 0 -46px;
+    background: url(../img/index/background-images/74.png) no-repeat 0 -46px;
     margin-left: -20px;
     float: left;
     _margin-left: -10px;
@@ -1872,7 +1872,7 @@ input {
 #booksort .item.hover .i-master h3 .food {
     width: 16px;
     height: 22px;
-    background: url(background-images/74.png) no-repeat 0 -104px;
+    background: url(../img/index/background-images/74.png) no-repeat 0 -104px;
     margin-left: -20px;
     float: left;
     _margin-left: -10px;
@@ -1882,7 +1882,7 @@ input {
 #booksort .item.hover .i-master h3 .pastry {
     width: 16px;
     height: 22px;
-    background: url(background-images/74.png) no-repeat 0 -157px;
+    background: url(../img/index/background-images/74.png) no-repeat 0 -157px;
     margin-left: -20px;
     float: left;
     _margin-left: -10px;
@@ -1892,7 +1892,7 @@ input {
 #booksort .item.hover .i-master h3 .oil {
     width: 16px;
     height: 22px;
-    background: url(background-images/74.png) no-repeat 0 -265px;
+    background: url(../img/index/background-images/74.png) no-repeat 0 -265px;
     margin-left: -20px;
     float: left;
     _margin-left: -10px;
@@ -1902,7 +1902,7 @@ input {
 #booksort .item.hover .i-master h3 .baby {
     width: 16px;
     height: 22px;
-    background: url(background-images/74.png) no-repeat 0 -319px;
+    background: url(../img/index/background-images/74.png) no-repeat 0 -319px;
     margin-left: -20px;
     float: left;
     float: left;
@@ -1913,7 +1913,7 @@ input {
 #booksort .item.hover .i-master h3 .health {
     width: 16px;
     height: 22px;
-    background: url(background-images/74.png) no-repeat 0 -373px;
+    background: url(../img/index/background-images/74.png) no-repeat 0 -373px;
     margin-left: -20px;
     float: left;
     _margin-left: -10px;
@@ -1923,7 +1923,7 @@ input {
 #booksort .item.hover .i-master h3 .tea {
     width: 16px;
     height: 22px;
-    background: url(background-images/74.png) no-repeat 0 -212px;
+    background: url(../img/index/background-images/74.png) no-repeat 0 -212px;
     margin-left: -20px;
     float: left;
     float: left;
@@ -1934,7 +1934,7 @@ input {
 #booksort .item.hover .i-master h3 .tools {
     width: 16px;
     height: 22px;
-    background: url(background-images/74.png) no-repeat 0 -428px;
+    background: url(../img/index/background-images/74.png) no-repeat 0 -428px;
     margin-left: -20px;
     float: left;
     _margin-left: -10px;
@@ -1942,67 +1942,67 @@ input {
 }
 
 #booksort .item .i-master .dev .fresh {
-    background: url(background-images/5.png) no-repeat 0 5px
+    background: url(../img/index/background-images/5.png) no-repeat 0 5px
 }
 
 #booksort .item .i-master .dev .baby {
-    background: url(background-images/5.png) no-repeat 0 -324px
+    background: url(../img/index/background-images/5.png) no-repeat 0 -324px
 }
 
 #booksort .item .i-master .dev .pastry {
-    background: url(background-images/5.png) no-repeat 0 -159px
+    background: url(../img/index/background-images/5.png) no-repeat 0 -159px
 }
 
 #booksort .item .i-master .dev .drinks {
-    background: url(background-images/5.png) no-repeat 0 -47px
+    background: url(../img/index/background-images/5.png) no-repeat 0 -47px
 }
 
 #booksort .item .i-master .dev .food {
-    background: url(background-images/5.png) no-repeat 0 -106px
+    background: url(../img/index/background-images/5.png) no-repeat 0 -106px
 }
 
 #booksort .item .i-master .dev .tea {
-    background: url(background-images/5.png) no-repeat 0 -213px
+    background: url(../img/index/background-images/5.png) no-repeat 0 -213px
 }
 
 #booksort .item .i-master .dev .oil {
-    background: url(background-images/5.png) no-repeat 0 -270px
+    background: url(../img/index/background-images/5.png) no-repeat 0 -270px
 }
 
 #booksort .item .i-master .dev .health {
-    background: url(background-images/5.png) no-repeat 0 -378px
+    background: url(../img/index/background-images/5.png) no-repeat 0 -378px
 }
 
 #booksort .item.hover .i-master .dev .fresh {
-    background: url(background-images/6.png) no-repeat 0 5px
+    background: url(../img/index/background-images/6.png) no-repeat 0 5px
 }
 
 #booksort .item.hover .i-master .dev .baby {
-    background: url(background-images/6.png) no-repeat 0 -324px
+    background: url(../img/index/background-images/6.png) no-repeat 0 -324px
 }
 
 #booksort .item.hover .i-master .dev .pastry {
-    background: url(background-images/6.png) no-repeat 0 -159px
+    background: url(../img/index/background-images/6.png) no-repeat 0 -159px
 }
 
 #booksort .item.hover .i-master .dev .drinks {
-    background: url(background-images/6.png) no-repeat 0 -47px
+    background: url(../img/index/background-images/6.png) no-repeat 0 -47px
 }
 
 #booksort .item.hover .i-master .dev .food {
-    background: url(background-images/6.png) no-repeat 0 -106px
+    background: url(../img/index/background-images/6.png) no-repeat 0 -106px
 }
 
 #booksort .item.hover .i-master .dev .tea {
-    background: url(background-images/6.png) no-repeat 0 -213px
+    background: url(../img/index/background-images/6.png) no-repeat 0 -213px
 }
 
 #booksort .item.hover .i-master .dev .oil {
-    background: url(background-images/6.png) no-repeat 0 -270px
+    background: url(../img/index/background-images/6.png) no-repeat 0 -270px
 }
 
 #booksort .item.hover .i-master .dev .health {
-    background: url(background-images/6.png) no-repeat 0 -378px
+    background: url(../img/index/background-images/6.png) no-repeat 0 -378px
 }
 
 #booksort .i-cm .i-left {
@@ -2100,7 +2100,7 @@ input {
 #booksort .i-right .i-channel em {
     width: 20px;
     height: 20px;
-    background: url(background-images/2.png) no-repeat -245px -55px;
+    background: url(../img/index/background-images/2.png) no-repeat -245px -55px;
     margin: 18px 0 0 10px;
     *margin: 0 0 0 10px;
     overflow: hidden;
@@ -2198,7 +2198,7 @@ input {
     position: absolute;
     top: 6px;
     right: 6px;
-    background: url(background-images/2.png) no-repeat -245px -1px;
+    background: url(../img/index/background-images/2.png) no-repeat -245px -1px;
     cursor: pointer
 }
 
@@ -2215,12 +2215,12 @@ a.submit5 {
     text-decoration: none;
     width: 110px;
     text-align: center;
-    background: url(background-images/72.png) no-repeat -182px -234px
+    background: url(../img/index/background-images/72.png) no-repeat -182px -234px
 }
 
 a.submit5:hover {
     color: #fff;
-    background: url(background-images/72.png) no-repeat -182px -262px
+    background: url(../img/index/background-images/72.png) no-repeat -182px -262px
 }
 
 .pageFooter {
@@ -2233,7 +2233,7 @@ a.submit5:hover {
     width: 290px;
     height: 145px;
     margin: 20px 0px 0px 10px;
-    background: url(background-images/39.jpg) no-repeat left top
+    background: url(../img/index/background-images/39.jpg) no-repeat left top
 }
 
 .pageFooter .middle ul {
@@ -2277,8 +2277,8 @@ a.submit5:hover {
     width: 29px;
     height: 29px;
     float: left;
-    background: url(background-images/3.png) no-repeat -322px -70px;
-    _background: url(background-images/75.jpg) no-repeat -322px -70px;
+    background: url(../img/index/background-images/3.png) no-repeat -322px -70px;
+    _background: url(../img/index/background-images/75.jpg) no-repeat -322px -70px;
     margin-right: 4px
 }
 
@@ -2294,7 +2294,7 @@ a.submit5:hover {
     width: 130px;
     height: 36px;
     float: left;
-    background: url(background-images/73.jpg) no-repeat -7px -52px
+    background: url(../img/index/background-images/73.jpg) no-repeat -7px -52px
 }
 
 .pageFooter .left ul li.fTel {
@@ -2307,8 +2307,8 @@ a.submit5:hover {
     width: 29px;
     height: 29px;
     float: left;
-    background: url(background-images/3.png) no-repeat -358px -70px;
-    _background: url(background-images/75.jpg) no-repeat -358px -70px;
+    background: url(../img/index/background-images/3.png) no-repeat -358px -70px;
+    _background: url(../img/index/background-images/75.jpg) no-repeat -358px -70px;
     margin-right: 4px
 }
 
@@ -2335,7 +2335,7 @@ a.submit5:hover {
     display: block;
     width: 80px;
     height: 80px;
-    background: url(background-images/41.png) no-repeat 0px 0px;
+    background: url(../img/index/background-images/41.png) no-repeat 0px 0px;
     margin: auto
 }
 
@@ -2350,7 +2350,7 @@ a.submit5:hover {
     display: block;
     width: 80px;
     height: 80px;
-    background: url(background-images/41.png) no-repeat -83px 0px;
+    background: url(../img/index/background-images/41.png) no-repeat -83px 0px;
     margin: auto
 }
 
@@ -2362,7 +2362,7 @@ a.submit5:hover {
     display: block;
     width: 45px;
     height: 45px;
-    background: url(background-images/73.jpg) no-repeat;
+    background: url(../img/index/background-images/73.jpg) no-repeat;
     margin: auto
 }
 
@@ -2419,7 +2419,7 @@ a.submit5:hover {
 }
 
 .pageFooter .right ul li.title span {
-    background: url(background-images/73.jpg) no-repeat;
+    background: url(../img/index/background-images/73.jpg) no-repeat;
     display: block;
     height: 26px;
     width: 26px;
@@ -2457,7 +2457,7 @@ a.submit5:hover {
     display: block;
     height: 40px;
     width: 750px;
-    background: url(background-images/73.jpg) no-repeat -0px -120px;
+    background: url(../img/index/background-images/73.jpg) no-repeat -0px -120px;
     margin: auto
 }
 
@@ -2528,19 +2528,19 @@ a.submit5:hover {
 }
 
 #footer .quanqiu {
-    background: url(background-images/42.png) no-repeat center center
+    background: url(../img/index/background-images/42.png) no-repeat center center
 }
 
 #footer .chandi {
-    background: url(background-images/43.png) no-repeat center center
+    background: url(../img/index/background-images/43.png) no-repeat center center
 }
 
 #footer .qcll {
-    background: url(background-images/44.png) no-repeat center center
+    background: url(../img/index/background-images/44.png) no-repeat center center
 }
 
 #footer .sfzd {
-    background: url(background-images/45.png) no-repeat center center
+    background: url(../img/index/background-images/45.png) no-repeat center center
 }
 
 #footer .foot {
@@ -2569,7 +2569,7 @@ a.submit5:hover {
 }
 
 #footer .help {
-    background: url(background-images/79.jpg) repeat-x top left #e6e6e6;
+    background: url(../img/index/background-images/79.jpg) repeat-x top left #e6e6e6;
     height: 177px
 }
 
@@ -2588,7 +2588,7 @@ a.submit5:hover {
     width: 180px;
     list-style: none;
     text-align: left;
-    background: url(background-images/76.jpg) no-repeat 75% top
+    background: url(../img/index/background-images/76.jpg) no-repeat 75% top
 }
 
 #footer .help ul li h3 {
@@ -2612,7 +2612,7 @@ a.submit5:hover {
     line-height: 18px;
     display: block;
     text-decoration: none;
-    background: url(background-images/78.gif) no-repeat 0% 50%;
+    background: url(../img/index/background-images/78.gif) no-repeat 0% 50%;
     text-align: left;
     padding: 2px 0px 2px 18px;
     font-size: 13px
@@ -2629,7 +2629,7 @@ a.submit5:hover {
 }
 
 #footer .service {
-    background: url(background-images/77.jpg) repeat-y
+    background: url(../img/index/background-images/77.jpg) repeat-y
 }
 
 #footer .siteinfo {
@@ -2765,7 +2765,7 @@ a.dy:visited {
 }
 
 .mailDYitem .btn {
-    background: url(background-images/41.png) no-repeat -118px -106px;
+    background: url(../img/index/background-images/41.png) no-repeat -118px -106px;
     height: 24px;
     width: 44px;
     border: 0;
@@ -2816,7 +2816,7 @@ a.dy:visited {
 #store-selector .text b,
 #store-selector_sfv .text b,
 #store-selector1 .text b {
-    background: url(background-images/3.png) no-repeat -386px -2px;
+    background: url(../img/index/background-images/3.png) no-repeat -386px -2px;
     display: block;
     height: 24px;
     overflow: hidden;
@@ -2899,7 +2899,7 @@ a.dy:visited {
 }
 
 .SF-stock .tab a i {
-    background-image: url(background-images/46.png);
+    background-image: url(../img/index/background-images/46.png);
     background-repeat: no-repeat
 }
 
@@ -2971,7 +2971,7 @@ a.dy:visited {
 #store-selector .close,
 #store-selector_sfv .close,
 #store-selector1 .close {
-    background: url(background-images/46.png) no-repeat 0 -70px;
+    background: url(../img/index/background-images/46.png) no-repeat 0 -70px;
     display: none;
     height: 17px;
     left: 345px;
@@ -3088,7 +3088,7 @@ input.submit1 {
 }
 
 input.submit1:hover {
-    background: url(background-images/72.png) repeat-x 0 -124px
+    background: url(../img/index/background-images/72.png) repeat-x 0 -124px
 }
 
 .window {
@@ -3393,7 +3393,7 @@ span.icon-cx {
 }
 
 .backToTop {
-    background: url(background-images/80.gif) no-repeat left top #fff;
+    background: url(../img/index/background-images/80.gif) no-repeat left top #fff;
     bottom: 10px;
     color: #fff;
     cursor: pointer;
@@ -3478,7 +3478,7 @@ span.icon-cx {
 }
 
 .side-wrap .s-cart {
-    background: url(background-images/48.png) no-repeat 0 -45px;
+    background: url(../img/index/background-images/48.png) no-repeat 0 -45px;
     width: 42px;
     height: 42px;
     display: block;
@@ -3486,7 +3486,7 @@ span.icon-cx {
 }
 
 .side-wrap .s-guang {
-    background: url(background-images/48.png) no-repeat -42px -82px;
+    background: url(../img/index/background-images/48.png) no-repeat -42px -82px;
     width: 42px;
     height: 42px;
     display: block;
@@ -3494,7 +3494,7 @@ span.icon-cx {
 }
 
 .side-wrap .s-app {
-    background: url(background-images/48.png) no-repeat -42px -40px;
+    background: url(../img/index/background-images/48.png) no-repeat -42px -40px;
     width: 42px;
     height: 42px;
     display: block;
@@ -3504,7 +3504,7 @@ span.icon-cx {
 }
 
 .side-wrap .s-kefu {
-    background: url(background-images/49.png) no-repeat;
+    background: url(../img/index/background-images/49.png) no-repeat;
     width: 42px;
     height: 42px;
     display: block;
@@ -3514,7 +3514,7 @@ span.icon-cx {
 }
 
 .side-wrap .s-back {
-    background: url(background-images/48.png) no-repeat -84px -142px;
+    background: url(../img/index/background-images/48.png) no-repeat -84px -142px;
     width: 42px;
     height: 42px;
     display: block;
@@ -3525,7 +3525,7 @@ span.icon-cx {
     width: 42px;
     height: 42px;
     display: none;
-    background: url(background-images/48.png) no-repeat 0 -82px;
+    background: url(../img/index/background-images/48.png) no-repeat 0 -82px;
     border: 1px solid #dadada
 }
 
@@ -3533,42 +3533,42 @@ span.icon-cx {
     width: 42px;
     height: 42px;
     display: none;
-    background: url(background-images/51.png) no-repeat 0 -27px;
+    background: url(../img/index/background-images/51.png) no-repeat 0 -27px;
     border: 1px solid #dadada;
     display: block;
     text-indent: -9999px
 }
 
 .side-wrap a.s-cart:hover {
-    background: url(background-images/48.png) no-repeat 0 -147px
+    background: url(../img/index/background-images/48.png) no-repeat 0 -147px
 }
 
 .side-wrap a.s-guang:hover {
-    background: url(background-images/48.png) no-repeat -42px -184px
+    background: url(../img/index/background-images/48.png) no-repeat -42px -184px
 }
 
 .side-wrap a.s-app:hover {
-    background: url(background-images/48.png) no-repeat -42px -142px
+    background: url(../img/index/background-images/48.png) no-repeat -42px -142px
 }
 
 .side-wrap a.s-kefu:hover {
-    background: url(background-images/49.png) no-repeat -42px 0
+    background: url(../img/index/background-images/49.png) no-repeat -42px 0
 }
 
 .side-wrap a.s-back:hover {
-    background: url(background-images/48.png) no-repeat -84px -184px
+    background: url(../img/index/background-images/48.png) no-repeat -84px -184px
 }
 
 .side-wrap a.s-top:hover {
-    background: url(background-images/48.png) no-repeat 0 -184px
+    background: url(../img/index/background-images/48.png) no-repeat 0 -184px
 }
 
 .side-wrap a.s-promote:hover {
-    background: url(background-images/51.png) no-repeat 0 -69px
+    background: url(../img/index/background-images/51.png) no-repeat 0 -69px
 }
 
 .side-wrap .side_v {
-    background: url(background-images/52.png) no-repeat -41px -182px;
+    background: url(../img/index/background-images/52.png) no-repeat -41px -182px;
     width: 44px;
     height: 44px;
     display: block
@@ -3650,7 +3650,7 @@ span.icon-cx {
 }
 
 .cart-list .cart-num-icon {
-    background: url(background-images/48.png) no-repeat -88px -39px;
+    background: url(../img/index/background-images/48.png) no-repeat -88px -39px;
     height: 18px;
     padding: 0 0 0 25px;
     display: inline-block;
@@ -3666,7 +3666,7 @@ span.icon-cx {
     position: absolute;
     margin-left: -1px;
     bottom: 160px;
-    background: url(background-images/48.png) no-repeat -88px -88px;
+    background: url(../img/index/background-images/48.png) no-repeat -88px -88px;
     width: 8px;
     height: 15px
 }
@@ -3683,7 +3683,7 @@ span.icon-cx {
     position: absolute;
     margin-left: -1px;
     bottom: 110px;
-    background: url(background-images/48.png) no-repeat -88px -88px;
+    background: url(../img/index/background-images/48.png) no-repeat -88px -88px;
     width: 8px;
     height: 15px
 }
@@ -3756,7 +3756,7 @@ span.icon-cx {
     position: absolute;
     margin-left: -1px;
     bottom: 63px;
-    background: url(background-images/48.png) no-repeat -88px -88px;
+    background: url(../img/index/background-images/48.png) no-repeat -88px -88px;
     width: 8px;
     height: 15px
 }
@@ -3776,7 +3776,7 @@ span.icon-cx {
     width: 115px;
     height: 116px;
     overflow: hidden;
-    background: url(background-images/3.png) no-repeat 0 -210px;
+    background: url(../img/index/background-images/3.png) no-repeat 0 -210px;
     display: block
 }
 
@@ -3786,7 +3786,7 @@ span.icon-cx {
     height: 29px;
     left: 135px;
     top: 20px;
-    background: url(background-images/1.png) no-repeat -73px -93px;
+    background: url(../img/index/background-images/1.png) no-repeat -73px -93px;
     display: block
 }
 
@@ -3808,7 +3808,7 @@ span.icon-cx {
 
 .appItem .client-promo {
     height: 30px;
-    background: url(background-images/3.png) no-repeat -116px -210px #fcfbe4;
+    background: url(../img/index/background-images/3.png) no-repeat -116px -210px #fcfbe4;
     text-align: center;
     color: #fa6400;
     font-size: 14px;
@@ -3892,7 +3892,7 @@ span.icon-cx {
 }
 
 .floatBar .logo span {
-    background: url(background-images/1.png) no-repeat 0px -50px;
+    background: url(../img/index/background-images/1.png) no-repeat 0px -50px;
     width: 91px;
     height: 43px;
     display: block
@@ -3929,7 +3929,7 @@ span.icon-cx {
     padding: 0px;
     background: #690;
     vertical-align: middle;
-    background: url(background-images/1.png) no-repeat -92px -50px #690;
+    background: url(../img/index/background-images/1.png) no-repeat -92px -50px #690;
     cursor: pointer;
     display: block;
     float: left
@@ -4092,7 +4092,7 @@ span.icon-cx {
 
 img.lazy,
 img.lazy_load {
-    background: url(background-images/53.png) no-repeat 50% 50%
+    background: url(../img/index/background-images/53.png) no-repeat 50% 50%
 }
 
 .yxgj_icon {
@@ -4253,7 +4253,7 @@ img.lazy_load {
     width: 10px;
     height: 7px;
     display: inline-block;
-    background: url(background-images/51.png) -44px -116px no-repeat
+    background: url(../img/index/background-images/51.png) -44px -116px no-repeat
 }
 
 #store-selector .content .addr_list .more.active .icon-down {
@@ -4312,7 +4312,7 @@ img.lazy_load {
     display: inline-block;
     width: 11px;
     height: 7px;
-    background: url(background-images/54.png) left top;
+    background: url(../img/index/background-images/54.png) left top;
     position: absolute;
     top: 0;
     left: 165px
@@ -4333,7 +4333,7 @@ img.lazy_load {
     display: inline-block;
     width: 12px;
     height: 12px;
-    background: url(background-images/81.png) left top no-repeat;
+    background: url(../img/index/background-images/81.png) left top no-repeat;
     position: relative;
     right: 2px;
     top: 3px
@@ -4354,7 +4354,7 @@ img.lazy_load {
 }
 
 .side-wrap .kefuicon {
-    background: url(background-images/49.png) center center no-repeat;
+    background: url(../img/index/background-images/49.png) center center no-repeat;
     width: 44px;
     height: 44px;
     display: block

@@ -52,7 +52,7 @@
     margin-left: 575px;
     width: 25px;
     height: 16px;
-    background: url(background-images/55.png) no-repeat center center;
+    background: url(../img/index/background-images/55.png) no-repeat center center;
     cursor: pointer;
     text-indent: -9999px
 }
@@ -217,7 +217,7 @@
 }
 
 .slide_show a.show_next s {
-    background: url(background-images/56.png) no-repeat -40px -256px;
+    background: url(../img/index/background-images/56.png) no-repeat -40px -256px;
     width: 39px;
     height: 50px;
     display: block;
@@ -227,7 +227,7 @@
 }
 
 .slide_show a.show_pre s {
-    background: url(background-images/56.png) no-repeat 0px -256px;
+    background: url(../img/index/background-images/56.png) no-repeat 0px -256px;
     width: 39px;
     height: 50px;
     display: block;
@@ -368,7 +368,7 @@
 .bestbuy h2 span {
     margin: 0 0 0 15px;
     overflow: hidden;
-    background: url(background-images/2.png) no-repeat -29px -333px;
+    background: url(../img/index/background-images/2.png) no-repeat -29px -333px;
     height: 14px;
     width: 118px;
     display: inline-block
@@ -454,7 +454,7 @@
     margin: 0 auto;
     height: 24px;
     display: block;
-    background: url(background-images/56.png) no-repeat -66px -177px;
+    background: url(../img/index/background-images/56.png) no-repeat -66px -177px;
     line-height: 24px;
     font-family: Microsoft YaHei;
     font-size: 12px;
@@ -566,7 +566,7 @@
     position: absolute;
     width: 11px;
     height: 11px;
-    background: url(background-images/2.png) no-repeat -140px -206px
+    background: url(../img/index/background-images/2.png) no-repeat -140px -206px
 }
 
 .timedbuy .ttop {
@@ -580,7 +580,7 @@
 
 .timedbuy .ttop span {
     float: left;
-    background: url(background-images/2.png) no-repeat -1px -314px;
+    background: url(../img/index/background-images/2.png) no-repeat -1px -314px;
     margin: -5px 0 0 10px;
     width: 19px;
     height: 37px
@@ -596,7 +596,7 @@
     margin-top: -2px;
     width: 111px;
     height: 28px;
-    background: url(background-images/2.png) no-repeat -204px -319px
+    background: url(../img/index/background-images/2.png) no-repeat -204px -319px
 }
 
 .timedbuy .ttop .ttl {
@@ -615,7 +615,7 @@
     margin-top: -2px;
     width: 111px;
     height: 28px;
-    background: url(background-images/2.png) no-repeat -205px -289px
+    background: url(../img/index/background-images/2.png) no-repeat -205px -289px
 }
 
 .timedbuy .ttop .tright {
@@ -635,14 +635,14 @@
     margin-top: -6px;
     display: block;
     width: 100px;
-    background: url(background-images/56.png) -90px -296px no-repeat
+    background: url(../img/index/background-images/56.png) -90px -296px no-repeat
 }
 
 .timedbuy .ttop .tright a:hover {
     color: #690;
     display: block;
     width: 100px;
-    background: url(background-images/56.png) -90px -239px no-repeat
+    background: url(../img/index/background-images/56.png) -90px -239px no-repeat
 }
 
 .timedbuy .ttop .tright1 {
@@ -660,13 +660,13 @@
     display: block;
     text-decoration: none;
     width: 100px;
-    background: url(background-images/56.png) -165px -270px no-repeat
+    background: url(../img/index/background-images/56.png) -165px -270px no-repeat
 }
 
 .timedbuy .ttop .tright1 a:hover {
     color: #690;
     text-decoration: none;
-    background: url(background-images/56.png) -165px -209px no-repeat
+    background: url(../img/index/background-images/56.png) -165px -209px no-repeat
 }
 
 .timedbuy .ttop dd {
@@ -679,7 +679,7 @@
     text-align: center;
     width: 20px;
     height: 28px;
-    background: url(background-images/56.png) no-repeat -83px -77px;
+    background: url(../img/index/background-images/56.png) no-repeat -83px -77px;
     margin: 0 2px 0 0
 }
 
@@ -842,7 +842,7 @@
     position: absolute;
     width: 132px;
     height: 54px;
-    background: url(background-images/83.png) no-repeat
+    background: url(../img/index/background-images/83.png) no-repeat
 }
 
 .tbover .price .yulan {
@@ -875,7 +875,7 @@
     margin: 45px 0 0 1200px;
     width: 50px;
     height: 168px;
-    background: url(background-images/2.png) no-repeat -72px -121px;
+    background: url(../img/index/background-images/2.png) no-repeat -72px -121px;
     *position: relative;
     *margin: -425px 0 0 1200px
 }
@@ -884,7 +884,7 @@
     width: 15px;
     height: 15px;
     margin: 135px 0 0 8px;
-    background: url(background-images/2.png) no-repeat -27px -315px;
+    background: url(../img/index/background-images/2.png) no-repeat -27px -315px;
     display: block
 }
 
@@ -915,7 +915,7 @@ a.fresh_f:hover span {
     position: absolute;
     width: 11px;
     height: 11px;
-    background: url(background-images/2.png) no-repeat -140px -68px
+    background: url(../img/index/background-images/2.png) no-repeat -140px -68px
 }
 
 .category .mTitle li {
@@ -929,7 +929,7 @@ a.fresh_f:hover span {
 }
 
 .category .mTitle li:hover .cir {
-    background: url(background-images/2.png) no-repeat -170px -68px
+    background: url(../img/index/background-images/2.png) no-repeat -170px -68px
 }
 
 .category .mTitle {
@@ -968,7 +968,7 @@ a.fresh_f:hover span {
     width: 60px;
     height: 24px;
     display: block;
-    background: url(background-images/56.png) no-repeat -66px -177px;
+    background: url(../img/index/background-images/56.png) no-repeat -66px -177px;
     line-height: 24px;
     font-family: Microsoft YaHei;
     font-size: 12px;
@@ -1003,7 +1003,7 @@ a.fresh_f:hover span {
 }
 
 .fresh h2 em {
-    background: url(background-images/2.png) no-repeat -97px -295px;
+    background: url(../img/index/background-images/2.png) no-repeat -97px -295px;
     width: 15px;
     height: 16px;
     float: left;
@@ -1134,14 +1134,14 @@ a.fresh_f:hover span {
     _margin: 3px;
     width: 55px;
     height: 55px;
-    background: url(background-images/2.png) no-repeat;
+    background: url(../img/index/background-images/2.png) no-repeat;
     text-align: center;
     line-height: 55px;
     float: left
 }
 
 .sfRight .rHot li:hover {
-    background: url(background-images/2.png) no-repeat 0 -61px
+    background: url(../img/index/background-images/2.png) no-repeat 0 -61px
 }
 
 .sfRight .rimg {
@@ -1155,14 +1155,14 @@ a.fresh_f:hover span {
 
 .sfRight .rimg .rbutton {
     margin: -166px 0 0 15px;
-    background: url(background-images/2.png) no-repeat -204px 0px;
+    background: url(../img/index/background-images/2.png) no-repeat -204px 0px;
     width: 25px;
     height: 25px;
     position: relative
 }
 
 .sfRight .rimg .rbutton.hover {
-    background: url(background-images/2.png) no-repeat -204px -33px
+    background: url(../img/index/background-images/2.png) no-repeat -204px -33px
 }
 
 .sfRight .rimg .rbutton a {
@@ -1172,7 +1172,7 @@ a.fresh_f:hover span {
 }
 
 .sfRight .rimg .rbutton a:hover {
-    background: url(background-images/2.png) no-repeat -204px -33px
+    background: url(../img/index/background-images/2.png) no-repeat -204px -33px
 }
 
 .food .mTitle {
@@ -1180,7 +1180,7 @@ a.fresh_f:hover span {
 }
 
 .food .cir {
-    background: url(background-images/2.png) no-repeat -140px -88px
+    background: url(../img/index/background-images/2.png) no-repeat -140px -88px
 }
 
 .food .mTitle li:hover {
@@ -1188,11 +1188,11 @@ a.fresh_f:hover span {
 }
 
 .food .mTitle li:hover .cir {
-    background: url(background-images/2.png) no-repeat -170px -88px
+    background: url(../img/index/background-images/2.png) no-repeat -170px -88px
 }
 
 .food h2 em {
-    background: url(background-images/2.png) no-repeat -70px -296px;
+    background: url(../img/index/background-images/2.png) no-repeat -70px -296px;
     width: 15px;
     height: 16px;
     float: left;
@@ -1204,15 +1204,15 @@ a.fresh_f:hover span {
 }
 
 .food .sfRight .rHot li:hover {
-    background: url(background-images/2.png) no-repeat 0 -121px
+    background: url(../img/index/background-images/2.png) no-repeat 0 -121px
 }
 
 .food .sfRight .rbutton a:hover {
-    background: url(background-images/2.png) no-repeat -204px -66px
+    background: url(../img/index/background-images/2.png) no-repeat -204px -66px
 }
 
 .food .sfRight .rbutton.hover {
-    background: url(background-images/2.png) no-repeat -204px -66px
+    background: url(../img/index/background-images/2.png) no-repeat -204px -66px
 }
 
 .drinks .mTitle {
@@ -1220,7 +1220,7 @@ a.fresh_f:hover span {
 }
 
 .drinks .cir {
-    background: url(background-images/2.png) no-repeat -140px -109px
+    background: url(../img/index/background-images/2.png) no-repeat -140px -109px
 }
 
 .drinks .mTitle li:hover {
@@ -1228,11 +1228,11 @@ a.fresh_f:hover span {
 }
 
 .drinks .mTitle li:hover .cir {
-    background: url(background-images/2.png) no-repeat -170px -109px
+    background: url(../img/index/background-images/2.png) no-repeat -170px -109px
 }
 
 .drinks h2 em {
-    background: url(background-images/2.png) no-repeat -126px -295px;
+    background: url(../img/index/background-images/2.png) no-repeat -126px -295px;
     width: 14px;
     height: 16px;
     float: left;
@@ -1244,15 +1244,15 @@ a.fresh_f:hover span {
 }
 
 .drinks .sfRight .rHot li:hover {
-    background: url(background-images/2.png) no-repeat 0 -181px
+    background: url(../img/index/background-images/2.png) no-repeat 0 -181px
 }
 
 .drinks .sfRight .rbutton a:hover {
-    background: url(background-images/2.png) no-repeat -204px -99px
+    background: url(../img/index/background-images/2.png) no-repeat -204px -99px
 }
 
 .drinks .sfRight .rbutton.hover {
-    background: url(background-images/2.png) no-repeat -204px -99px
+    background: url(../img/index/background-images/2.png) no-repeat -204px -99px
 }
 
 .snack .mTitle {
@@ -1260,7 +1260,7 @@ a.fresh_f:hover span {
 }
 
 .snack .cir {
-    background: url(background-images/2.png) no-repeat -140px -132px
+    background: url(../img/index/background-images/2.png) no-repeat -140px -132px
 }
 
 .snack .mTitle li:hover {
@@ -1268,11 +1268,11 @@ a.fresh_f:hover span {
 }
 
 .snack .mTitle li:hover .cir {
-    background: url(background-images/2.png) no-repeat -170px -132px
+    background: url(../img/index/background-images/2.png) no-repeat -170px -132px
 }
 
 .snack h2 em {
-    background: url(background-images/2.png) no-repeat -154px -294px;
+    background: url(../img/index/background-images/2.png) no-repeat -154px -294px;
     width: 14px;
     height: 16px;
     float: left;
@@ -1284,15 +1284,15 @@ a.fresh_f:hover span {
 }
 
 .snack .sfRight .rHot li:hover {
-    background: url(background-images/2.png) no-repeat 0 -241px
+    background: url(../img/index/background-images/2.png) no-repeat 0 -241px
 }
 
 .snack .sfRight .rbutton a:hover {
-    background: url(background-images/2.png) no-repeat -204px -132px
+    background: url(../img/index/background-images/2.png) no-repeat -204px -132px
 }
 
 .snack .sfRight .rbutton.hover {
-    background: url(background-images/2.png) no-repeat -204px -132px
+    background: url(../img/index/background-images/2.png) no-repeat -204px -132px
 }
 
 .tea .mTitle {
@@ -1300,7 +1300,7 @@ a.fresh_f:hover span {
 }
 
 .tea .cir {
-    background: url(background-images/2.png) no-repeat -140px -153px
+    background: url(../img/index/background-images/2.png) no-repeat -140px -153px
 }
 
 .tea .mTitle li:hover {
@@ -1308,11 +1308,11 @@ a.fresh_f:hover span {
 }
 
 .tea .mTitle li:hover .cir {
-    background: url(background-images/2.png) no-repeat -170px -153px
+    background: url(../img/index/background-images/2.png) no-repeat -170px -153px
 }
 
 .tea h2 em {
-    background: url(background-images/2.png) no-repeat -179px -293px;
+    background: url(../img/index/background-images/2.png) no-repeat -179px -293px;
     width: 14px;
     height: 16px;
     float: left;
@@ -1324,15 +1324,15 @@ a.fresh_f:hover span {
 }
 
 .tea .sfRight .rHot li:hover {
-    background: url(background-images/2.png) no-repeat -65px 0
+    background: url(../img/index/background-images/2.png) no-repeat -65px 0
 }
 
 .tea .sfRight .rbutton a:hover {
-    background: url(background-images/2.png) no-repeat -204px -166px
+    background: url(../img/index/background-images/2.png) no-repeat -204px -166px
 }
 
 .tea .sfRight .rbutton.hover {
-    background: url(background-images/2.png) no-repeat -204px -166px
+    background: url(../img/index/background-images/2.png) no-repeat -204px -166px
 }
 
 .baby .mTitle {
@@ -1340,7 +1340,7 @@ a.fresh_f:hover span {
 }
 
 .baby .cir {
-    background: url(background-images/2.png) no-repeat -140px -172px
+    background: url(../img/index/background-images/2.png) no-repeat -140px -172px
 }
 
 .baby .mTitle li:hover {
@@ -1348,11 +1348,11 @@ a.fresh_f:hover span {
 }
 
 .baby .mTitle li:hover .cir {
-    background: url(background-images/2.png) no-repeat -170px -172px
+    background: url(../img/index/background-images/2.png) no-repeat -170px -172px
 }
 
 .baby h2 em {
-    background: url(background-images/2.png) no-repeat -178px -317px;
+    background: url(../img/index/background-images/2.png) no-repeat -178px -317px;
     width: 15px;
     height: 16px;
     float: left;
@@ -1364,15 +1364,15 @@ a.fresh_f:hover span {
 }
 
 .baby .sfRight .rHot li:hover {
-    background: url(background-images/2.png) no-repeat -65px -61px
+    background: url(../img/index/background-images/2.png) no-repeat -65px -61px
 }
 
 .baby .sfRight .rbutton a:hover {
-    background: url(background-images/2.png) no-repeat -204px -199px
+    background: url(../img/index/background-images/2.png) no-repeat -204px -199px
 }
 
 .baby .sfRight .rbutton.hover {
-    background: url(background-images/2.png) no-repeat -204px -199px
+    background: url(../img/index/background-images/2.png) no-repeat -204px -199px
 }
 
 .tools .mTitle {
@@ -1380,7 +1380,7 @@ a.fresh_f:hover span {
 }
 
 .tools .cir {
-    background: url(background-images/2.png) no-repeat -140px -190px
+    background: url(../img/index/background-images/2.png) no-repeat -140px -190px
 }
 
 .tools .mTitle li:hover {
@@ -1388,11 +1388,11 @@ a.fresh_f:hover span {
 }
 
 .tools .mTitle li:hover .cir {
-    background: url(background-images/2.png) no-repeat -170px -190px
+    background: url(../img/index/background-images/2.png) no-repeat -170px -190px
 }
 
 .tools h2 em {
-    background: url(background-images/2.png) no-repeat -178px -263px;
+    background: url(../img/index/background-images/2.png) no-repeat -178px -263px;
     width: 15px;
     height: 18px;
     float: left;
@@ -1404,15 +1404,15 @@ a.fresh_f:hover span {
 }
 
 .tools .sfRight .rHot li:hover {
-    background: url(background-images/2.png) no-repeat -133px 0
+    background: url(../img/index/background-images/2.png) no-repeat -133px 0
 }
 
 .tools .sfRight .rbutton a:hover {
-    background: url(background-images/2.png) no-repeat -204px -232px
+    background: url(../img/index/background-images/2.png) no-repeat -204px -232px
 }
 
 .tools .sfRight .rbutton.hover {
-    background: url(background-images/2.png) no-repeat -204px -232px
+    background: url(../img/index/background-images/2.png) no-repeat -204px -232px
 }
 
 .gWindow {
@@ -1424,7 +1424,7 @@ a.fresh_f:hover span {
     top: 230px;
     left: -30px;
     z-index: 999;
-    background: url(background-images/56.png) no-repeat 8px -66px #fff;
+    background: url(../img/index/background-images/56.png) no-repeat 8px -66px #fff;
     padding: 15px 5px 0px 75px;
     line-height: 18px;
     color: #0e6248;
@@ -1452,11 +1452,11 @@ a.fresh_f:hover span {
 }
 
 .gWindow .gButton1 {
-    background: url(background-images/56.png) no-repeat 0 -18px
+    background: url(../img/index/background-images/56.png) no-repeat 0 -18px
 }
 
 .gWindow .gButton2 {
-    background: url(background-images/56.png) no-repeat 0 -42px
+    background: url(../img/index/background-images/56.png) no-repeat 0 -42px
 }
 
 .gClose {
@@ -1469,7 +1469,7 @@ a.fresh_f:hover span {
     right: 5px;
     cursor: pointer;
     text-indent: -9999px;
-    background: url(background-images/56.png) no-repeat 0 0
+    background: url(../img/index/background-images/56.png) no-repeat 0 0
 }
 
 .caption {
@@ -1484,7 +1484,7 @@ a.fresh_f:hover span {
 }
 
 .caption p {
-    background: url(background-images/57.jpg) no-repeat center left;
+    background: url(../img/index/background-images/57.jpg) no-repeat center left;
     padding: 0 0 0 15px;
     width: 385px
 }
@@ -1564,7 +1564,7 @@ a.fresh_f:hover span {
 }
 
 .zhiwei .slide a.btn_next s {
-    background: url(background-images/82.png) no-repeat -16px 10px;
+    background: url(../img/index/background-images/82.png) no-repeat -16px 10px;
     width: 38px;
     height: 50px;
     display: block;
@@ -1572,7 +1572,7 @@ a.fresh_f:hover span {
 }
 
 .zhiwei .slide a.btn_prev s {
-    background: url(background-images/82.png) no-repeat 8px 10px;
+    background: url(../img/index/background-images/82.png) no-repeat 8px 10px;
     width: 38px;
     height: 50px;
     display: block;
@@ -1594,7 +1594,7 @@ a.fresh_f:hover span {
 }
 
 .zhiwei .info p {
-    background: url(background-images/58.jpg) no-repeat scroll left center rgba(0, 0, 0, 0);
+    background: url(../img/index/background-images/58.jpg) no-repeat scroll left center rgba(0, 0, 0, 0);
     height: 20px;
     overflow: hidden;
     padding-left: 10px;
@@ -1694,7 +1694,7 @@ a.fresh_f:hover span {
 }
 
 .ucaption p {
-    background: url(background-images/59.jpg) no-repeat center left;
+    background: url(../img/index/background-images/59.jpg) no-repeat center left;
     padding: 0 0 0 24px;
     float: left;
     color: #323232
@@ -1704,7 +1704,7 @@ a.fresh_f:hover span {
     width: 60px;
     height: 29px;
     display: block;
-    background: url(background-images/41.png) no-repeat -3px -97px
+    background: url(../img/index/background-images/41.png) no-repeat -3px -97px
 }
 
 .ucaption h2 {
@@ -1716,7 +1716,7 @@ a.fresh_f:hover span {
     width: 60px;
     height: 29px;
     display: block;
-    background: url(background-images/41.png) no-repeat -3px -123px
+    background: url(../img/index/background-images/41.png) no-repeat -3px -123px
 }
 
 .youpin {
@@ -1762,7 +1762,7 @@ a.fresh_f:hover span {
 }
 
 .us_content .us_foot {
-    background: url(background-images/84.png) no-repeat left center;
+    background: url(../img/index/background-images/84.png) no-repeat left center;
     padding-left: 15px
 }
 
@@ -1834,7 +1834,7 @@ a.fresh_f:hover span {
     top: 0px;
     right: 0;
     cursor: pointer;
-    background: url(background-images/55.png) no-repeat left top;
+    background: url(../img/index/background-images/55.png) no-repeat left top;
     text-indent: -9999px
 }
 
@@ -1850,7 +1850,7 @@ a.fresh_f:hover span {
     position: absolute;
     top: 0;
     width: 100%;
-    background: url(background-images/60.png) center top no-repeat;
+    background: url(../img/index/background-images/60.png) center top no-repeat;
     text-indent: -9999px
 }
 
@@ -1880,7 +1880,7 @@ a.fresh_f:hover span {
 .p_qg.timedbuy .ttop span {
     width: 31px;
     height: 34px;
-    background: url(background-images/52.png) -39px -266px no-repeat;
+    background: url(../img/index/background-images/52.png) -39px -266px no-repeat;
     margin-left: 12px;
     margin-top: -4px
 }
@@ -1897,7 +1897,7 @@ a.fresh_f:hover span {
 }
 
 .p_qg.timedbuy .ttop dd {
-    background: url(background-images/52.png) -185px -217px no-repeat;
+    background: url(../img/index/background-images/52.png) -185px -217px no-repeat;
     width: 38px;
     height: 40px;
     color: #fff;
@@ -1924,7 +1924,7 @@ a.fresh_f:hover span {
 }
 
 .p_qg.timedbuy .ttop .tright a i {
-    background: url(background-images/52.png) 3px -105px;
+    background: url(../img/index/background-images/52.png) 3px -105px;
     display: inline-block;
     width: 12px;
     height: 12px
@@ -1956,7 +1956,7 @@ a.fresh_f:hover span {
     height: 32px;
     top: 0;
     left: 8px;
-    background: url(background-images/52.png) 0px -136px
+    background: url(../img/index/background-images/52.png) 0px -136px
 }
 
 .p_qg .tbList li {
@@ -2083,7 +2083,7 @@ a.fresh_f:hover span {
     width: 97px;
     height: 23px;
     display: inline-block;
-    background: url(background-images/51.png) left top no-repeat
+    background: url(../img/index/background-images/51.png) left top no-repeat
 }
 
 .ptList li {
