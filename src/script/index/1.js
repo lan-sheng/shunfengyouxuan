@@ -606,8 +606,10 @@ var SFbest = {};
                 f.find(".slideControls span").removeClass("cur").eq(0).addClass("cur");
                 f.find(".slideControls span").mouseenter(function() {
                     i = f.find(".slideControls span").index(this);
-                    if (i == l) { g();
-                        i = 0; } else { h(); }
+                    if (i == l) {
+                        g();
+                        i = 0;
+                    } else { h(); }
                 });
                 f.find("ul").css("width", w * (l + 1));
                 f.find(".btn_next").click(function() {
@@ -625,8 +627,10 @@ var SFbest = {};
                             f.find("ul li:first").remove();
                         });
                         f.find(".slideControls span").removeClass("cur").eq(l - 1).addClass("cur");
-                    } else { i--;
-                        h(); }
+                    } else {
+                        i--;
+                        h();
+                    }
                 });
 
                 function g() {
@@ -1985,15 +1989,23 @@ $(document).ready(function() {
         //setCookie('is_first',1,new Date(today.getTime() + 3 * 60 * 60 * 1000));
         $(".banner").hide();
         $(".topclose").hide();
-        $(".topshow").slideDown(500, function() { setTimeout(function() { $(".topshow").slideUp(500);
+        $(".topshow").slideDown(500, function() {
+            setTimeout(function() {
+                $(".topshow").slideUp(500);
                 $(".banner").slideDown(500);
-                $(".topclose").show(); }, 5000); });
-        $(".topclose").click(function() { $(".topclose").hide();
-            $(".banner").slideUp(500) });
+                $(".topclose").show();
+            }, 5000);
+        });
+        $(".topclose").click(function() {
+            $(".topclose").hide();
+            $(".banner").slideUp(500)
+        });
     }
     //顶部倒计时关闭
-    $("#ticket_close").click(function() { $("#ticket_close").hide();
-        $(".q_ticket").slideUp(500) });
+    $("#ticket_close").click(function() {
+        $("#ticket_close").hide();
+        $(".q_ticket").slideUp(500)
+    });
     //关闭新用户注册提示
     $('.ac_newregdiv').live("click", function() {
         $(this).hide();
@@ -2377,7 +2389,9 @@ $(document).ready(function() {
         $.getJSON(host_www2 + "/edm/footregion/?callback=?", { format: "json" }, function(data) {
             switch (data.type) {
                 case 1:
-                    $("#SF-stock1").html(data.msg); break; }
+                    $("#SF-stock1").html(data.msg);
+                    break;
+            }
         });
     }
     getFootRegionSf();
