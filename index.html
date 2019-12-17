@@ -14,6 +14,7 @@
 <meta property=wb:webmaster content=3a008ad947166307>
 <link rel=stylesheet type=text/css href='./src/css/index_0.css'>
 <link rel=stylesheet type=text/css href="./src/css/index_1.css">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <!-- <script src="src/script/index/0.js"></script> -->
 <script>
     var SMART_SORT_FLAG = 0;
@@ -1483,7 +1484,19 @@
                     </li>
                 </ul>
             </div>
-
+            <script>
+                $('.bbig li').each(function() {
+                    $(this).hover(function() {
+                        $(this).find(".gBtn").animate({
+                            top: "225px"
+                        }, 200);
+                    }, function() {
+                        $(this).find(".gBtn").animate({
+                            top: "260px"
+                        }, 300);
+                    })
+                })
+            </script>
             <div class=rSide1>
 
                 <div class=rImg2>
@@ -1663,6 +1676,19 @@
                     </li>
                 </ul>
             </div>
+            <script>
+                $('.sfRight li').each(function() {
+                    $(this).hover(function() {
+                        $(this).find(".gBtn").animate({
+                            top: "136px"
+                        }, 200);
+                    }, function() {
+                        $(this).find(".gBtn").animate({
+                            top: "161px"
+                        }, 300);
+                    })
+                })
+            </script>
             <div class=redge>
                 <ul class=rHot>
                     <li><a name=sfbest_hp_hp_floor1_Keywords1 class=trackref href=http://www.sfbest.com/mall/7993-0-0-0-0-2-0-0-0-0-0.html target=_blank>瓜类</a></li>
@@ -1800,6 +1826,19 @@
             </li>
         </ul>
     </div>
+    <script>
+        $('.ptList li').each(function() {
+            $(this).hover(function() {
+                $(this).find(".gBtn").animate({
+                    top: "186px"
+                }, 200);
+            }, function() {
+                $(this).find(".gBtn").animate({
+                    top: "211px"
+                }, 300);
+            })
+        })
+    </script>
     <div class=promote-end id=loading_more style=display:none>
         <div class=t1></div>
         <div class=t2>正在加载...</div>
@@ -2113,9 +2152,187 @@
                 </ul>
             </div>
             <script>
+                (
+                    function() {
+                        var currIndex; //图片的索引;
+                        var lis; //li变量
+                        var liWidth; //每个li的宽度
+                        var len //li的个数
+                        var id;
+                        init()
+
+                        function init() {
+                            currIndex = 1; //初始化时第一张图片为1；因为前面有一个最后一张图片的复制
+                            var li_first1 = document.querySelector('.scrollbox #toplist li:nth-child(1)')
+                            var li_first2 = document.querySelector('.scrollbox #toplist li:nth-child(2)')
+                            var copy_first1 = li_first1.cloneNode(true);
+                            var copy_first2 = li_first2.cloneNode(true);
+                            var li_last1 = document.querySelector('.scrollbox #toplist li:nth-last-child(2)');
+                            var li_last2 = document.querySelector('.scrollbox #toplist li:nth-last-child(1)');
+                            var copy_last1 = li_last1.cloneNode(true);
+                            var copy_last2 = li_last2.cloneNode(true);
+                            var list = document.querySelector('.scrollbox #toplist') //ul
+                            list.appendChild(copy_first1);
+                            list.appendChild(copy_first2);
+                            list.insertBefore(copy_last1, li_first1);
+                            list.insertBefore(copy_last2, li_first1);
+                            lis = document.querySelectorAll('#toplist li');
+                            len = lis.length / 2; //9
+                            liHeight = 130;
+                            list.style.top = -liHeight + 'px';
+
+
+                            // var bullets = document.querySelectorAll('.slider .pagination .bullet');
+                            // for (var i = 0; i < bullets.length; i++) {
+                            //     bullets[i].index = i;
+                            //     bullets[i].onclick = function() {
+                            //         currIndex = this.index + 1;
+                            //         slideTo(currIndex);
+                            //     }
+                            // }
+                            auto();
+                            document.querySelector('.scrollbox').onmouseover = function() {
+                                stop();
+                            }
+                            document.querySelector('.scrollbox').onmouseout = function() {
+                                auto();
+                            }
+                        }
+
+                        function slideTo(index) {
+                            var list = document.querySelector('.scrollbox #toplist')
+                            if (currIndex === len) {
+                                index = currIndex = 2;
+                                list.style.top = -liHeight + 'px'
+                            }
+                            if (currIndex === -1) {
+                                index = currIndex = len - 3;
+                                list.style.top = -liHeight * (len - 2) + 'px'
+                            }
+
+                            var top = -index * liHeight;
+                            animate(list, {
+                                top: top
+                            })
+                        }
+
+                        function slideNext() {
+                            currIndex++;
+                            slideTo(currIndex);
+                        }
+
+                        function auto() {
+                            clearInterval(id);
+                            id = setInterval(function() {
+                                slideNext()
+                            }, 6000)
+                        }
+
+                        function stop() {
+                            clearInterval(id)
+                        }
+                    }
+                )()
             </script>
         </div>
+        <script>
+            (function($) {
+                $.fn.autoMail = function(options) {
+                    var opts = $.extend({}, $.fn.autoMail.defaults, options);
+                    return this.each(function() {
+                        var $this = $(this);
+                        var o = $.meta ? $.extend({}, opts, $this.data()) : opts;
+                        var top = $this.offset().top + $this.height() + 82;
+                        var left = $this.offset().left;
+                        var $mailBox = $('<div id="mailBox" style="top:' + top + 'px;left:' + left + 'px;width:' + $this.width() + 'px"></div>');
+                        $('.mailDYitem').append($mailBox);
 
+                        //设置高亮li
+                        function setEmailLi(index) {
+                            $('#mailBox li').removeClass('cmail').eq(index).addClass('cmail');
+                        }
+                        //初始化邮箱列表
+                        var emails = o.emails;
+                        var init = function(input) {
+                                //取消浏览器自动提示
+                                input.attr('autocomplete', 'off');
+                                //添加提示邮箱列表
+                                if (input.val() != "") {
+                                    var emailList = '<ul>';
+                                    for (var i = 0; i < emails.length; i++) {
+                                        emailList += '<li>' + input.val() + '@' + emails[i] + '</li>';
+                                    }
+                                    emailList += '</ul>';
+                                    $mailBox.html(emailList).show(0);
+                                } else {
+                                    $mailBox.hide(0);
+                                }
+                                //添加鼠标事件
+                                $('#mailBox li').hover(function() {
+                                    $('#mailBox li').removeClass('cmail');
+                                    $(this).addClass('cmail');
+                                }, function() {
+                                    $(this).removeClass('cmail');
+                                }).click(function() {
+                                    input.val($(this).html());
+                                    $mailBox.hide(0);
+                                });
+                            }
+                            //当前高亮下标
+                        var eindex = -1;
+                        //监听事件
+                        $this.focus(function() {
+                            if ($this.val().indexOf('@') == -1) {
+                                init($this);
+                            } else {
+                                $mailBox.hide(0);
+                            }
+                        }).blur(function() {
+                            setTimeout(function() {
+                                $mailBox.hide(0);
+                            }, 1000); //
+                        }).keyup(function(event) {
+                            if ($this.val().indexOf('@') == -1) {
+                                //上键
+                                if (event.keyCode == 40) {
+                                    eindex++;
+                                    if (eindex >= $('#mailBox li').length) {
+                                        eindex = 0;
+                                    }
+                                    setEmailLi(eindex);
+                                    //下键
+                                } else if (event.keyCode == 38) {
+                                    eindex--;
+                                    if (eindex < 0) {
+                                        eindex = $('#mailBox li').length - 1;
+                                    }
+                                    setEmailLi(eindex);
+                                    //回车键
+                                } else if (event.keyCode == 13) {
+                                    if (eindex >= 0) {
+                                        $this.val($('#mailBox li').eq(eindex).html());
+                                        $mailBox.hide(0);
+                                    }
+                                } else {
+                                    eindex = -1;
+                                    init($this);
+                                }
+                            } else {
+                                $mailBox.hide(0);
+                            }
+                            //如果在表单中，防止回车提交
+                        }).keydown(function(event) {
+                            if (event.keyCode == 13) {
+                                return false;
+                            }
+                        });
+                    });
+                }
+                $.fn.autoMail.defaults = {
+                    emails: []
+                }
+            })(jQuery);
+        </script>
         <div class=youpin>
             <div class=ucaption>
                 <p>发现优品
@@ -2136,7 +2353,7 @@
             <div class=clear></div>
             <div class=mailDY>
                 <div class=mailDYitem id=mailDYitem>
-                    <span><input type=text value class=i id=footermail></span>
+                    <span><input type=text value="请填写邮箱订阅促销" class=i id=footermail></span>
                     <span class=ftitle>
     <div id=store-selector1>
     <div style=line-height:22px class=text><div id=showarea1 title=订阅区域>北京</div><b></b></div>
@@ -2145,16 +2362,56 @@
     </div>
     <div onclick="$('#store-selector1').removeClass('hover')" class=close></div>
     </div>
-    <div class=clear></div>
-    </span>
-                    <span><a class=btn onclick=subfootedm(); href=javascript:void(0);></a></span><span> <a name=sfbest_hp_hp_discovery_takemore class="dy trackref" href=http://www.sfbest.com/www/389/6268.html target=_blank> 订阅更多&gt;</a></span>
+    <div class=clear></div></span>
+                    <span><a class=btn onclick=subfootedm(); href=javascript:void(0);></a></span>
+                    <span> <a name=sfbest_hp_hp_discovery_takemore class="dy trackref" href=http://www.sfbest.com/www/389/6268.html target=_blank> 订阅更多&gt;</a></span>
                     <div class=clear></div>
-
-
-                    <div style=display:none id=emailMsg class=emailerr>邮箱格式不正确</div>
+                    <div style=display:none id=emailMsg class=emailerr>请输入邮箱地址</div>
                 </div>
             </div>
         </div>
+        <script>
+            $(document).ready(function() {
+                $('#footermail').autoMail({
+                    emails: ['qq.com', '163.com', '126.com', 'sina.com', 'sohu.com', 'yahoo.cn', 'gmail.com']
+                });
+            });
+            $("#footermail").bind("focus", function() {
+                $("#emailMsg").hide();
+                if ($(this).val() == '请填写邮箱订阅促销') {
+                    $(this).val('');
+                    return;
+                }
+            });
+            $("#footermail").bind("blur", function() {
+                if ($(this).val() == '') {
+                    $(this).val('请填写邮箱订阅促销');
+                    return;
+                }
+            });
+
+            function subfootedm() {
+                var reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$"); //正则表达式
+                if ($('#footermail').val() === "请填写邮箱订阅促销") {
+                    $('#emailMsg').show().html('请输入邮箱地址').removeAttr('style');
+                    $('#footermail').val("");
+                } else if ($('#footermail').val() !== "请填写邮箱订阅促销" && $('#footermail').val() !== "" && !reg.test($('#footermail').val())) {　
+                    $('#emailMsg').show().html('邮箱格式不正确').removeAttr('style');
+                } else {
+
+                    $('#emailMsg').show().html('订阅成功').css({
+                        "color": "green",
+                        'background': 'white',
+                        "border-color": "green"
+                    });
+                    setTimeout(function() {
+                        $('#footermail').val("请填写邮箱订阅促销");
+                        $('#emailMsg').hide();
+                    }, 2000);
+
+                }
+            }
+        </script>
     </div>
 
     <div id=footer>
@@ -2358,7 +2615,7 @@
     <div class=paid_lq style=display:none>
         <img src=./src/img/index/images/38.png width=329 height=186>
         <a class=paid_close href=javascript:void(0);></a>
-        <a class=paid_lq_a href=http://www.sfbest.com/paidMember/ target=_blank></a>
+        <a class=paid_lq_a href=# target=_blank></a>
         <a class=paid_bzts href=javascript:void(0);></a>
         <div class=paid_day><span id=paid_day>30</span><i>天</i></div>
     </div>
@@ -2848,7 +3105,7 @@
                 }
             });
         }
-    </script> -->
+    </script>  -->
     <div id=screen></div>
     <div class=indexshadow id=shadowAllCity></div>
     <!-- <script src="src/script/index/6.js"></script> -->
