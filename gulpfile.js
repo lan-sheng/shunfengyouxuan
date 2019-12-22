@@ -18,29 +18,29 @@ const plugins = require('gulp-load-plugins')(); //生成.map文件
 // });
 
 //1.压缩html文件
-gulp.task('uglifyhtml', function() {
-    return gulp.src('./*.html')
-        .pipe(html()) //引入压缩模块
-        .pipe(gulp.dest('dist/'));
-});
+// gulp.task('uglifyhtml', function() {
+//     return gulp.src('./*.html')
+//         .pipe(html()) //引入压缩模块
+//         .pipe(gulp.dest('dist/'));
+// });
 
 // 2.压缩css文件--如果用sass进行css开发，不需要这个模块。
-gulp.task('uglifycss', function() {
-    return gulp.src('./src/css/*.css')
-        .pipe(css())
-        .pipe(gulp.dest('./dist/src/css/'))
-});
+// gulp.task('uglifycss', function() {
+//     return gulp.src('./src/css/*.css')
+//         .pipe(css())
+//         .pipe(gulp.dest('./dist/src/css/'))
+// });
 
 //3.sass编译css最终压缩的实现
-gulp.task('compilesass', function() {
-    return gulp.src('src/css/*.sass')
-        .pipe(plugins.sourcemaps.init()) // 初始化 gulp-sourcemaps 插件  生成.map文件初始化  
-        .pipe(plugins.sass({ // 调用 sass 插件，编译 sass 文件
-            outputStyle: 'compressed' //压缩一行
-        }))
-        .pipe(plugins.sourcemaps.write('.')) // 生成 sourcemap 生成.map文件 
-        .pipe(gulp.dest('./dist/src/css/')); // 目标文件存放路径
-});
+// gulp.task('compilesass', function() {
+//     return gulp.src('src/css/*.sass')
+//         .pipe(plugins.sourcemaps.init()) // 初始化 gulp-sourcemaps 插件  生成.map文件初始化  
+//         .pipe(plugins.sass({ // 调用 sass 插件，编译 sass 文件
+//             outputStyle: 'compressed' //压缩一行
+//         }))
+//         .pipe(plugins.sourcemaps.write('.')) // 生成 sourcemap 生成.map文件 
+//         .pipe(gulp.dest('./dist/src/css/')); // 目标文件存放路径
+// });
 
 //4.压缩js文件--如果将es6的代码转换成es5,无需此模块
 // gulp.task('uglifyjs', function () {
@@ -60,41 +60,41 @@ gulp.task('babel', function() {
             presets: ['es2015']
         }))
         .pipe(uglifyjs())
-        .pipe(gulp.dest('./dist/src/script/'));
+        .pipe(gulp.dest('./dist/src/script/index/'));
 });
 
 //6.png图片的压缩
 //图片压缩的插件：gulp-imagemin
-gulp.task('runimg', function() {
-    return gulp.src('src/img/*.{png,gif,jpg,ico}')
-        .pipe(imagemin())
-        .pipe(gulp.dest('dist/img/'));
-});
+// gulp.task('runimg', function() {
+//     return gulp.src('src/img/*.{png,gif,jpg,ico}')
+//         .pipe(imagemin())
+//         .pipe(gulp.dest('dist/img/'));
+// });
 
 
 //最终监听
 //每一个任务先跑一次，再进行监听
-gulp.task('default', function() {
-    watch(['src/font/*', 'src/*.html', 'src/sass/*.scss', 'src/script/*.js', 'src/img/*.{png,jpg,gif,ico}'], gulp.parallel('copyfile', 'uglifyhtml', 'compilesass', 'babel', 'runimg'));
-});
+// gulp.task('default', function() {
+//     watch(['src/font/*', 'src/*.html', 'src/sass/*.scss', 'src/script/*.js', 'src/img/*.{png,jpg,gif,ico}'], gulp.parallel('copyfile', 'uglifyhtml', 'compilesass', 'babel', 'runimg'));
+// });
 
-// gulp.task('uglifyhtml', function() {
-//     return gulp.src('*.html')
-//         .pipe(html())
-//         .pipe(gulp.dest('dist/'))
-// })
-// gulp.task('uglifycss', function() {
-//     return gulp.src('src/css/*.css')
-//         .pipe(css())
-//         .pipe(gulp.dest('dist/src/css/'))
-// })
-// gulp.task('compilesass', function() {
-//     return gulp.src('src/css/*.sass')
-//         .pipe(sass())
-//         .pipe(gulp.dest('dist/src/css/'))
-// })
-// gulp.task('uglifyjs', function() {
-//     return gulp.src('src/script/*/*.*')
-//         .pipe(js())
-//         .pipe(gulp.dest('dist/src/script/*/*.*'))
-// })
+gulp.task('uglifyhtml', function() {
+    return gulp.src('src/*.html')
+        .pipe(html())
+        .pipe(gulp.dest('dist/src/'))
+})
+gulp.task('uglifycss', function() {
+        return gulp.src('src/css/*.css')
+            .pipe(css())
+            .pipe(gulp.dest('dist/src/css/'))
+    })
+    // gulp.task('compilesass', function() {
+    //     return gulp.src('src/css/*.sass')
+    //         .pipe(sass())
+    //         .pipe(gulp.dest('dist/src/css/'))
+    // })
+    // gulp.task('uglifyjs', function() {
+    //     return gulp.src('src/script/index/*.*')
+    //         .pipe(uglifyjs())
+    //         .pipe(gulp.dest('dist/src/script/index/'))
+    // })
