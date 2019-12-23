@@ -1,5 +1,6 @@
 function bufferMove(obj, json, fn) {
-    var speed = 0;
+    let speed = 0;
+
     function getStyle(obj, attr) {
         if (window.getComputedStyle) {
             return window.getComputedStyle(obj)[attr];
@@ -8,13 +9,13 @@ function bufferMove(obj, json, fn) {
         }
     }
     clearInterval(obj.timer); //防止事件下面定时器叠加
-    obj.timer = setInterval(function () {
-        var flag = true; //假设运动已经结束
+    obj.timer = setInterval(function() {
+        let flag = true; //假设运动已经结束
 
         //开始属性遍历运动
-        for (var attr in json) { //attr:css属性名称  json[attr]:目标点 前面的target
+        for (let attr in json) { //attr:css属性名称  json[attr]:目标点 前面的target
             //1.求当前的css属性值
-            var currentValue = null;
+            let currentValue = null;
             if (attr === 'opacity') { //透明度
                 currentValue = getStyle(obj, attr) * 100; //扩展100倍，透明度的目标100
             } else { //px单位的属性

@@ -12,24 +12,24 @@ const sourcemaps = require('gulp-sourcemaps'); //引入生成.map文件模块
 const plugins = require('gulp-load-plugins')(); //生成.map文件
 
 //0.复制文件
-// gulp.task('copyfile', function() {
-//     return gulp.src('src/font/*')
-//         .pipe(gulp.dest('dist/font/'));
-// });
+gulp.task('copyfile', function() {
+    return gulp.src('src/font/*')
+        .pipe(gulp.dest('dist/font/'));
+});
 
 //1.压缩html文件
-// gulp.task('uglifyhtml', function() {
-//     return gulp.src('./*.html')
-//         .pipe(html()) //引入压缩模块
-//         .pipe(gulp.dest('dist/'));
-// });
+gulp.task('uglifyhtml', function() {
+    return gulp.src('src/*.html')
+        .pipe(html())
+        .pipe(gulp.dest('dist/src/'))
+})
 
 // 2.压缩css文件--如果用sass进行css开发，不需要这个模块。
-// gulp.task('uglifycss', function() {
-//     return gulp.src('./src/css/*.css')
-//         .pipe(css())
-//         .pipe(gulp.dest('./dist/src/css/'))
-// });
+gulp.task('uglifycss', function() {
+    return gulp.src('src/css/*.css')
+        .pipe(css())
+        .pipe(gulp.dest('dist/src/css/'))
+})
 
 //3.sass编译css最终压缩的实现
 // gulp.task('compilesass', function() {
@@ -42,34 +42,32 @@ const plugins = require('gulp-load-plugins')(); //生成.map文件
 //         .pipe(gulp.dest('./dist/src/css/')); // 目标文件存放路径
 // });
 
-//4.压缩js文件--如果将es6的代码转换成es5,无需此模块
-// gulp.task('uglifyjs', function () {
-//     return gulp.src('src/script/*.js')
-//         .pipe(js())
-//         .pipe(gulp.dest('dist/script/'));
+// 4.压缩js文件--如果将es6的代码转换成es5,无需此模块
+// gulp.task('uglifyjs', function() {
+//     return gulp.src('src/script/detail/cookie.js')
+//         .pipe(uglifyjs())
+//         .pipe(gulp.dest('dist/src/script/detail/'));
 // });
 
 
 //5.转码，压缩的合并实现
 //先将es6代码转换成es5才能进行相关的压缩合并操作。
-//gulp-babel@7   @后面的数字代表版本
-//gulp-babel@7  babel-core   babel-preset-es2015
+// gulp-babel@7   @后面的数字代表版本
+// gulp-babel@7  babel-core   babel-preset-es2015
 gulp.task('babel', function() {
     return gulp.src('src/script/index/*.js')
-        .pipe(babel({ //es6转es5
-            presets: ['es2015']
-        }))
+        .pipe(babel())
         .pipe(uglifyjs())
         .pipe(gulp.dest('./dist/src/script/index/'));
 });
 
-//6.png图片的压缩
-//图片压缩的插件：gulp-imagemin
-// gulp.task('runimg', function() {
-//     return gulp.src('src/img/*.{png,gif,jpg,ico}')
-//         .pipe(imagemin())
-//         .pipe(gulp.dest('dist/img/'));
-// });
+// 6.png图片的压缩
+// 图片压缩的插件：gulp-imagemin
+gulp.task('runimg', function() {
+    return gulp.src('src/img/detail/background-images/*.{png,gif,jpg,ico}')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/src/img/detail/background-images/'));
+});
 
 
 //最终监听
@@ -77,24 +75,3 @@ gulp.task('babel', function() {
 // gulp.task('default', function() {
 //     watch(['src/font/*', 'src/*.html', 'src/sass/*.scss', 'src/script/*.js', 'src/img/*.{png,jpg,gif,ico}'], gulp.parallel('copyfile', 'uglifyhtml', 'compilesass', 'babel', 'runimg'));
 // });
-
-gulp.task('uglifyhtml', function() {
-    return gulp.src('src/*.html')
-        .pipe(html())
-        .pipe(gulp.dest('dist/src/'))
-})
-gulp.task('uglifycss', function() {
-        return gulp.src('src/css/*.css')
-            .pipe(css())
-            .pipe(gulp.dest('dist/src/css/'))
-    })
-    // gulp.task('compilesass', function() {
-    //     return gulp.src('src/css/*.sass')
-    //         .pipe(sass())
-    //         .pipe(gulp.dest('dist/src/css/'))
-    // })
-    // gulp.task('uglifyjs', function() {
-    //     return gulp.src('src/script/index/*.*')
-    //         .pipe(uglifyjs())
-    //         .pipe(gulp.dest('dist/src/script/index/'))
-    // })
